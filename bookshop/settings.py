@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # My additions 
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,1030 @@
+[
+    {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK1",
+      "author": "Chinua Achebe",
+      "country": "Nigeria",
+      "imageLink": "things-fall-apart.jpg",
+      "language": "English",
+      "blurb": "Things Fall Apart is the first of three novels in Chinua Achebe's critically acclaimed African Trilogy. It is a classic narrative about Africa's cataclysmic encounter with Europe as it establishes a colonial presence on the continent. Told through the fictional experiences of Okonkwo, a wealthy and fearless Igbo warrior of Umuofia in the late 1800s, Things Fall Apart explores one man's futile resistance to the devaluing of his Igbo traditions by British political and religious forces and his despair as his community capitulates to the powerful new order.",
+      "pages": 209,
+      "title": "Things Fall Apart",
+      "year": 1958,
+      "price": 9.99,
+      "rating": 3.72,
+      "category": 2
+    }
+    },
+    {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK2",
+      "author": "Hans Christian Andersen",
+      "country": "Denmark",
+      "imageLink": "fairy-tales.jpg",
+      "language": "Danish",
+      "blurb": "This book contains the complete Andersen's fairy tales and stories hardcopy format. Hans Christian Andersen was a Danish author and poet. Although a prolific writer of plays, travelogues, novels, and poems, Andersen is best remembered for his fairy tales, a literary genre he so mastered that he himself has become as mythical as the tales he wrote. Andersen's popularity is not limited to children; his stories - called eventyrs, or 'fantastic tales' - express themes that transcend age and nationality.",
+      "pages": 784,
+      "title": "Fairy tales",
+      "year": 1836,
+      "price": 12.99,
+      "rating": 4.29,
+      "category": 2
+    }
+    },
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "sku": "BOOK3",
+        "author": "Dante Alighieri",
+        "country": "Italy",
+        "imageLink": "the-divine-comedy.jpg",
+        "language": "Italian",
+        "blurb": "The Divine Comedy begins in a shadowed forest on Good Friday in the year 1300. It proceeds on a journey that, in its intense recreation of the depths and the heights of human experience, has become the key with which Western civilization has sought to unlock the mystery of its own identity.",
+        "pages": 928,
+        "title": "The Divine Comedy",
+        "year": 1315,
+        "price": 14.99,
+        "rating": 4.07,
+        "category": 2
+      }
+    },
+    {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK4",
+      "author": "Jane Austen",
+      "country": "United Kingdom",
+      "imageLink": "pride-and-prejudice.jpg",
+      "language": "English",
+      "blurb": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work 'her own darling child' and its vivacious heroine, Elizabeth Bennet, 'as delightful a creature as ever appeared in print.' The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen's radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England.",
+      "pages": 226,
+      "title": "Pride and Prejudice",
+      "year": 1813,
+      "price": 8.99,
+      "rating": 4.28,
+      "category": 2
+    }
+    },
+    {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK5",
+      "author": "Samuel Beckett",
+      "country": "Republic of Ireland",
+      "imageLink": "molloy-malone-dies-the-unnamable.jpg",
+      "language": "French, English",
+      "blurb": "The first novel of Samuel Beckett's mordant and exhilirating midcentury trilogy intoduces us to Molloy, who has been mysteriously incarcerated, and who subsequently escapes to go discover the whereabouts of his mother. In the latter part of this curious masterwork, a certain Jacques Moran is deputized by anonymous authorities to search for the aforementioned Molloy. In the trilogy's second novel, Malone, who might or might not be Molloy himself, addresses us with his ruminations while in the act of dying. The third novel consists of the fragmented monologue - delivered, like the monologues of the previous novels, in a mournful rhetoric that possesses the utmost splendor and beauty - of what might or might not an armless and legless creature living in an urn outside an eating house.",
+      "pages": 256,
+      "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+      "year": 1952,
+      "price": 14.99,
+      "rating": 4.28,
+      "category": 2
+    }
+    },
+    {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK6",
+      "author": "Giovanni Boccaccio",
+      "country": "Italy",
+      "imageLink": "the-decameron.jpg",
+      "language": "Italian",
+      "blurb": "The Decameron (c.1351) is an entertaining series of one hundred stories written in the wake of the Black Death. The stories are told in a country villa outside the city of Florence by ten young noble men and women who are seeking to escape the ravages of the plague. Boccaccio's skill as a dramatist is masterfully displayed in these vivid portraits of people from all stations in life, with plots that revel in a bewildering variety of human reactions.",
+      "pages": 1024,
+      "title": "The Decameron",
+      "year": 1351,
+      "price": 8.99,
+      "rating": 3.88,
+      "category": 2
+    }
+    },
+    {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK7",
+      "author": "Jorge Luis Borges",
+      "country": "Argentina",
+      "imageLink": "ficciones.jpg",
+      "language": "Spanish",
+      "blurb": "The seventeen pieces in Ficciones demonstrate the whirlwind of Borges's genius and mirror the precision and potency of his intellect and inventiveness, his piercing irony, his skepticism, and his obsession with fantasy. Borges sends us on a journey into a compelling, bizarre, and profoundly resonant realm; we enter the fearful sphere of Pascal's abyss, the surreal and literal labyrinth of books, and the iconography of eternal return. To enter the worlds in Ficciones is to enter the mind of Jorge Luis Borges, wherein lies Heaven, Hell, and everything else in between.",
+      "pages": 224,
+      "title": "Ficciones",
+      "year": 1965,
+      "price": 10.99,
+      "rating": 4.42,
+      "category": 2
+    }
+    },
+    {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK8",
+      "author": "Emily Bront\u00eb",
+      "country": "United Kingdom",
+      "imageLink": "wuthering-heights.jpg",
+      "language": "English",
+      "blurb": "At the centre of this novel is the passionate love between Catherine Earnshaw and Heathcliff - recounted with such emotional intensity that a plain tale of the Yorkshire moors acquires the depth and simplicity of ancient tragedy.",
+      "pages": 342,
+      "title": "Wuthering Heights",
+      "year": 1847,
+      "price": 7.99,
+      "rating": 3.88,
+      "category": 3
+    }
+    },
+    {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK9",
+      "author": "Albert Camus",
+      "country": "Algeria, French Empire",
+      "imageLink": "l-etranger.jpg",
+      "language": "French",
+      "blurb": "Published in 1942 by French author Albert Camus, The Stranger has long been considered a classic of twentieth-century literature. Le Monde ranks it as number one on its '100 Books of the Century' list. Through this story of an ordinary man unwittingly drawn into a senseless murder on a sundrenched Algerian beach, Camus explores what he termed 'the nakedness of man faced with the absurd.'",
+      "pages": 185,
+      "title": "The Stranger",
+      "year": 1942,
+      "price": 8.99,
+      "rating": 4.01,
+      "category": 2
+    }
+    },
+    {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK10",
+      "author": "Paul Celan",
+      "country": "Romania, France",
+      "imageLink": "poems-paul-celan.jpg",
+      "language": "German",
+      "blurb": "Michael Hamburger's extensive selection of Celan's poems is presented in facing-text form, prefaced by an illuminating introduction. This third Anvil edition of his selected translations now includes the previously uncollected longer poem 'Wolf's Bean', several additional short poems, and the essay 'On Translating Celan' in which he discusses the challenges faced over many years in his engagement with Celan's poetry.",
+      "pages": 320,
+      "title": "Poems",
+      "year": 1952,
+      "price": 10.99,
+      "rating": 4.35,
+      "category": 2
+    }
+    },
+    {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK11",
+      "author": "Miguel de Cervantes",
+      "country": "Spain",
+      "imageLink": "don-quijote-de-la-mancha.jpg",
+      "language": "Spanish",
+      "blurb": "Don Quixote has become so entranced by reading chivalric romances that he determines to become a knight-errant himself. In the company of his faithful squire, Sancho Panza, his exploits blossom in all sorts of wonderful ways. While Quixote's fancy often leads him astray—he tilts at windmills, imagining them to be giants—Sancho acquires cunning and a certain sagacity. Sane madman and wise fool, they roam the world together, and together they have haunted readers' imaginations for nearly four hundred years.",
+      "pages": 1056,
+      "title": "Don Quijote De La Mancha",
+      "year": 1610,
+      "price": 6.99,
+      "rating": 3.89,
+      "category": 3
+    }
+    },
+    {
+      "author": "Geoffrey Chaucer",
+      "country": "England",
+      "imageLink": "the-canterbury-tales.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/The_Canterbury_Tales\n",
+      "pages": 544,
+      "title": "The Canterbury Tales",
+      "year": 1450
+    },
+    {
+      "author": "Anton Chekhov",
+      "country": "Russia",
+      "imageLink": "stories-of-anton-chekhov.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/List_of_short_stories_by_Anton_Chekhov\n",
+      "pages": 194,
+      "title": "Stories",
+      "year": 1886
+    },
+    {
+      "author": "Joseph Conrad",
+      "country": "United Kingdom",
+      "imageLink": "nostromo.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Nostromo\n",
+      "pages": 320,
+      "title": "Nostromo",
+      "year": 1904
+    },
+    {
+      "author": "Charles Dickens",
+      "country": "United Kingdom",
+      "imageLink": "great-expectations.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Great_Expectations\n",
+      "pages": 194,
+      "title": "Great Expectations",
+      "year": 1861
+    },
+    {
+      "author": "Denis Diderot",
+      "country": "France",
+      "imageLink": "jacques-the-fatalist.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/Jacques_the_Fatalist\n",
+      "pages": 596,
+      "title": "Jacques the Fatalist",
+      "year": 1796
+    },
+    {
+      "author": "Alfred D\u00f6blin",
+      "country": "Germany",
+      "imageLink": "berlin-alexanderplatz.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/Berlin_Alexanderplatz\n",
+      "pages": 600,
+      "title": "Berlin Alexanderplatz",
+      "year": 1929
+    },
+    {
+      "author": "Fyodor Dostoevsky",
+      "country": "Russia",
+      "imageLink": "crime-and-punishment.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/Crime_and_Punishment\n",
+      "pages": 551,
+      "title": "Crime and Punishment",
+      "year": 1866
+    },
+    {
+      "author": "Fyodor Dostoevsky",
+      "country": "Russia",
+      "imageLink": "the-idiot.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/The_Idiot\n",
+      "pages": 656,
+      "title": "The Idiot",
+      "year": 1869
+    },
+    {
+      "author": "Fyodor Dostoevsky",
+      "country": "Russia",
+      "imageLink": "the-possessed.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/Demons_(Dostoyevsky_novel)\n",
+      "pages": 768,
+      "title": "The Possessed",
+      "year": 1872
+    },
+    {
+      "author": "Fyodor Dostoevsky",
+      "country": "Russia",
+      "imageLink": "the-brothers-karamazov.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/The_Brothers_Karamazov\n",
+      "pages": 824,
+      "title": "The Brothers Karamazov",
+      "year": 1880
+    },
+    {
+      "author": "George Eliot",
+      "country": "United Kingdom",
+      "imageLink": "middlemarch.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Middlemarch\n",
+      "pages": 800,
+      "title": "Middlemarch",
+      "year": 1871
+    },
+    {
+      "author": "Ralph Ellison",
+      "country": "United States",
+      "imageLink": "invisible-man.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Invisible_Man\n",
+      "pages": 581,
+      "title": "Invisible Man",
+      "year": 1952
+    },
+    {
+      "author": "Euripides",
+      "country": "Greece",
+      "imageLink": "medea.jpg",
+      "language": "Greek",
+      "link": "https://en.wikipedia.org/wiki/Medea_(play)\n",
+      "pages": 104,
+      "title": "Medea",
+      "year": -431
+    },
+    {
+      "author": "William Faulkner",
+      "country": "United States",
+      "imageLink": "absalom-absalom.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Absalom,_Absalom!\n",
+      "pages": 313,
+      "title": "Absalom, Absalom!",
+      "year": 1936
+    },
+    {
+      "author": "William Faulkner",
+      "country": "United States",
+      "imageLink": "the-sound-and-the-fury.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/The_Sound_and_the_Fury\n",
+      "pages": 326,
+      "title": "The Sound and the Fury",
+      "year": 1929
+    },
+    {
+      "author": "Gustave Flaubert",
+      "country": "France",
+      "imageLink": "madame-bovary.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/Madame_Bovary\n",
+      "pages": 528,
+      "title": "Madame Bovary",
+      "year": 1857
+    },
+    {
+      "author": "Gustave Flaubert",
+      "country": "France",
+      "imageLink": "l-education-sentimentale.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/Sentimental_Education\n",
+      "pages": 606,
+      "title": "Sentimental Education",
+      "year": 1869
+    },
+    {
+      "author": "Federico Garc\u00eda Lorca",
+      "country": "Spain",
+      "imageLink": "gypsy-ballads.jpg",
+      "language": "Spanish",
+      "link": "https://en.wikipedia.org/wiki/Gypsy_Ballads\n",
+      "pages": 218,
+      "title": "Gypsy Ballads",
+      "year": 1928
+    },
+    {
+      "author": "Gabriel Garc\u00eda M\u00e1rquez",
+      "country": "Colombia",
+      "imageLink": "one-hundred-years-of-solitude.jpg",
+      "language": "Spanish",
+      "link": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude\n",
+      "pages": 417,
+      "title": "One Hundred Years of Solitude",
+      "year": 1967
+    },
+    {
+      "author": "Gabriel Garc\u00eda M\u00e1rquez",
+      "country": "Colombia",
+      "imageLink": "love-in-the-time-of-cholera.jpg",
+      "language": "Spanish",
+      "link": "https://en.wikipedia.org/wiki/Love_in_the_Time_of_Cholera\n",
+      "pages": 368,
+      "title": "Love in the Time of Cholera",
+      "year": 1985
+    },
+    {
+      "author": "Johann Wolfgang von Goethe",
+      "country": "Saxe-Weimar",
+      "imageLink": "faust.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/Goethe%27s_Faust\n",
+      "pages": 158,
+      "title": "Faust",
+      "year": 1832
+    },
+    {
+      "author": "Nikolai Gogol",
+      "country": "Russia",
+      "imageLink": "dead-souls.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/Dead_Souls\n",
+      "pages": 432,
+      "title": "Dead Souls",
+      "year": 1842
+    },
+    {
+      "author": "G\u00fcnter Grass",
+      "country": "Germany",
+      "imageLink": "the-tin-drum.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/The_Tin_Drum\n",
+      "pages": 600,
+      "title": "The Tin Drum",
+      "year": 1959
+    },
+    {
+      "author": "Jo\u00e3o Guimar\u00e3es Rosa",
+      "country": "Brazil",
+      "imageLink": "the-devil-to-pay-in-the-backlands.jpg",
+      "language": "Portuguese",
+      "link": "https://en.wikipedia.org/wiki/The_Devil_to_Pay_in_the_Backlands\n",
+      "pages": 494,
+      "title": "The Devil to Pay in the Backlands",
+      "year": 1956
+    },
+    {
+      "author": "Knut Hamsun",
+      "country": "Norway",
+      "imageLink": "hunger.jpg",
+      "language": "Norwegian",
+      "link": "https://en.wikipedia.org/wiki/Hunger_(Hamsun_novel)\n",
+      "pages": 176,
+      "title": "Hunger",
+      "year": 1890
+    },
+    {
+      "author": "Ernest Hemingway",
+      "country": "United States",
+      "imageLink": "the-old-man-and-the-sea.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea\n",
+      "pages": 128,
+      "title": "The Old Man and the Sea",
+      "year": 1952
+    },
+    {
+      "author": "Homer",
+      "country": "Greece",
+      "imageLink": "the-iliad-of-homer.jpg",
+      "language": "Greek",
+      "link": "https://en.wikipedia.org/wiki/Iliad\n",
+      "pages": 608,
+      "title": "Iliad",
+      "year": -735
+    },
+    {
+      "author": "Homer",
+      "country": "Greece",
+      "imageLink": "the-odyssey-of-homer.jpg",
+      "language": "Greek",
+      "link": "https://en.wikipedia.org/wiki/Odyssey\n",
+      "pages": 374,
+      "title": "Odyssey",
+      "year": -800
+    },
+    {
+      "author": "Henrik Ibsen",
+      "country": "Norway",
+      "imageLink": "a-Dolls-house.jpg",
+      "language": "Norwegian",
+      "link": "https://en.wikipedia.org/wiki/A_Doll%27s_House\n",
+      "pages": 68,
+      "title": "A Doll's House",
+      "year": 1879
+    },
+    {
+      "author": "James Joyce",
+      "country": "Irish Free State",
+      "imageLink": "ulysses.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Ulysses_(novel)\n",
+      "pages": 228,
+      "title": "Ulysses",
+      "year": 1922
+    },
+    {
+      "author": "Franz Kafka",
+      "country": "Czechoslovakia",
+      "imageLink": "stories-of-franz-kafka.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/Franz_Kafka_bibliography#Short_stories\n",
+      "pages": 488,
+      "title": "Stories",
+      "year": 1924
+    },
+    {
+      "author": "Franz Kafka",
+      "country": "Czechoslovakia",
+      "imageLink": "the-trial.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/The_Trial\n",
+      "pages": 160,
+      "title": "The Trial",
+      "year": 1925
+    },
+    {
+      "author": "Franz Kafka",
+      "country": "Czechoslovakia",
+      "imageLink": "the-castle.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/The_Castle_(novel)\n",
+      "pages": 352,
+      "title": "The Castle",
+      "year": 1926
+    },
+    {
+      "author": "K\u0101lid\u0101sa",
+      "country": "India",
+      "imageLink": "the-recognition-of-shakuntala.jpg",
+      "language": "Sanskrit",
+      "link": "https://en.wikipedia.org/wiki/Abhij%C3%B1%C4%81na%C5%9B%C4%81kuntalam\n",
+      "pages": 147,
+      "title": "The recognition of Shakuntala",
+      "year": 150
+    },
+    {
+      "author": "Yasunari Kawabata",
+      "country": "Japan",
+      "imageLink": "the-sound-of-the-mountain.jpg",
+      "language": "Japanese",
+      "link": "https://en.wikipedia.org/wiki/The_Sound_of_the_Mountain\n",
+      "pages": 288,
+      "title": "The Sound of the Mountain",
+      "year": 1954
+    },
+    {
+      "author": "Nikos Kazantzakis",
+      "country": "Greece",
+      "imageLink": "zorba-the-greek.jpg",
+      "language": "Greek",
+      "link": "https://en.wikipedia.org/wiki/Zorba_the_Greek\n",
+      "pages": 368,
+      "title": "Zorba the Greek",
+      "year": 1946
+    },
+    {
+      "author": "D. H. Lawrence",
+      "country": "United Kingdom",
+      "imageLink": "sons-and-lovers.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Sons_and_Lovers\n",
+      "pages": 432,
+      "title": "Sons and Lovers",
+      "year": 1913
+    },
+    {
+      "author": "Halld\u00f3r Laxness",
+      "country": "Iceland",
+      "imageLink": "independent-people.jpg",
+      "language": "Icelandic",
+      "link": "https://en.wikipedia.org/wiki/Independent_People\n",
+      "pages": 470,
+      "title": "Independent People",
+      "year": 1934
+    },
+    {
+      "author": "Giacomo Leopardi",
+      "country": "Italy",
+      "imageLink": "poems-giacomo-leopardi.jpg",
+      "language": "Italian",
+      "link": "\n",
+      "pages": 184,
+      "title": "Poems",
+      "year": 1818
+    },
+    {
+      "author": "Doris Lessing",
+      "country": "United Kingdom",
+      "imageLink": "the-golden-notebook.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/The_Golden_Notebook\n",
+      "pages": 688,
+      "title": "The Golden Notebook",
+      "year": 1962
+    },
+    {
+      "author": "Astrid Lindgren",
+      "country": "Sweden",
+      "imageLink": "pippi-longstocking.jpg",
+      "language": "Swedish",
+      "link": "https://en.wikipedia.org/wiki/Pippi_Longstocking\n",
+      "pages": 160,
+      "title": "Pippi Longstocking",
+      "year": 1945
+    },
+    {
+      "author": "Lu Xun",
+      "country": "China",
+      "imageLink": "diary-of-a-madman.jpg",
+      "language": "Chinese",
+      "link": "https://en.wikipedia.org/wiki/A_Madman%27s_Diary\n",
+      "pages": 389,
+      "title": "Diary of a Madman",
+      "year": 1918
+    },
+    {
+      "author": "Naguib Mahfouz",
+      "country": "Egypt",
+      "imageLink": "children-of-gebelawi.jpg",
+      "language": "Arabic",
+      "link": "https://en.wikipedia.org/wiki/Children_of_Gebelawi\n",
+      "pages": 355,
+      "title": "Children of Gebelawi",
+      "year": 1959
+    },
+    {
+      "author": "Thomas Mann",
+      "country": "Germany",
+      "imageLink": "buddenbrooks.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/Buddenbrooks\n",
+      "pages": 736,
+      "title": "Buddenbrooks",
+      "year": 1901
+    },
+    {
+      "author": "Thomas Mann",
+      "country": "Germany",
+      "imageLink": "the-magic-mountain.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/The_Magic_Mountain\n",
+      "pages": 720,
+      "title": "The Magic Mountain",
+      "year": 1924
+    },
+    {
+      "author": "Herman Melville",
+      "country": "United States",
+      "imageLink": "moby-dick.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Moby-Dick\n",
+      "pages": 378,
+      "title": "Moby Dick",
+      "year": 1851
+    },
+    {
+      "author": "Michel de Montaigne",
+      "country": "France",
+      "imageLink": "essais.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/Essays_(Montaigne)\n",
+      "pages": 404,
+      "title": "Essays",
+      "year": 1595
+    },
+    {
+      "author": "Elsa Morante",
+      "country": "Italy",
+      "imageLink": "history.jpg",
+      "language": "Italian",
+      "link": "https://en.wikipedia.org/wiki/History_(novel)\n",
+      "pages": 600,
+      "title": "History",
+      "year": 1974
+    },
+    {
+      "author": "Toni Morrison",
+      "country": "United States",
+      "imageLink": "beloved.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Beloved_(novel)\n",
+      "pages": 321,
+      "title": "Beloved",
+      "year": 1987
+    },
+    {
+      "author": "Murasaki Shikibu",
+      "country": "Japan",
+      "imageLink": "the-tale-of-genji.jpg",
+      "language": "Japanese",
+      "link": "https://en.wikipedia.org/wiki/The_Tale_of_Genji\n",
+      "pages": 1360,
+      "title": "The Tale of Genji",
+      "year": 1006
+    },
+    {
+      "author": "Robert Musil",
+      "country": "Austria",
+      "imageLink": "the-man-without-qualities.jpg",
+      "language": "German",
+      "link": "https://en.wikipedia.org/wiki/The_Man_Without_Qualities\n",
+      "pages": 365,
+      "title": "The Man Without Qualities",
+      "year": 1931
+    },
+    {
+      "author": "Vladimir Nabokov",
+      "country": "Russia/United States",
+      "imageLink": "lolita.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Lolita\n",
+      "pages": 317,
+      "title": "Lolita",
+      "year": 1955
+    },
+    {
+      "author": "George Orwell",
+      "country": "United Kingdom",
+      "imageLink": "nineteen-eighty-four.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four\n",
+      "pages": 272,
+      "title": "Nineteen Eighty-Four",
+      "year": 1949
+    },
+    {
+      "author": "Ovid",
+      "country": "Roman Empire",
+      "imageLink": "the-metamorphoses-of-ovid.jpg",
+      "language": "Classical Latin",
+      "link": "https://en.wikipedia.org/wiki/Metamorphoses\n",
+      "pages": 576,
+      "title": "Metamorphoses",
+      "year": 100
+    },
+    {
+      "author": "Fernando Pessoa",
+      "country": "Portugal",
+      "imageLink": "the-book-of-disquiet.jpg",
+      "language": "Portuguese",
+      "link": "https://en.wikipedia.org/wiki/The_Book_of_Disquiet\n",
+      "pages": 272,
+      "title": "The Book of Disquiet",
+      "year": 1928
+    },
+    {
+      "author": "Edgar Allan Poe",
+      "country": "United States",
+      "imageLink": "tales-and-poems-of-edgar-allan-poe.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography#Tales\n",
+      "pages": 842,
+      "title": "Tales",
+      "year": 1950
+    },
+    {
+      "author": "Marcel Proust",
+      "country": "France",
+      "imageLink": "a-la-recherche-du-temps-perdu.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/In_Search_of_Lost_Time\n",
+      "pages": 2408,
+      "title": "In Search of Lost Time",
+      "year": 1920
+    },
+    {
+      "author": "Fran\u00e7ois Rabelais",
+      "country": "France",
+      "imageLink": "gargantua-and-pantagruel.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/Gargantua_and_Pantagruel\n",
+      "pages": 623,
+      "title": "Gargantua and Pantagruel",
+      "year": 1533
+    },
+    {
+      "author": "Juan Rulfo",
+      "country": "Mexico",
+      "imageLink": "pedro-paramo.jpg",
+      "language": "Spanish",
+      "link": "https://en.wikipedia.org/wiki/Pedro_P%C3%A1ramo\n",
+      "pages": 124,
+      "title": "Pedro P\u00e1ramo",
+      "year": 1955
+    },
+    {
+      "author": "Rumi",
+      "country": "Sultanate of Rum",
+      "imageLink": "the-masnavi.jpg",
+      "language": "Persian",
+      "link": "https://en.wikipedia.org/wiki/Masnavi\n",
+      "pages": 438,
+      "title": "The Masnavi",
+      "year": 1236
+    },
+    {
+      "author": "Salman Rushdie",
+      "country": "United Kingdom, India",
+      "imageLink": "midnights-children.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Midnight%27s_Children\n",
+      "pages": 536,
+      "title": "Midnight's Children",
+      "year": 1981
+    },
+    {
+      "author": "Saadi",
+      "country": "Persia, Persian Empire",
+      "imageLink": "bostan.jpg",
+      "language": "Persian",
+      "link": "https://en.wikipedia.org/wiki/Bustan_(book)\n",
+      "pages": 298,
+      "title": "Bostan",
+      "year": 1257
+    },
+    {
+      "author": "Tayeb Salih",
+      "country": "Sudan",
+      "imageLink": "season-of-migration-to-the-north.jpg",
+      "language": "Arabic",
+      "link": "https://en.wikipedia.org/wiki/Season_of_Migration_to_the_North\n",
+      "pages": 139,
+      "title": "Season of Migration to the North",
+      "year": 1966
+    },
+    {
+      "author": "Jos\u00e9 Saramago",
+      "country": "Portugal",
+      "imageLink": "blindness.jpg",
+      "language": "Portuguese",
+      "link": "https://en.wikipedia.org/wiki/Blindness_(novel)\n",
+      "pages": 352,
+      "title": "Blindness",
+      "year": 1995
+    },
+    {
+      "author": "William Shakespeare",
+      "country": "England",
+      "imageLink": "hamlet.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Hamlet\n",
+      "pages": 432,
+      "title": "Hamlet",
+      "year": 1603
+    },
+    {
+      "author": "William Shakespeare",
+      "country": "England",
+      "imageLink": "king-lear.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/King_Lear\n",
+      "pages": 384,
+      "title": "King Lear",
+      "year": 1608
+    },
+    {
+      "author": "William Shakespeare",
+      "country": "England",
+      "imageLink": "othello.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Othello\n",
+      "pages": 314,
+      "title": "Othello",
+      "year": 1609
+    },
+    {
+      "author": "Sophocles",
+      "country": "Greece",
+      "imageLink": "oedipus-the-king.jpg",
+      "language": "Greek",
+      "link": "https://en.wikipedia.org/wiki/Oedipus_the_King\n",
+      "pages": 88,
+      "title": "Oedipus the King",
+      "year": -430
+    },
+    {
+      "author": "Stendhal",
+      "country": "France",
+      "imageLink": "le-rouge-et-le-noir.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/The_Red_and_the_Black\n",
+      "pages": 576,
+      "title": "The Red and the Black",
+      "year": 1830
+    },
+    {
+      "author": "Laurence Sterne",
+      "country": "England",
+      "imageLink": "the-life-and-opinions-of-tristram-shandy.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/The_Life_and_Opinions_of_Tristram_Shandy,_Gentleman\n",
+      "pages": 640,
+      "title": "The Life And Opinions of Tristram Shandy",
+      "year": 1760
+    },
+    {
+      "author": "Italo Svevo",
+      "country": "Italy",
+      "imageLink": "confessions-of-zeno.jpg",
+      "language": "Italian",
+      "link": "https://en.wikipedia.org/wiki/Zeno%27s_Conscience\n",
+      "pages": 412,
+      "title": "Confessions of Zeno",
+      "year": 1923
+    },
+    {
+      "author": "Jonathan Swift",
+      "country": "Ireland",
+      "imageLink": "gullivers-travels.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Gulliver%27s_Travels\n",
+      "pages": 178,
+      "title": "Gulliver's Travels",
+      "year": 1726
+    },
+    {
+      "author": "Leo Tolstoy",
+      "country": "Russia",
+      "imageLink": "war-and-peace.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/War_and_Peace\n",
+      "pages": 1296,
+      "title": "War and Peace",
+      "year": 1867
+    },
+    {
+      "author": "Leo Tolstoy",
+      "country": "Russia",
+      "imageLink": "anna-karenina.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/Anna_Karenina\n",
+      "pages": 864,
+      "title": "Anna Karenina",
+      "year": 1877
+    },
+    {
+      "author": "Leo Tolstoy",
+      "country": "Russia",
+      "imageLink": "the-death-of-ivan-ilyich.jpg",
+      "language": "Russian",
+      "link": "https://en.wikipedia.org/wiki/The_Death_of_Ivan_Ilyich\n",
+      "pages": 92,
+      "title": "The Death of Ivan Ilyich",
+      "year": 1886
+    },
+    {
+      "author": "Mark Twain",
+      "country": "United States",
+      "imageLink": "the-adventures-of-huckleberry-finn.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Adventures_of_Huckleberry_Finn\n",
+      "pages": 224,
+      "title": "The Adventures of Huckleberry Finn",
+      "year": 1884
+    },
+    {
+      "author": "Valmiki",
+      "country": "India",
+      "imageLink": "ramayana.jpg",
+      "language": "Sanskrit",
+      "link": "https://en.wikipedia.org/wiki/Ramayana\n",
+      "pages": 152,
+      "title": "Ramayana",
+      "year": -450
+    },
+    {
+      "author": "Virgil",
+      "country": "Roman Empire",
+      "imageLink": "the-aeneid.jpg",
+      "language": "Classical Latin",
+      "link": "https://en.wikipedia.org/wiki/Aeneid\n",
+      "pages": 442,
+      "title": "The Aeneid",
+      "year": -23
+    },
+    {
+      "author": "Vyasa",
+      "country": "India",
+      "imageLink": "the-mahab-harata.jpg",
+      "language": "Sanskrit",
+      "link": "https://en.wikipedia.org/wiki/Mahabharata\n",
+      "pages": 276,
+      "title": "Mahabharata",
+      "year": -700
+    },
+    {
+      "author": "Walt Whitman",
+      "country": "United States",
+      "imageLink": "leaves-of-grass.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Leaves_of_Grass\n",
+      "pages": 152,
+      "title": "Leaves of Grass",
+      "year": 1855
+    },
+    {
+      "author": "Virginia Woolf",
+      "country": "United Kingdom",
+      "imageLink": "mrs-dalloway.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Mrs_Dalloway\n",
+      "pages": 216,
+      "title": "Mrs Dalloway",
+      "year": 1925
+    },
+    {
+      "author": "Virginia Woolf",
+      "country": "United Kingdom",
+      "imageLink": "to-the-lighthouse.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/To_the_Lighthouse\n",
+      "pages": 209,
+      "title": "To the Lighthouse",
+      "year": 1927
+    },
+    {
+      "author": "Marguerite Yourcenar",
+      "country": "France/Belgium",
+      "imageLink": "memoirs-of-hadrian.jpg",
+      "language": "French",
+      "link": "https://en.wikipedia.org/wiki/Memoirs_of_Hadrian\n",
+      "pages": 408,
+      "title": "Memoirs of Hadrian",
+      "year": 1951
+    }
+  ]
