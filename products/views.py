@@ -20,7 +20,7 @@ def book_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'product': products,
+        'product': product,
     }
     
-    return render(request, 'products/book_detail.html', context)
+    return render(request, 'products/book-detail.html', context)
