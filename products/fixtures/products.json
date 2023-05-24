@@ -576,344 +576,598 @@
     }
     },
     {
+    "pk": 32,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK32",
       "author": "Nikolai Gogol",
       "country": "Russia",
       "imageLink": "dead-souls.jpg",
       "language": "Russian",
-      "link": "https://en.wikipedia.org/wiki/Dead_Souls\n",
+      "blurb": "In a new translation of the comic classic of Russian literature, Chichikov, an enigmatic stranger and conniving schemer, buys deceased serfs' names from their landlords' poll tax lists hoping to mortgage them for profit and to reinvent himself as a likeable gentleman.",
       "pages": 432,
       "title": "Dead Souls",
-      "year": 1842
+      "year": 1842,
+      "price": 9.99,
+      "rating": 3.98,
+      "category": 2
+    }
     },
     {
+    "pk": 33,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK33",
       "author": "G\u00fcnter Grass",
       "country": "Germany",
       "imageLink": "the-tin-drum.jpg",
       "language": "German",
-      "link": "https://en.wikipedia.org/wiki/The_Tin_Drum\n",
+      "blurb": "On his third birthday Oskar decides to stop growing. Haunted by the deaths of his parents and wielding his tin drum Oskar recounts the events of his extraordinary life; from the long nightmare of the Nazi era to his anarchic adventures in post-war Germany.",
       "pages": 600,
       "title": "The Tin Drum",
-      "year": 1959
+      "year": 1959,
+      "price": 9.99,
+      "rating": 3.95,
+      "category": 2
+    }
     },
     {
+    "pk": 34,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK34",
       "author": "Jo\u00e3o Guimar\u00e3es Rosa",
       "country": "Brazil",
       "imageLink": "the-devil-to-pay-in-the-backlands.jpg",
       "language": "Portuguese",
-      "link": "https://en.wikipedia.org/wiki/The_Devil_to_Pay_in_the_Backlands\n",
+      "blurb": "The original title refers to the veredas - small paths through wetlands usually located at higher altitudes characterized by the presence of grasses and buritizais, groups of the buriti palm-tree (Mauritia flexuosa), that criss-cross the Sertão region in northern Minas Gerais, Southeast Brazil - as a labyrinthine net where an outsider can easily get lost, and where there is no single way to a certain place, since all paths interconnect in such a way that any road can lead anywhere. The English title refers to a later episode in the book involving an attempt to make a deal with the Devil. Most of the book's spirit is however lost in translation, as the Portuguese original is written in a register that is both archaic and colloquial, making it a very difficult book to translate. The combination of its size, linguistic oddness and polemic themes caused a shock when it was published, but now it is considered one of the most important novels of South American literature.",
       "pages": 494,
       "title": "The Devil to Pay in the Backlands",
-      "year": 1956
+      "year": 1956,
+      "price": 9.99,
+      "rating": 4.60,
+      "category": 2
+    }
     },
     {
+    "pk": 35,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK35",
       "author": "Knut Hamsun",
       "country": "Norway",
       "imageLink": "hunger.jpg",
       "language": "Norwegian",
-      "link": "https://en.wikipedia.org/wiki/Hunger_(Hamsun_novel)\n",
+      "blurb": "One of the most important and controversial writers of the 20th century, Knut Hamsun made literary history with the publication in 1890 of this powerful, autobiographical novel recounting the abject poverty, hunger and despair of a young writer struggling to achieve self-discovery and its ultimate artistic expression. The book brilliantly probes the psychodynamics of alienation, obsession, and self-destruction, painting an unforgettable portrait of a man driven by forces beyond his control to the edge of the abyss",
       "pages": 176,
       "title": "Hunger",
-      "year": 1890
+      "year": 1890,
+      "price": 9.99,
+      "rating": 4.06,
+      "category": 2
+    }
     },
     {
+    "pk": 36,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK36",
       "author": "Ernest Hemingway",
       "country": "United States",
       "imageLink": "the-old-man-and-the-sea.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea\n",
+      "blurb": "This short novel, already a modern classic, is the superbly told, tragic story of a Cuban fisherman in the Gulf Stream and the giant Marlin he kills and loses—specifically referred to in the citation accompanying the author's Nobel Prize for literature in 1954.",
       "pages": 128,
       "title": "The Old Man and the Sea",
-      "year": 1952
+      "year": 1952,
+      "price": 6.99,
+      "rating": 3.80,
+      "category": 3
+    }
     },
     {
+    "pk": 37,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK37",
       "author": "Homer",
       "country": "Greece",
       "imageLink": "the-iliad-of-homer.jpg",
       "language": "Greek",
-      "link": "https://en.wikipedia.org/wiki/Iliad\n",
+      "blurb": "One of the foremost achievements in Western literature, Homer's Iliad tells the story of the darkest episode of the Trojan War. At its center is Achilles, the greatest warrior-champion of the Greeks, and his conflict with his leader Agamemnon. Interwoven in the tragic sequence of events are powerfully moving descriptions of the ebb and flow of battle, the besieged city of Ilium, the feud between the gods, and the fate of mortals.",
       "pages": 608,
       "title": "Iliad",
-      "year": -735
+      "year": -735,
+      "price": 10.99,
+      "rating": 3.90,
+      "category": 2
+    }
     },
     {
+    "pk": 38,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK38",
       "author": "Homer",
       "country": "Greece",
       "imageLink": "the-odyssey-of-homer.jpg",
       "language": "Greek",
-      "link": "https://en.wikipedia.org/wiki/Odyssey\n",
+      "blurb": "If the Iliad is the world's greatest war epic, then the Odyssey is literature's grandest evocation of everyman's journey though life. Odysseus' reliance on his wit and wiliness for survival in his encounters with divine and natural forces, during his ten-year voyage home to Ithaca after the Trojan War, is at once a timeless human story and an individual test of moral endurance.",
       "pages": 374,
       "title": "Odyssey",
-      "year": -800
+      "year": -800,
+      "price": 8.99,
+      "rating": 3.80,
+      "category": 2
+    }
     },
     {
+    "pk": 39,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK39",
       "author": "Henrik Ibsen",
       "country": "Norway",
       "imageLink": "a-Dolls-house.jpg",
       "language": "Norwegian",
-      "link": "https://en.wikipedia.org/wiki/A_Doll%27s_House\n",
+      "blurb": "A Doll's House (1879), is a masterpiece of theatrical craft which, for the first time portrayed the tragic hypocrisy of Victorian middle class marriage on the stage. The play ushered in a new social era and 'exploded like a bomb into contemporary life'. ",
       "pages": 68,
       "title": "A Doll's House",
-      "year": 1879
+      "year": 1879,
+      "price": 6.99,
+      "rating": 3.76,
+      "category": 3
+    }
     },
     {
+    "pk": 40,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK40",
       "author": "James Joyce",
       "country": "Irish Free State",
       "imageLink": "ulysses.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/Ulysses_(novel)\n",
+      "blurb": "Loosely based on the Odyssey, this landmark of modern literature follows ordinary Dubliners in 1904. Capturing a single day in the life of Dubliner Leopold Bloom, his friends Buck Mulligan and Stephen Dedalus, his wife Molly, and a scintillating cast of supporting characters, Joyce pushes Celtic lyricism and vulgarity to splendid extremes. Captivating experimental techniques range from interior monologues to exuberant wordplay and earthy humor. A major achievement in 20th century literature.",
       "pages": 228,
       "title": "Ulysses",
-      "year": 1922
+      "year": 1922,
+      "price": 6.99,
+      "rating": 3.75,
+      "category": 3
+    }
     },
     {
+    "pk": 41,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK41",
       "author": "Franz Kafka",
       "country": "Czechoslovakia",
       "imageLink": "stories-of-franz-kafka.jpg",
       "language": "German",
-      "link": "https://en.wikipedia.org/wiki/Franz_Kafka_bibliography#Short_stories\n",
+      "blurb": "The Complete Stories brings together all of Kafka's stories, from the classic tales such as 'The Metamorphosis,' 'In the Penal Colony,' and 'A Hunger Artist' to shorter pieces and fragments that Max Brod, Kafka's literary executor, released after Kafka's death. With the exception of his three novels, the whole of Kafka's narrative work is included in this volume.",
       "pages": 488,
       "title": "Stories",
-      "year": 1924
+      "year": 1924,
+      "price": 12.99,
+      "rating": 4.34,
+      "category": 2
+    }
     },
     {
+    "pk": 42,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK42",
       "author": "Franz Kafka",
       "country": "Czechoslovakia",
       "imageLink": "the-trial.jpg",
       "language": "German",
-      "link": "https://en.wikipedia.org/wiki/The_Trial\n",
+      "blurb": "Written in 1914 but not published until 1925, a year after Kafka's death, The Trial is the terrifying tale of Josef K., a respectable bank officer who is suddenly and inexplicably arrested and must defend himself against a charge about which he can get no information. Whether read as an existential tale, a parable, or a prophecy of the excesses of modern bureaucracy wedded to the madness of totalitarianism, The Trial has resonated with chilling truth for generations of readers.",
       "pages": 160,
       "title": "The Trial",
-      "year": 1925
+      "year": 1925,
+      "price": 9.99,
+      "rating": 3.96,
+      "category": 2
+    }
     },
     {
+    "pk": 43,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK43",
       "author": "Franz Kafka",
       "country": "Czechoslovakia",
       "imageLink": "the-castle.jpg",
       "language": "German",
-      "link": "https://en.wikipedia.org/wiki/The_Castle_(novel)\n",
+      "blurb": "Left unfinished by Kafka in 1922 and not published until 1926, two years after his death, The Castle is the haunting tale of K.'s relentless, unavailing struggle with an inscrutable authority in order to gain access to the Castle. Scrupulously following the fluidity and breathlessness of the sparsely punctuated original manuscript, Mark Harman's new translation reveals levels of comedy, energy, and visual power, previously unknown to English language readers.",
       "pages": 352,
       "title": "The Castle",
-      "year": 1926
+      "year": 1926,
+      "price": 9.99,
+      "rating": 3.94,
+      "category": 2
+    }
     },
     {
+    "pk": 44,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK44",
       "author": "K\u0101lid\u0101sa",
       "country": "India",
       "imageLink": "the-recognition-of-shakuntala.jpg",
       "language": "Sanskrit",
-      "link": "https://en.wikipedia.org/wiki/Abhij%C3%B1%C4%81na%C5%9B%C4%81kuntalam\n",
+      "blurb": "Kalidasa's play about the love of King Dusyanta and Sakuntala, a hermitage girl, their separation by a curse, and eventual reunion, is the supreme work of Sanskrit drama by its greatest poet and playwright (c.4th century CE). Overwhelmingly erotic in tone, in peformance The Recognition of Sakuntala aimed to produce an experience of aesthetic rapture in the audience, akin to certain types of mystical experience.",
       "pages": 147,
       "title": "The recognition of Shakuntala",
-      "year": 150
+      "year": 150,
+      "price": 7.99,
+      "rating": 3.85,
+      "category": 2
+    }
     },
     {
+    "pk": 45,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK45",
       "author": "Yasunari Kawabata",
       "country": "Japan",
       "imageLink": "the-sound-of-the-mountain.jpg",
       "language": "Japanese",
-      "link": "https://en.wikipedia.org/wiki/The_Sound_of_the_Mountain\n",
+      "blurb": "Ogata Shingo is growing old, and his memory is failing him. At night he hears only the sound of death in the distant rumble from the mountain. The relationships which have previously defined his life - with his son, his wife, and his attractive daughter-in-law - are dissolving, and Shingo is caught between love and destruction. Lyrical and precise, The Sound of the Mountain explores in immaculately crafted prose the changing roles of love and the truth we face in ageing.",
       "pages": 288,
       "title": "The Sound of the Mountain",
-      "year": 1954
+      "year": 1954,
+      "price": 9.99,
+      "rating": 3.87,
+      "category": 2
+    }
     },
     {
+    "pk": 46,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK46",
       "author": "Nikos Kazantzakis",
       "country": "Greece",
       "imageLink": "zorba-the-greek.jpg",
       "language": "Greek",
-      "link": "https://en.wikipedia.org/wiki/Zorba_the_Greek\n",
+      "blurb": "The classic novel Zorba the Greek is the story of two men, their incredible friendship, and the importance of living life to the fullest. Zorba, a Greek working man, is a larger-than-life character, energetic and unpredictable. He accompanies the unnamed narrator to Crete to work in the narrator's lignite mine, and the pair develops a singular relationship. The two men couldn't be further apart: The narrator is cerebral, modest, and reserved; Zorba is unfettered, spirited, and beyond the reins of civility. Over the course of their journey, he becomes the narrator's greatest friend and inspiration and helps him to appreciate the joy of living.",
       "pages": 368,
       "title": "Zorba the Greek",
-      "year": 1946
+      "year": 1946,
+      "price": 9.99,
+      "rating": 4.05,
+      "category": 2
+    }
     },
     {
+    "pk": 47,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK47",
       "author": "D. H. Lawrence",
       "country": "United Kingdom",
       "imageLink": "sons-and-lovers.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/Sons_and_Lovers\n",
+      "blurb": "The marriage of Gertrude and Walter Morel has become a battleground. Repelled by her uneducated and sometimes violent husband, delicate Gertrude devotes her life to her children, especially to her sons, William and Paul - determined they will not follow their father into working down the coal mines. But conflict is evitable when Paul seeks to escape his mother's suffocating grasp through relationships with women his own age. Set in Lawrence's native Nottinghamshire, Sons and Lovers is a highly autobiographical and compelling portrayal of childhood, adolescence and the clash of generations.",
       "pages": 432,
       "title": "Sons and Lovers",
-      "year": 1913
+      "year": 1913,
+      "price": 6.99,
+      "rating": 3.64,
+      "category": 3
+    }
     },
     {
+    "pk": 48,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK48",
       "author": "Halld\u00f3r Laxness",
       "country": "Iceland",
       "imageLink": "independent-people.jpg",
       "language": "Icelandic",
-      "link": "https://en.wikipedia.org/wiki/Independent_People\n",
+      "blurb": "Having spent eighteen years in humiliating servitude, Bjartur wants nothing more than to raise his flocks unbeholden to any man. But Bjartur's spirited daughter wants to live unbeholden to him. What ensues is a battle of wills that is by turns harsh and touching, elemental in its emotional intensity and intimate in its homely detail. Vast in scope and deeply rewarding, Independent People is simply a masterpiece",
       "pages": 470,
       "title": "Independent People",
-      "year": 1934
+      "year": 1934,
+      "price": 9.99,
+      "rating": 4.15,
+      "category": 2
+    }
     },
     {
+    "pk": 49,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK49",
       "author": "Giacomo Leopardi",
       "country": "Italy",
       "imageLink": "poems-giacomo-leopardi.jpg",
       "language": "Italian",
-      "link": "\n",
+      "blurb": "His verses ranged over a large field. They were philosophic, patriotic, amorous. There are odes, lyrics, satires, songs; many very beautiful and feeling; all noble and earnest. His three poems, 'All' Italia,' 'Sopra il Monumento di Dante,' 'A Angelo Mai,' gave him a national reputation. They touch the chords to which he always responded-patriotism, poetry, learning, a national idealism bearing aloft an enormous weight of erudition and thought.",
       "pages": 184,
       "title": "Poems",
-      "year": 1818
+      "year": 1818,
+      "price": 8.99,
+      "rating": 4.39,
+      "category": 2
+    }
     },
     {
+    "pk": 50,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK50",
       "author": "Doris Lessing",
       "country": "United Kingdom",
       "imageLink": "the-golden-notebook.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/The_Golden_Notebook\n",
+      "blurb": "Anna is a writer, author of one very successful novel, who now keeps four notebooks. In one, with a black cover, she reviews the African experience of her earlier year. In a red one she records her political life, her disillusionment with communism. In a yellow one she writes a novel in which the heroine relives part of her own experience. And in the blue one she keeps a personal diary. Finally, in love with an American writer and threatened with insanity, Anna tries to bring the threads of all four books together in a golden notebook.",
       "pages": 688,
       "title": "The Golden Notebook",
-      "year": 1962
+      "year": 1962,
+      "price": 10.99,
+      "rating": 3.76,
+      "category": 2
+    }
     },
     {
+    "pk": 51,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK51",
       "author": "Astrid Lindgren",
       "country": "Sweden",
       "imageLink": "pippi-longstocking.jpg",
       "language": "Swedish",
-      "link": "https://en.wikipedia.org/wiki/Pippi_Longstocking\n",
+      "blurb": "Tommy and his sister Annika have a new neighbor, and her name is Pippi Longstocking. She has crazy red pigtails, no parents to tell her what to do, a horse that lives on her porch, and a flair for the outrageous that seems to lead to one adventure after another!",
       "pages": 160,
       "title": "Pippi Longstocking",
-      "year": 1945
+      "year": 1945,
+      "price": 7.99,
+      "rating": 4.15,
+      "category": 2
+    }
     },
     {
+    "pk": 52,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK52",
       "author": "Lu Xun",
       "country": "China",
       "imageLink": "diary-of-a-madman.jpg",
       "language": "Chinese",
-      "link": "https://en.wikipedia.org/wiki/A_Madman%27s_Diary\n",
+      "blurb": "This collection of short stories by Lu Xun, commonly considered one of the greatest writers in 20th-century China and often referred to as the father of modern Chinese literature, includes the celebrated short story, 'A Madman's Diary'. This short story is considered to be one of the first and most influential modern works written in vernacular Chinese. 'A Madman's Diary' is an attempt by Lu Xun to describe the effects of feudal values upon the Chinese people. He uses an analogy of cannibalism to describe the way such outdated values eat away at the individual.",
       "pages": 389,
-      "title": "Diary of a Madman",
-      "year": 1918
+      "title": "Diary of a Madman and Other Stories",
+      "year": 1926,
+      "price": 9.99,
+      "rating": 3.93,
+      "category": 2
+    }
     },
     {
+    "pk": 53,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK53",
       "author": "Naguib Mahfouz",
       "country": "Egypt",
       "imageLink": "children-of-gebelawi.jpg",
       "language": "Arabic",
-      "link": "https://en.wikipedia.org/wiki/Children_of_Gebelawi\n",
+      "blurb": "Naguib Mahfouz guides us on a journey through the history of the tumultuous alley belonging to a delightful - and sometimes diabolical - Egyptian family: the descendants of a man named Gabalawi. We accompany them in their struggles to right their wrongs, to eke out a better existence for themselves and their cohorts - and we discover a second, hidden, and daring narrative: the spiritual history of humankind. From the supreme feudal lord who disowns one son for cruel pride and puts another to the test, to the savior of a succeeding generation who frees his people from bondage, we find the men and women of a modern Cairo neighborhood unwittingly reenacting the lives of their holy ancestors: the 'children of the alley.'",
       "pages": 355,
       "title": "Children of Gebelawi",
-      "year": 1959
+      "year": 1959,
+      "price": 12.99,
+      "rating": 4.09,
+      "category": 2
+    }
     },
     {
+    "pk": 54,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK54",
       "author": "Thomas Mann",
       "country": "Germany",
       "imageLink": "buddenbrooks.jpg",
       "language": "German",
-      "link": "https://en.wikipedia.org/wiki/Buddenbrooks\n",
+      "blurb": "It is the story of four generations of a wealthy bourgeois family in northern Germany facing the advent of modernity; in an uncertain new world, the family's bonds and traditions begin to disintegrate. As Mann charts the Buddenbrooks' decline from prosperity to bankruptcy, from moral and psychic soundness to sickly piety, artistic decadence, and madness, he ushers the reader into a world of stunning vitality, pieced together from births and funerals, weddings and divorces, recipes, gossip, and earthy humor.",
       "pages": 736,
       "title": "Buddenbrooks",
-      "year": 1901
+      "year": 1901,
+      "price": 10.99,
+      "rating": 4.18,
+      "category": 2
+    }
     },
     {
+    "pk": 55,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK55",
       "author": "Thomas Mann",
       "country": "Germany",
       "imageLink": "the-magic-mountain.jpg",
       "language": "German",
-      "link": "https://en.wikipedia.org/wiki/The_Magic_Mountain\n",
+      "blurb": "In this dizzyingly rich novel of ideas, Mann uses a sanatorium in the Swiss Alps, a community devoted exclusively to sickness, as a microcosm for Europe, which in the years before 1914 was already exhibiting the first symptoms of its own terminal irrationality. The Magic Mountain is a monumental work of erudition and irony, sexual tension and intellectual ferment, a book that pulses with life in the midst of death.",
       "pages": 720,
       "title": "The Magic Mountain",
-      "year": 1924
+      "year": 1924,
+      "price": 10.99,
+      "rating": 4.13,
+      "category": 2
+    }
     },
     {
+    "pk": 56,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK56",
       "author": "Herman Melville",
       "country": "United States",
       "imageLink": "moby-dick.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/Moby-Dick\n",
+      "blurb": "So Melville wrote of his masterpiece, one of the greatest works of imagination in literary history. In part, Moby-Dick is the story of an eerily compelling madman pursuing an unholy war against a creature as vast and dangerous and unknowable as the sea itself. But more than just a novel of adventure, more than an encyclopaedia of whaling lore and legend, the book can be seen as part of its author's lifelong meditation on America. Written with wonderfully redemptive humour, Moby-Dick is also a profound inquiry into character, faith, and the nature of perception.",
       "pages": 378,
       "title": "Moby Dick",
-      "year": 1851
+      "year": 1851,
+      "price": 6.99,
+      "rating": 3.53,
+      "category": 3
+    }
     },
     {
+    "pk": 57,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK57",
       "author": "Michel de Montaigne",
       "country": "France",
       "imageLink": "essais.jpg",
       "language": "French",
-      "link": "https://en.wikipedia.org/wiki/Essays_(Montaigne)\n",
+      "blurb": "He discusses subjects as diverse as war-horses and cannibals, poetry and politics, sex and religion, love and friendship, ecstasy and experience. But, above all, Montaigne studied himself as a way of drawing out his own inner nature and that of men and women in general. The Essays are among the most idiosyncratic and personal works in all literature and provide an engaging insight into a wise Renaissance mind, continuing to give pleasure and enlightenment to modern readers.",
       "pages": 404,
       "title": "Essays",
-      "year": 1595
+      "year": 1595,
+      "price": 10.99,
+      "rating": 4.24,
+      "category": 2
+    }
     },
     {
-      "author": "Elsa Morante",
-      "country": "Italy",
-      "imageLink": "history.jpg",
-      "language": "Italian",
-      "link": "https://en.wikipedia.org/wiki/History_(novel)\n",
-      "pages": 600,
-      "title": "History",
-      "year": 1974
-    },
-    {
+    "pk": 58,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK58",
       "author": "Toni Morrison",
       "country": "United States",
       "imageLink": "beloved.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/Beloved_(novel)\n",
+      "blurb": "Sethe was born a slave and escaped to Ohio, but eighteen years later she is still not free. She has borne the unthinkable and not gone mad, yet she is still held captive by memories of Sweet Home, the beautiful farm where so many hideous things happened. Meanwhile Sethe's house has long been troubled by the angry, destructive ghost of her baby, who died nameless and whose tombstone is engraved with a single word: Beloved. Sethe works at beating back the past, but it makes itself heard and felt incessantly in her memory and in the lives of those around her. When a mysterious teenage girl arrives, calling herself Beloved, Sethe's terrible secret explodes into the present.",
       "pages": 321,
       "title": "Beloved",
-      "year": 1987
+      "year": 1987,
+      "price": 9.99,
+      "rating": 3.93,
+      "category": 2
+    }
     },
     {
+    "pk": 59,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK59",
       "author": "Murasaki Shikibu",
       "country": "Japan",
       "imageLink": "the-tale-of-genji.jpg",
       "language": "Japanese",
-      "link": "https://en.wikipedia.org/wiki/The_Tale_of_Genji\n",
+      "blurb": "Written in the eleventh century, this exquisite portrait of courtly life in medieval Japan is widely celebrated as the world's first novel. Genji, the Shining Prince, is the son of an emperor. He is a passionate character whose tempestuous nature, family circumstances, love affairs, alliances, and shifting political fortunes form the core of this magnificent epic. Royall Tyler's superior translation is detailed, poetic, and superbly true to the Japanese original while allowing the modern reader to appreciate it as a contemporary treasure. Supplemented with detailed notes, glossaries, character lists, and chronologies to help the reader navigate the multigenerational narrative, this comprehensive edition presents this ancient tale in the grand style that it deserves.",
       "pages": 1360,
       "title": "The Tale of Genji",
-      "year": 1006
+      "year": 1006,
+      "price": 14.99,
+      "rating": 3.72,
+      "category": 2
+    }
     },
     {
+    "pk": 60,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK60",
       "author": "Robert Musil",
       "country": "Austria",
       "imageLink": "the-man-without-qualities.jpg",
       "language": "German",
-      "link": "https://en.wikipedia.org/wiki/The_Man_Without_Qualities\n",
+      "blurb": "Set in Vienna on the eve of World War I, this great novel of ideas tells the story of Ulrich, ex-soldier and scientist, seducer and skeptic, who finds himself drafted into the grandiose plans for the 70th jubilee of the Emperor Franz Josef. This new translation—published in two elegant volumes—is the first to present Musil's complete text, including material that remained unpublished during his lifetime.",
       "pages": 365,
       "title": "The Man Without Qualities",
-      "year": 1931
+      "year": 1931,
+      "price": 9.99,
+      "rating": 4.19,
+      "category": 2
+    }
     },
     {
+    "pk": 61,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK61",
       "author": "Vladimir Nabokov",
       "country": "Russia/United States",
       "imageLink": "lolita.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/Lolita\n",
+      "blurb": "Poet and pervert, Humbert Humbert becomes obsessed by twelve-year-old Lolita and seeks to possess her, first carnally and then artistically, out of love, 'to fix once for all the perilous magic of nymphets'. Is he in love or insane? A silver-tongued poet or a pervert? A tortured soul or a monster? Or is he all of these? Humbert Humbert's seduction is one of many dimensions in Nabokov's dizzying masterpiece, which is suffused with a savage humour and rich, elaborate verbal textures",
       "pages": 317,
       "title": "Lolita",
-      "year": 1955
+      "year": 1955,
+      "price": 9.99,
+      "rating": 3.88,
+      "category": 2
+    }
     },
     {
+    "pk": 62,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK62",
       "author": "George Orwell",
       "country": "United Kingdom",
       "imageLink": "nineteen-eighty-four.jpg",
       "language": "English",
-      "link": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four\n",
+      "blurb": "The scene is London, where there has been no new housing since 1950 and where the city-wide slums are called Victory Mansions. Science has abandoned Man for the State. As every citizen knows only too well, war is peace. To Winston Smith, a young man who works in the Ministry of Truth (Minitru for short), come two people who transform this life completely. One is Julia, whom he meets after she hands him a slip reading, 'I love you.' The other is O'Brien, who tells him, 'We shall meet in the place where there is no darkness.' The way in which Winston is betrayed by the one and, against his own desires and instincts, ultimately betrays the other, makes a story of mounting drama and suspense.",  
       "pages": 272,
       "title": "Nineteen Eighty-Four",
-      "year": 1949
+      "year": 1949,
+      "price": 4.99,
+      "rating": 4.19,
+      "category": 3
+    }
     },
     {
+    "pk": 63,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK63",
       "author": "Ovid",
       "country": "Roman Empire",
       "imageLink": "the-metamorphoses-of-ovid.jpg",
       "language": "Classical Latin",
-      "link": "https://en.wikipedia.org/wiki/Metamorphoses\n",
+      "blurb": "Prized through the ages for its splendor and its savage, sophisticated wit, The Metamorphoses is a masterpiece of Western culture--the first attempt to link all the Greek myths, before and after Homer, in a cohesive whole, to the Roman myths of Ovid's day. Horace Gregory, in this modern translation, turns his poetic gifts toward a deft reconstruction of Ovid's ancient themes, using contemporary idiom to bring today's reader all the ageless drama and psychological truths vividly intact.",
       "pages": 576,
       "title": "Metamorphoses",
-      "year": 100
+      "year": 100,
+      "price": 10.99,
+      "rating": 4.08,
+      "category": 2
+    }
     },
     {
+    "pk": 64,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK64",
       "author": "Fernando Pessoa",
       "country": "Portugal",
       "imageLink": "the-book-of-disquiet.jpg",
       "language": "Portuguese",
-      "link": "https://en.wikipedia.org/wiki/The_Book_of_Disquiet\n",
+      "blurb": "The Book of Disquiet, an astonishing work that, in George Steiner's words, 'gives to Lisbon the haunting spell of Joyce's Dublin or Kafka's Prague.' Published for the first time some fifty years after his death, this unique collection of short, aphoristic paragraphs comprises the 'autobiography' of Bernardo Soares, one of Pessoa's alternate selves. Part intimate diary, part prose poetry, part descriptive narrative, captivatingly translated by Richard Zenith, The Book of Disquiet is one of the greatest works of the twentieth century.",
       "pages": 272,
       "title": "The Book of Disquiet",
-      "year": 1928
+      "year": 1928,
+      "price": 9.99,
+      "rating": 4.42,
+      "category": 2
+    }
     },
     {
       "author": "Edgar Allan Poe",
