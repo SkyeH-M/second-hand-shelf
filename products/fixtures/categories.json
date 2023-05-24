@@ -24,14 +24,6 @@
       }
     },
     {
-      "pk": 4,
-      "model": "products.category",
-      "fields": {
-        "name": "deals",
-        "friendly_name": "Deals"
-      }
-    },
-    {
       "pk": 5,
       "model": "products.category",
       "fields": {
