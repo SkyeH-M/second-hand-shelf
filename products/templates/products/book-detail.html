@@ -34,6 +34,13 @@
                     <p class="mb-0"><small class=text-muted>Book length: {{ product.pages }} pages</small></p>
                     <p class="mb-0"><small class=text-muted>Year of release: {{ product.release_year }}</small></p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                    {% if product.category %}
+                        <p class="small mt-1 mb-0">
+                            <a class="text-muted" href="{% url 'books' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            </a>
+                        </p>
+                    {% endif %}
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
