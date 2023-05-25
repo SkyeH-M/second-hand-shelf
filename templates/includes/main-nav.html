@@ -5,11 +5,10 @@
                 All Books
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-books-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Language</a>
-                <a href="" class="dropdown-item ">By Year of Release</a>
-                <!-- removed by genre here as it's duplicate -->
+                <a href="{% url 'books' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'books' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'books' %}?sort=language" class="dropdown-item ">By Language</a>
+                <a href="{% url 'books' %}?sort=release_year&direction=desc" class="dropdown-item ">By Year of Release</a>
                 <a href="{% url 'books' %}" class="dropdown-item">All Books</a>
             </div>
         </li>
@@ -19,9 +18,9 @@
                 Books by Genre
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="books-link">
-                <a href="" class="dropdown-item">Horror/Mystery</a>
-                <a href="" class="dropdown-item">Classic Fiction</a>
-                <a href="" class="dropdown-item">Modern Fiction</a>
+                <a href="{% url 'books' %}?category=horror_mystery" class="dropdown-item">Horror/Mystery</a>
+                <a href="{% url 'books' %}?category=classic_fiction" class="dropdown-item">Classic Fiction</a>
+                <a href="{% url 'books' %}?category=modern_fiction" class="dropdown-item">Modern Fiction</a>
                 <a href="{% url 'books' %}" class="dropdown-item">All Books</a>
             </div>
         </li>
@@ -31,9 +30,9 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Releases</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'books' %}?category=new_releases" class="dropdown-item">New Releases</a>
+                <a href="{% url 'books' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'books' %}?category=new_releases,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>

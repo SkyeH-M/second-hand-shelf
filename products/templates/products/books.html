@@ -36,6 +36,9 @@
                                 {% endif %}
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.title }}</p>
+                                    <p class="mb-0">By {{ product.author }}</p>
+                                    <p class="mb-0"><small class="text-muted">Written in {{ product.language }}</small></p>
+                                    <p class="mb-0"><small class="text-muted">Released: {{ product.release_year }}</small></p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
