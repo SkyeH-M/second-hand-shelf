@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.contrib import messages
 
+from products.models import Product
 
 def view_bag(request):
     """ A view that renders the bag contents page """
@@ -10,27 +12,34 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
+    product = get_object_or_404(Product, pk=item_id)    
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     quality = None
 
     if 'book_quality' in request.POST:
         quality = request.POST['book_quality']
+
     bag = request.session.get('bag', {})
 
     if quality:
         if item_id in list(bag.keys()):
             if quality in bag[item_id]['items_by_quality'].keys():
                 bag[item_id]['items_by_quality'][quality] += quantity
+                messages.success(request, f"Updated quality '{quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
             else:
                 bag[item_id]['items_by_quality'][quality] = quantity
+                messages.success(request, f"Added quality '{quality}' {product.title} to your bag")
         else:
             bag[item_id] = {'items_by_quality': {quality: quantity}}
+            messages.success(request, f"Added quality '{quality}' {product.title} to your bag")
     else: 
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
+            messages.success(request, f"Updated {product.title} quantity to {bag[item_id]}")
         else:
             bag[item_id] = quantity
+            messages.success(request, f"Added {product.title} to your bag")
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -39,6 +48,7 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """ Adjust the quantity of the specified product to the specified amount """
 
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     quality = None
     if 'book_quality' in request.POST:
@@ -48,15 +58,20 @@ def adjust_bag(request, item_id):
     if quality:
         if quantity > 0:
             bag[item_id]['items_by_quality'][quality] = quantity
+            messages.success(request, f"Updated quality '{quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
         else:
             del bag[item_id]['items_by_quality'][quality]
             if not bag[item_id]['items_by_quality']:
                 bag.pop(item_id)
+                messages.success(request, f"Removed quality '{quality}' {product.title} from your bag")
     else:
         if quantity > 0:
             bag[item_id] = quantity
+            messages.success(request, f"Added {product.title} to your bag")
+
         else:
             bag.pop(item_id)
+            messages.success(request, f"Removed {product.title} from your bag")
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -66,6 +81,7 @@ def remove_from_bag(request, item_id):
     """ Remove the item from the bag """
 
     try: 
+        product = get_object_or_404(Product, pk=item_id)
         quality = None
         if 'book_quality' in request.POST:
             quality = request.POST['book_quality']
@@ -75,11 +91,15 @@ def remove_from_bag(request, item_id):
             del bag[item_id]['items_by_quality'][quality]
             if not bag[item_id]['items_by_quality']:
                 bag.pop(item_id)
+                messages.success(request, f"Removed quality '{quality}' {product.title} from your bag")
+
         else:
             bag.pop(item_id)
+            messages.success(request, f"Removed {product.title} from your bag")
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:
-            return HttpResponse(status=500)
+        messages.error(request, f"Error removing item: {e}")
+        return HttpResponse(status=500)
