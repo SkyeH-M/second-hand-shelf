@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
 
+from .models import Product, Category
+from .forms import ProductForm
 
 def all_books(request):
     """ A view to display all books, including sorting and search queries """
@@ -20,7 +21,6 @@ def all_books(request):
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
-                # does below need to be title, or name?
                 products = products.annotate(lower_name=Lower('title')) 
             if sortkey == 'category':
                 sortkey = 'category__name'
@@ -66,3 +66,13 @@ def book_detail(request, product_id):
     }
     
     return render(request, 'products/book-detail.html', context)
+
+def add_book(request):
+    """ Add a product to the store """
+    form = ProductForm()
+    template = 'products/add_book.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
