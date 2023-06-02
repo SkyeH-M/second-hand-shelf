@@ -72,9 +72,9 @@ def add_book(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully added book')
-            return redirect(reverse('add_book'))
+            return redirect(reverse('book_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. \
             Please ensure all information is correct')
@@ -86,3 +86,34 @@ def add_book(request):
     }
 
     return render(request, template, context)
+
+def edit_book(request, product_id):
+    """ Edit a product in the store """
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated book: "{product.title}"')
+            return redirect(reverse('book_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product. Please \
+            ensure all information is correct.')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are editing book: "{product.title}"')
+
+    template = 'products/edit_book.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
+
+def delete_book(request, product_id):
+    """ Delete a product from the store """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, f'Book: "{product.title}" has been successfully deleted.')
+    return redirect(reverse('books'))
