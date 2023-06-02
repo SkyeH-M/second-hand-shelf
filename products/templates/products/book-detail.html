@@ -17,11 +17,11 @@
                 <div class="image-container my-5">
                     {% if product.image_link %}
                         <a href="{{ product.image_link.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image_link.url }}" alt="{{ product.title }}">
+                            <img class="card-img-top img-fluid mx-auto d-block" src="{{ product.image_link.url }}" alt="{{ product.title }}">
                         </a>
                     {% else %}
                         <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}.noimage.png" alt="{{ product.title }}">
+                            <img class="card-img-top img-fluid mx-auto d-block" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
                         </a>
                     {% endif %}
                 </div>
