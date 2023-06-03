@@ -3,6 +3,7 @@ Django==3.2.19
 django-allauth==0.41.0
 django-countries==7.2.1
 django-crispy-forms==1.14.0
+django-mathfilters==1.0.0
 oauthlib==3.2.2
 Pillow==9.5.0
 python-dotenv==1.0.0
