@@ -28,9 +28,11 @@ class Product(models.Model):
     blurb = models.TextField()
     has_quality = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    discounted_price = models.
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_link = models.ImageField(null=True, blank=True)
+
+    # def price_by_quality(Product.price):
+
 
     def __str__(self):
         return self.title

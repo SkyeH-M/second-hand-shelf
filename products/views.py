@@ -60,8 +60,7 @@ def book_detail(request, product_id):
     """ A view to display individual book details """
 
     product = get_object_or_404(Product, pk=product_id)
-    quality = product.book_quality
-    print(quality)
+    
     context = {
         'product': product,
     }
