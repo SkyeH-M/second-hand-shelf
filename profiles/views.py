@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
 from .forms import UserProfileForm
-
+from products.models import Product
 from checkout.models import Order
 
 def profile(request):
@@ -47,3 +48,11 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def add_to_wishlist(request, id):
+    # should id be sku instead, and on url ?
+    product = get_object_or_404(Product, id=id)
+    if product.users_wishlist.filter(id=request.user.id)
+
