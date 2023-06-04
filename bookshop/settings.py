@@ -183,6 +183,8 @@ STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'secondhandshelf@example.com'
 DEBUG = "DEVELOPMENT" in os.environ
 
+# Custom User model
+# AUTH_USER_MODEL = "profiles.UserProfile"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
