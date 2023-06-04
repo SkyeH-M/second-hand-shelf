@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -54,5 +55,8 @@ def order_history(request, order_number):
 def add_to_wishlist(request, id):
     # should id be sku instead, and on url ?
     product = get_object_or_404(Product, id=id)
-    if product.users_wishlist.filter(id=request.user.id)
-
+    if product.users_wishlist.filter(id=request.user.id).exists():
+        product.users_wishlist.remove(request.user)
+    else:
+        product.users_wishlist.add(request.user)
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
