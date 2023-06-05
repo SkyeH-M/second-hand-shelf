@@ -19,7 +19,7 @@
             <hr>
             <h2 class="logo-font mb-4">My Wishlist</h2>
             <hr>
-            <div>Manage your Wishlist</div>
+            <h4 class="logo-font mb-2">Manage your Wishlist</h4>
 
             {% if wishlist %}
                 {% for product in wishlist %}
@@ -45,7 +45,13 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <p>You currently have no books in your wishlist</p>
+                <p>You currently have no books in your wishlist, click the button below to find your new favourite read...</p>
+                <a href="{% url 'books' %}?category=all" class="btn btn-black rounded-0 my-2">
+                    <span class="icon mr-2">
+                        <i class="fas fa-book"></i>
+                    </span>
+                    <span class="text-uppercase">Check out our books!</span>
+                </a>
             {% endif %}
         </div>
     </div>

@@ -267,6 +267,14 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+.add_to_wishlist_btn {
+    width: 180px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -279,6 +287,10 @@ input[name='q']::placeholder {
 
     .header-container {
         padding-top: 164px; /* Changed from 164px */
+    }
+
+    .add_to_wishlist_btn {
+
     }
 }
 
