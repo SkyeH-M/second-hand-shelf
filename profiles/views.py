@@ -52,11 +52,22 @@ def order_history(request, order_number):
 
 
 @login_required
+def wishlist(request):
+    products = Product.objects.filter(users_wishlist=request.user)
+    context = {
+        'wishlist': products,
+    }
+    template = "profiles/user_wish_list.html"
+    return render(request, template, context)
+
+
+@login_required
 def add_to_wishlist(request, id):
-    # should id be sku instead, and on url ?
     product = get_object_or_404(Product, id=id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
+        messages.success(request, f"Removed {product.title} from your wishlist")
     else:
         product.users_wishlist.add(request.user)
+        messages.success(request, f'Added {product.title} to your wishlist')
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
