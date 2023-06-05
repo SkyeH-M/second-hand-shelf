@@ -44,7 +44,7 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                <span class="small"><a href="{% url 'books' %}">Books Home</a> | </span>
+                                <span class="small"><a href="{% url 'books' %}" class="text-decoration-none books-home-link">Books Home</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
@@ -64,7 +64,9 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.title }}</p>
+                                    <a href="{% url 'book_detail' product.id %}" class="text-decoration-none">
+                                        <p class="mb-0 book-title">{{ product.title }}</p>
+                                    </a>
                                     <p class="mb-0">By {{ product.author }}</p>
                                     <p class="mb-0"><small class="text-muted">Written in {{ product.language }}</small></p>
                                     <p class="mb-0"><small class="text-muted">Released: {{ product.release_year }}</small></p>

@@ -1,5 +1,5 @@
 [
-    {
+  {
     "pk": 1,
     "model": "products.product",
     "fields": {
@@ -16,8 +16,8 @@
       "rating": 3.72,
       "category": 5
     }
-    },
-    {
+  },
+  {
     "pk": 2,
     "model": "products.product",
     "fields": {
@@ -34,26 +34,26 @@
       "rating": 4.29,
       "category": 2
     }
-    },
-    {
-      "pk": 3,
-      "model": "products.product",
-      "fields": {
-        "sku": "BOOK3",
-        "author": "Dante Alighieri",
-        "country": "Italy",
-        "image_link": "the-divine-comedy.jpg",
-        "language": "Italian",
-        "blurb": "The Divine Comedy begins in a shadowed forest on Good Friday in the year 1300. It proceeds on a journey that, in its intense recreation of the depths and the heights of human experience, has become the key with which Western civilization has sought to unlock the mystery of its own identity.",
-        "pages": 928,
-        "title": "The Divine Comedy",
-        "release_year": 1315,
-        "price": 14.99,
-        "rating": 4.07,
-        "category": 2
-      }
-    },
-    {
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK3",
+      "author": "Dante Alighieri",
+      "country": "Italy",
+      "image_link": "the-divine-comedy.jpg",
+      "language": "Italian",
+      "blurb": "The Divine Comedy begins in a shadowed forest on Good Friday in the year 1300. It proceeds on a journey that, in its intense recreation of the depths and the heights of human experience, has become the key with which Western civilization has sought to unlock the mystery of its own identity.",
+      "pages": 928,
+      "title": "The Divine Comedy",
+      "release_year": 1315,
+      "price": 14.99,
+      "rating": 4.07,
+      "category": 2
+    }
+  },
+  {
     "pk": 4,
     "model": "products.product",
     "fields": {
@@ -70,8 +70,8 @@
       "rating": 4.28,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 5,
     "model": "products.product",
     "fields": {
@@ -88,8 +88,8 @@
       "rating": 4.28,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 6,
     "model": "products.product",
     "fields": {
@@ -106,8 +106,8 @@
       "rating": 3.88,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 7,
     "model": "products.product",
     "fields": {
@@ -124,8 +124,8 @@
       "rating": 4.42,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 8,
     "model": "products.product",
     "fields": {
@@ -142,8 +142,8 @@
       "rating": 3.88,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 9,
     "model": "products.product",
     "fields": {
@@ -160,8 +160,8 @@
       "rating": 4.01,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 10,
     "model": "products.product",
     "fields": {
@@ -178,8 +178,8 @@
       "rating": 4.35,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 11,
     "model": "products.product",
     "fields": {
@@ -196,8 +196,8 @@
       "rating": 3.89,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 12,
     "model": "products.product",
     "fields": {
@@ -214,8 +214,8 @@
       "rating": 3.52,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 13,
     "model": "products.product",
     "fields": {
@@ -232,8 +232,8 @@
       "rating": 4.38,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 14,
     "model": "products.product",
     "fields": {
@@ -250,8 +250,8 @@
       "rating": 3.81,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 15,
     "model": "products.product",
     "fields": {
@@ -268,8 +268,8 @@
       "rating": 3.79,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 16,
     "model": "products.product",
     "fields": {
@@ -286,8 +286,8 @@
       "rating": 3.81,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 17,
     "model": "products.product",
     "fields": {
@@ -304,8 +304,8 @@
       "rating": 3.85,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 18,
     "model": "products.product",
     "fields": {
@@ -322,8 +322,8 @@
       "rating": 4.26,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 18,
     "model": "products.product",
     "fields": {
@@ -340,8 +340,8 @@
       "rating": 4.20,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 19,
     "model": "products.product",
     "fields": {
@@ -358,8 +358,8 @@
       "rating": 4.29,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 20,
     "model": "products.product",
     "fields": {
@@ -376,8 +376,8 @@
       "rating": 4.36,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 21,
     "model": "products.product",
     "fields": {
@@ -394,8 +394,8 @@
       "rating": 4.01,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 22,
     "model": "products.product",
     "fields": {
@@ -412,8 +412,8 @@
       "rating": 3.91,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 23,
     "model": "products.product",
     "fields": {
@@ -430,8 +430,8 @@
       "rating": 3.92,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 24,
     "model": "products.product",
     "fields": {
@@ -448,8 +448,8 @@
       "rating": 3.97,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 25,
     "model": "products.product",
     "fields": {
@@ -466,8 +466,8 @@
       "rating": 3.86,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 26,
     "model": "products.product",
     "fields": {
@@ -484,8 +484,8 @@
       "rating": 3.70,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 27,
     "model": "products.product",
     "fields": {
@@ -502,8 +502,8 @@
       "rating": 3.81,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 28,
     "model": "products.product",
     "fields": {
@@ -520,8 +520,8 @@
       "rating": 4.18,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 29,
     "model": "products.product",
     "fields": {
@@ -538,8 +538,8 @@
       "rating": 4.11,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 30,
     "model": "products.product",
     "fields": {
@@ -556,8 +556,8 @@
       "rating": 3.93,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 31,
     "model": "products.product",
     "fields": {
@@ -574,8 +574,8 @@
       "rating": 3.91,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 32,
     "model": "products.product",
     "fields": {
@@ -592,8 +592,8 @@
       "rating": 3.98,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 33,
     "model": "products.product",
     "fields": {
@@ -610,8 +610,8 @@
       "rating": 3.95,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 34,
     "model": "products.product",
     "fields": {
@@ -628,8 +628,8 @@
       "rating": 4.60,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 35,
     "model": "products.product",
     "fields": {
@@ -646,8 +646,8 @@
       "rating": 4.06,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 36,
     "model": "products.product",
     "fields": {
@@ -664,8 +664,8 @@
       "rating": 3.80,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 37,
     "model": "products.product",
     "fields": {
@@ -682,8 +682,8 @@
       "rating": 3.90,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 38,
     "model": "products.product",
     "fields": {
@@ -700,8 +700,8 @@
       "rating": 3.80,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 39,
     "model": "products.product",
     "fields": {
@@ -718,8 +718,8 @@
       "rating": 3.76,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 40,
     "model": "products.product",
     "fields": {
@@ -736,8 +736,8 @@
       "rating": 3.75,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 41,
     "model": "products.product",
     "fields": {
@@ -754,8 +754,8 @@
       "rating": 4.34,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 42,
     "model": "products.product",
     "fields": {
@@ -772,8 +772,8 @@
       "rating": 3.96,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 43,
     "model": "products.product",
     "fields": {
@@ -790,8 +790,8 @@
       "rating": 3.94,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 44,
     "model": "products.product",
     "fields": {
@@ -808,8 +808,8 @@
       "rating": 3.85,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 45,
     "model": "products.product",
     "fields": {
@@ -826,8 +826,8 @@
       "rating": 3.87,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 46,
     "model": "products.product",
     "fields": {
@@ -844,8 +844,8 @@
       "rating": 4.05,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 47,
     "model": "products.product",
     "fields": {
@@ -862,8 +862,8 @@
       "rating": 3.64,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 48,
     "model": "products.product",
     "fields": {
@@ -880,8 +880,8 @@
       "rating": 4.15,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 49,
     "model": "products.product",
     "fields": {
@@ -898,8 +898,8 @@
       "rating": 4.39,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 50,
     "model": "products.product",
     "fields": {
@@ -916,8 +916,8 @@
       "rating": 3.76,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 51,
     "model": "products.product",
     "fields": {
@@ -934,8 +934,8 @@
       "rating": 4.15,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 52,
     "model": "products.product",
     "fields": {
@@ -952,8 +952,8 @@
       "rating": 3.93,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 53,
     "model": "products.product",
     "fields": {
@@ -970,8 +970,8 @@
       "rating": 4.09,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 54,
     "model": "products.product",
     "fields": {
@@ -988,8 +988,8 @@
       "rating": 4.18,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 55,
     "model": "products.product",
     "fields": {
@@ -1006,8 +1006,8 @@
       "rating": 4.13,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 56,
     "model": "products.product",
     "fields": {
@@ -1024,8 +1024,8 @@
       "rating": 3.53,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 57,
     "model": "products.product",
     "fields": {
@@ -1042,8 +1042,8 @@
       "rating": 4.24,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 58,
     "model": "products.product",
     "fields": {
@@ -1060,8 +1060,8 @@
       "rating": 3.93,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 59,
     "model": "products.product",
     "fields": {
@@ -1078,8 +1078,8 @@
       "rating": 3.72,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 60,
     "model": "products.product",
     "fields": {
@@ -1096,8 +1096,8 @@
       "rating": 4.19,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 61,
     "model": "products.product",
     "fields": {
@@ -1114,8 +1114,8 @@
       "rating": 3.88,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 62,
     "model": "products.product",
     "fields": {
@@ -1124,7 +1124,7 @@
       "country": "United Kingdom",
       "image_link": "nineteen-eighty-four.jpg",
       "language": "English",
-      "blurb": "The scene is London, where there has been no new housing since 1950 and where the city-wide slums are called Victory Mansions. Science has abandoned Man for the State. As every citizen knows only too well, war is peace. To Winston Smith, a young man who works in the Ministry of Truth (Minitru for short), come two people who transform this life completely. One is Julia, whom he meets after she hands him a slip reading, 'I love you.' The other is O'Brien, who tells him, 'We shall meet in the place where there is no darkness.' The way in which Winston is betrayed by the one and, against his own desires and instincts, ultimately betrays the other, makes a story of mounting drama and suspense.",  
+      "blurb": "The scene is London, where there has been no new housing since 1950 and where the city-wide slums are called Victory Mansions. Science has abandoned Man for the State. As every citizen knows only too well, war is peace. To Winston Smith, a young man who works in the Ministry of Truth (Minitru for short), come two people who transform this life completely. One is Julia, whom he meets after she hands him a slip reading, 'I love you.' The other is O'Brien, who tells him, 'We shall meet in the place where there is no darkness.' The way in which Winston is betrayed by the one and, against his own desires and instincts, ultimately betrays the other, makes a story of mounting drama and suspense.",
       "pages": 272,
       "title": "Nineteen Eighty-Four",
       "release_year": 1949,
@@ -1132,8 +1132,8 @@
       "rating": 4.19,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 63,
     "model": "products.product",
     "fields": {
@@ -1150,8 +1150,8 @@
       "rating": 4.08,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 64,
     "model": "products.product",
     "fields": {
@@ -1168,8 +1168,8 @@
       "rating": 4.42,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 65,
     "model": "products.product",
     "fields": {
@@ -1186,8 +1186,8 @@
       "rating": 4.42,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 66,
     "model": "products.product",
     "fields": {
@@ -1204,8 +1204,8 @@
       "rating": 4.35,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 67,
     "model": "products.product",
     "fields": {
@@ -1222,8 +1222,8 @@
       "rating": 3.68,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 68,
     "model": "products.product",
     "fields": {
@@ -1240,8 +1240,8 @@
       "rating": 4.06,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 69,
     "model": "products.product",
     "fields": {
@@ -1258,8 +1258,8 @@
       "rating": 4.41,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 70,
     "model": "products.product",
     "fields": {
@@ -1276,8 +1276,8 @@
       "rating": 3.98,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 71,
     "model": "products.product",
     "fields": {
@@ -1294,8 +1294,8 @@
       "rating": 4.36,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 72,
     "model": "products.product",
     "fields": {
@@ -1312,8 +1312,8 @@
       "rating": 3.71,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 73,
     "model": "products.product",
     "fields": {
@@ -1330,8 +1330,8 @@
       "rating": 4.16,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 74,
     "model": "products.product",
     "fields": {
@@ -1348,8 +1348,8 @@
       "rating": 4.06,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 75,
     "model": "products.product",
     "fields": {
@@ -1366,8 +1366,8 @@
       "rating": 3.91,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 76,
     "model": "products.product",
     "fields": {
@@ -1384,8 +1384,8 @@
       "rating": 3.89,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 77,
     "model": "products.product",
     "fields": {
@@ -1402,8 +1402,8 @@
       "rating": 3.72,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 78,
     "model": "products.product",
     "fields": {
@@ -1420,8 +1420,8 @@
       "rating": 3.87,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 79,
     "model": "products.product",
     "fields": {
@@ -1438,8 +1438,8 @@
       "rating": 3.73,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 80,
     "model": "products.product",
     "fields": {
@@ -1456,8 +1456,8 @@
       "rating": 3.78,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 81,
     "model": "products.product",
     "fields": {
@@ -1474,8 +1474,8 @@
       "rating": 3.58,
       "category": 3
     }
-    },
-    {
+  },
+  {
     "pk": 82,
     "model": "products.product",
     "fields": {
@@ -1492,8 +1492,8 @@
       "rating": 4.15,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 83,
     "model": "products.product",
     "fields": {
@@ -1510,8 +1510,8 @@
       "rating": 4.08,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 84,
     "model": "products.product",
     "fields": {
@@ -1528,8 +1528,8 @@
       "rating": 4.12,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 85,
     "model": "products.product",
     "fields": {
@@ -1546,8 +1546,8 @@
       "rating": 3.83,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 86,
     "model": "products.product",
     "fields": {
@@ -1564,8 +1564,8 @@
       "rating": 4.20,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 87,
     "model": "products.product",
     "fields": {
@@ -1582,8 +1582,8 @@
       "rating": 3.86,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 88,
     "model": "products.product",
     "fields": {
@@ -1600,8 +1600,8 @@
       "rating": 4.45,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 89,
     "model": "products.product",
     "fields": {
@@ -1618,8 +1618,8 @@
       "rating": 4.12,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 90,
     "model": "products.product",
     "fields": {
@@ -1636,8 +1636,8 @@
       "rating": 3.79,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 91,
     "model": "products.product",
     "fields": {
@@ -1654,8 +1654,8 @@
       "rating": 3.80,
       "category": 2
     }
-    },
-    {
+  },
+  {
     "pk": 91,
     "model": "products.product",
     "fields": {
@@ -1672,5 +1672,239 @@
       "rating": 4.23,
       "category": 2
     }
+  },
+  {
+    "pk": 92,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK92",
+      "author": "Julia Armfield",
+      "country": "England",
+      "image_link": "our-wives.jpg",
+      "language": "English",
+      "blurb": "Miri thinks she has got her wife back, when Leah finally returns after a deep-sea mission that ended in catastrophe. It soon becomes clear, though, that Leah is not the same. Whatever happened in that vessel, whatever it was they were supposed to be studying before they were stranded on the ocean floor, Leah has brought part of it back with her, onto dry land and into their home. Moving through something that only resembles normal life, Miri comes to realize that the life that they had before might be gone. Though Leah is still there, Miri can feel the woman she loves slipping from her grasp.",
+      "pages": 240,
+      "title": "Our Wives Under the Sea",
+      "release_year": 2022,
+      "price": 9.99,
+      "rating": 3.85,
+      "category": 1
     }
-  ]
+  },
+  {
+    "pk": 93,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK93",
+      "author": "Bram Stoker",
+      "country": "England",
+      "image_link": "dracula.jpg",
+      "language": "English",
+      "blurb": "When Jonathan Harker visits Transylvania to help Count Dracula with the purchase of a London house, he makes a series of horrific discoveries about his client. Soon afterwards, various bizarre incidents unfold in England: an apparently unmanned ship is wrecked off the coast of Whitby; a young woman discovers strange puncture marks on her neck; and the inmate of a lunatic asylum raves about the 'Master' and his imminent arrival.",
+      "pages": 488,
+      "title": "Dracula",
+      "release_year": 1897,
+      "price": 8.99,
+      "rating": 4.01,
+      "category": 1
+    }
+  },
+  {
+    "pk": 94,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK94",
+      "author": "Shirley Jackson",
+      "country": "America",
+      "image_link": "haunting-of-hill-house.JPEG",
+      "language": "English",
+      "blurb": "It is the story of four seekers who arrive at a notoriously unfriendly pile called Hill House: Dr. Montague, an occult scholar looking for solid evidence of a 'haunting'; Theodora, the lighthearted assistant; Eleanor, a friendless, fragile young woman well acquainted with poltergeists; and Luke, the future heir of Hill House. At first, their stay seems destined to be merely a spooky encounter with inexplicable phenomena. But Hill House is gathering its powers—and soon it will choose one of them to make its own.",
+      "pages": 182,
+      "title": "The Haunting of Hill House",
+      "release_year": 1959,
+      "price": 9.99,
+      "rating": 3.82,
+      "category": 1
+    }
+  },
+  {
+    "pk": 95,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK95",
+      "author": "Henry James",
+      "country": "America",
+      "image_link": "turn-of-the-screw.JPEG",
+      "language": "English",
+      "blurb": "A very young woman's first job: governess for two weirdly beautiful, strangely distant, oddly silent children, Miles and Flora, at a forlorn estate... An estate haunted by a beckoning evil. Half-seen figures who glare from dark towers and dusty windows- silent, foul phantoms who, day by day, night by night, come closer, ever closer. With growing horror, the helpless governess realizes the fiendish creatures want the children, seeking to corrupt their bodies, possess their minds, own their souls. But worse-much worse- the governess discovers that Miles and Flora have no terror of the lurking evil. For they want the walking dead as badly as the dead want them.",
+      "pages": 121,
+      "title": "The Turn of the Screw",
+      "release_year": 1898,
+      "price": 5.99,
+      "rating": 3.39,
+      "category": 1
+    }
+  },
+  {
+    "pk": 96,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK96",
+      "author": "T. Kingfisher",
+      "country": "America",
+      "image_link": "the-hollow-places.JPEG",
+      "language": "English",
+      "blurb": "Pray they are hungry. Kara finds these words in the mysterious bunker that she's discovered behind a hole in the wall of her uncle's house. Freshly divorced and living back at home, Kara now becomes obsessed with these cryptic words and starts exploring the peculiar bunker—only to discover that it holds portals to countless alternate realities. But these places are haunted by creatures that seem to hear thoughts…and the more you fear them, the stronger they become.",
+      "pages": 341,
+      "title": "The Hollow Places",
+      "release_year": 2020,
+      "price": 9.99,
+      "rating": 3.80,
+      "category": 1
+    }
+  },
+  {
+    "pk": 96,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK96",
+      "author": "Kate Alice Marshall",
+      "country": "America",
+      "image_link": "what-lies-in-the-woods.jpg",
+      "language": "English",
+      "blurb": "Naomi Shaw used to believe in magic. Twenty-two years ago, she and her two best friends, Cassidy and Olivia, spent the summer roaming the woods, imagining a world of ceremony and wonder. They called it the Goddess Game. The summer ended suddenly when Naomi was attacked. Miraculously, she survived her seventeen stab wounds and lived to identify the man who had hurt her. The girls’ testimony put away a serial killer, wanted for murdering six women. They were heroes. And they were liars.",
+      "pages": 322,
+      "title": "What Lies in the Woods",
+      "release_year": 2023,
+      "price": 10.99,
+      "rating": 4.01,
+      "category": 1
+    }
+  },
+  {
+    "pk": 97,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK97",
+      "author": "Max Booth III",
+      "country": "America",
+      "image_link": "maggots-screaming.JPEG",
+      "language": "English",
+      "blurb": "On a hot summer weekend in San Antonio, Texas, a father and son bond after discovering three impossible corpses buried in their back yard.",
+      "pages": 342,
+      "title": "Maggots Screaming!",
+      "release_year": 2022,
+      "price": 10.99,
+      "rating": 4.34,
+      "category": 1
+    }
+  },
+  {
+    "pk": 98,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK98",
+      "author": "Sally Rooney",
+      "country": "Ireland",
+      "image_link": "normal-people.jpg",
+      "language": "English",
+      "blurb": "At school Connell and Marianne pretend not to know each other. He's popular and well-adjusted, star of the school soccer team while she is lonely, proud, and intensely private. But when Connell comes to pick his mother up from her housekeeping job at Marianne's house, a strange and indelible connection grows between the two teenagers - one they are determined to conceal. A year later, they're both studying at Trinity College in Dublin. Marianne has found her feet in a new social world while Connell hangs at the sidelines, shy and uncertain. Throughout their years in college, Marianne and Connell circle one another, straying toward other people and possibilities but always magnetically, irresistibly drawn back together. Then, as she veers into self-destruction and he begins to search for meaning elsewhere, each must confront how far they are willing to go to save the other.",
+      "pages": 273,
+      "title": "Normal People",
+      "release_year": 2018,
+      "price": 9.99,
+      "rating": 3.81,
+      "category": 5
+    }
+  },
+  {
+    "pk": 99,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK99",
+      "author": "Sally Rooney",
+      "country": "Ireland",
+      "image_link": "conversations-with-friends.png",
+      "language": "English",
+      "blurb": "Frances is twenty-one years old, cool-headed, and darkly observant. A college student and aspiring writer, she devotes herself to a life of the mind--and to the beautiful and endlessly self-possessed Bobbi, her best friend and comrade-in-arms. Lovers at school, the two young women now perform spoken-word poetry together in Dublin, where a journalist named Melissa spots their potential. Drawn into Melissa's orbit, Frances is reluctantly impressed by the older woman's sophisticated home and tall, handsome husband. Private property, Frances believes, is a cultural evil--and Nick, a bored actor who never quite lived up to his potential, looks like patriarchy made flesh. But however amusing their flirtation seems at first, it gives way to a strange intimacy neither of them expect. As Frances tries to keep her life in check, her relationships increasingly resist her control: with Nick, with her difficult and unhappy father, and finally even with Bobbi. Desperate to reconcile herself to the desires and vulnerabilities of her body, Frances's intellectual certainties begin to yield to something new: a painful and disorienting way of living from moment to moment.",
+      "pages": 304,
+      "title": "Conversations with Friends",
+      "release_year": 2017,
+      "price": 8.99,
+      "rating": 3.78,
+      "category": 5
+    }
+  },
+  {
+    "pk": 100,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK100",
+      "author": "Kate Elizabeth Russell",
+      "country": "America",
+      "image_link": "my-dark-vanessa.jpg",
+      "language": "English",
+      "blurb": "2000. Bright, ambitious, and yearning for adulthood, fifteen-year-old Vanessa Wye becomes entangled in an affair with Jacob Strane, her magnetic and guileful forty-two-year-old English teacher. 2017. Amid the rising wave of allegations against powerful men, a reckoning is coming due. Strane has been accused of sexual abuse by a former student, who reaches out to Vanessa, and now Vanessa suddenly finds herself facing an impossible choice: remain silent, firm in the belief that her teenage self willingly engaged in this relationship, or redefine herself and the events of her past. But how can Vanessa reject her first love, the man who fundamentally transformed her and has been a persistent presence in her life? Is it possible that the man she loved as a teenager—and who professed to worship only her—may be far different from what she has always believed?",
+      "pages": 373,
+      "title": "My Dark Vanessa",
+      "release_year": 2020,
+      "price": 9.99,
+      "rating": 4.09,
+      "category": 5
+    }
+  },
+  {
+    "pk": 101,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK101",
+      "author": "Ottessa Moshfegh",
+      "country": "America",
+      "image_link": "rest-and-relaxation.jpg",
+      "language": "English",
+      "blurb": "Our narrator should be happy, shouldn't she? She's young, thin, pretty, a recent Columbia graduate, works an easy job at a hip art gallery, lives in an apartment on the Upper East Side of Manhattan paid for, like the rest of her needs, by her inheritance. But there is a dark and vacuous hole in her heart, and it isn't just the loss of her parents, or the way her Wall Street boyfriend treats her, or her sadomasochistic relationship with her best friend, Reva. It's the year 2000 in a city aglitter with wealth and possibility; what could be so terribly wrong?",
+      "pages": 289,
+      "title": "My Year of Rest and Relaxation",
+      "release_year": 2018,
+      "price": 7.99,
+      "rating": 3.68,
+      "category": 5
+    }
+  },
+  {
+    "pk": 102,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK102",
+      "author": "Carmen Maria Machado",
+      "country": "America",
+      "image_link": "her-body-and-other-parties.jpg",
+      "language": "English",
+      "blurb": "In Her Body and Other Parties, Carmen Maria Machado blithely demolishes the arbitrary borders between psychological realism and science fiction, comedy and horror, fantasy and fabulism. While her work has earned her comparisons to Karen Russell and Kelly Link, she has a voice that is all her own. In this electric and provocative debut, Machado bends genre to shape startling narratives that map the realities of women's lives and the violence visited upon their bodies.",
+      "pages": 248,
+      "title": "Her Body and Other Parties",
+      "release_year": 2017,
+      "price": 9.99,
+      "rating": 3.86,
+      "category": 5
+    }
+  },
+  {
+    "pk": 103,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK103",
+      "author": "Alison Rumfitt",
+      "country": "England",
+      "image_link": "TMIW.JPEG",
+      "language": "English",
+      "blurb": "Three years ago, Alice spent one night in an abandoned house with her friends, Ila and Hannah. Since then, Alice's life has spiraled. She lives a haunted existence, selling videos of herself for money, going to parties she hates, drinking herself to sleep. Memories of that night torment Alice, but when Ila asks her to return to the House, to go past the KEEP OUT sign and over the sick earth where teenagers dare each other to venture, Alice knows she must go. Together, Alice and Ila must face the horrors that happened there, must pull themselves apart from the inside out, put their differences aside, and try to rescue Hannah, whom the House has chosen to make its own.",
+      "pages": 264,
+      "title": "Tell Me I'm Worthless",
+      "release_year": 2021,
+      "price": 9.99,
+      "rating": 3.75,
+      "category": 1
+    }
+  }
+    ]

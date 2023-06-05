@@ -58,7 +58,7 @@ body {
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
+    background: #244c2c; /* Changed from black */
     color: white !important;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
+    background: #244c2c !important;
     color: #fff !important;
 }
 
@@ -240,6 +240,22 @@ input[name='q']::placeholder {
     width: 330px;
 }
 
+.card-title {
+    color: rgb(85, 85, 85);
+}
+
+.book-title {
+    color: rgb(85, 85, 85);
+}
+
+.books-home-link {
+    color: rgb(85, 85, 85);
+}
+
+.books-home-link:hover {
+    color: #244c2c;
+}
+
 /* Book Form */
 .btn-file {
     position: relative;
@@ -275,6 +291,10 @@ input[name='q']::placeholder {
     margin-bottom: 15px;
 }
 
+#delivery-banner {
+    background-color: #244c2c;
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -290,7 +310,8 @@ input[name='q']::placeholder {
     }
 
     .add_to_wishlist_btn {
-
+        justify-content: center;
+        width: 200px;
     }
 }
 

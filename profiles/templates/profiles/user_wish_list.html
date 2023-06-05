@@ -27,14 +27,18 @@
                         <div class="row no-gutters">
                             <div class="col-md-4">
                                 {% if product.image_link %}
+                                <a href="{% url 'book_detail' product.id %}">
                                     <img src="{{ product.image_link.url }}" class="card-img-top img-fluid mx-auto d-block wishlist-img" alt="{{ product.title }}">
+                                </a>
                                 {% else %}
                                     <img class="card-img-top img-fluid mx-auto d-block" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
                                 {% endif %}
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <a href="{% url 'book_detail' product.id %}" class="text-decoration-none">
+                                        <h5 class="card-title">{{ product.title }}</h5>
+                                    </a>
                                     <h6 class="card-title">By: {{ product.author }}</h6>
                                     <p class="card-text">{{ product.blurb }}</p>
                                     <p class="card-text"><small class="text-muted">Price: {{ product.price }}</small></p>
