@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Quality, QualityVariants
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -21,5 +21,23 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
+
+class QualityAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'code',
+    )
+
+
+class QualityVariantsAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'product',
+        'quality',
+        'price',
+    )
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Quality, QualityAdmin)
+admin.site.register(QualityVariants, QualityVariantsAdmin)

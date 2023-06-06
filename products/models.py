@@ -17,6 +17,11 @@ class Category(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+QUALITY_VARIANTS = (
+    ('Fair', 'Fair'),
+    ('Good', 'Good'),
+    ('Great', 'Great'),
+)
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
@@ -30,6 +35,8 @@ class Product(models.Model):
     blurb = models.TextField()
     has_quality = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    # Yuksel Celik
+    variant = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_link = models.ImageField(null=True, blank=True)
     # Very Academy
@@ -39,11 +46,26 @@ class Product(models.Model):
         return self.title
 
 
-# class Discounts(models.Model):
-#     name = models.CharField(max_length=40)
-#     value = models.IntegerField()
+class Quality(models.Model):
+    """ Model to map relationship between quality of book and its price """
+    class Meta:
+        verbose_name_plural = 'Qualities'
 
-#     price = 
+    name = models.CharField(max_length=20)
+    code = models.CharField(max_length=10, blank=True, null=True)
 
-#     def twenty()
-#         return 
+    def __str__(self):
+        return self.name
+
+
+class QualityVariants(models.Model):
+    class Meta:
+        verbose_name_plural = 'Variants'
+
+    title = models.CharField(max_length=30)
+    price = models.DecimalField(decimal_places=2, max_digits=6)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quality = models.ForeignKey(Quality, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

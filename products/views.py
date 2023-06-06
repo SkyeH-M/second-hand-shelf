@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
+from .models import Product, Category, Quality, QualityVariants
 from .forms import ProductForm
 
 def all_books(request):
@@ -60,9 +60,17 @@ def book_detail(request, product_id):
     """ A view to display individual book details """
 
     product = get_object_or_404(Product, pk=product_id)
+    quality = get_object_or_404(Quality)
+    if product.variant == 'Fair':
+        product.price = int(product.price * 0.6)
+    elif product.variant == 'Good':
+        product.price = int(product.price * 0.8)
+    else:
+        product.price = product.price
     
     context = {
         'product': product,
+        'quality': quality,
     }
     
     return render(request, 'products/book-detail.html', context)
