@@ -50,7 +50,7 @@ class Product(models.Model):
         ('good', 'Good'),
         ('great', 'Great'),
     )
-    quality = models.CharField(max_length=10, choices=QUALITY_VARIANTS)
+    quality = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
 
     @property
     def discounted_price(self):

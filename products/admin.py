@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Product, Category, Quality, QualityVariants
+from .models import Product, Category
+# removed Quality, QualityVariants from imports 
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -22,22 +23,22 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
-class QualityAdmin(admin.ModelAdmin):
-    list_display = (
-        'name',
-        'code',
-    )
+# class QualityAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'name',
+#         'code',
+#     )
 
 
-class QualityVariantsAdmin(admin.ModelAdmin):
-    list_display = (
-        'title',
-        'product',
-        'quality',
-        'price',
-    )
+# class QualityVariantsAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'title',
+#         'product',
+#         'quality',
+#         'price',
+#     )
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Quality, QualityAdmin)
-admin.site.register(QualityVariants, QualityVariantsAdmin)
+# admin.site.register(Quality, QualityAdmin)
+# admin.site.register(QualityVariants, QualityVariantsAdmin)
