@@ -45,7 +45,8 @@
                     <p class="mb-0">By {{ product.author }}</p>
                     <p class="mb-0"><small class=text-muted>Book length: {{ product.pages }} pages</small></p>
                     <p class="mb-0"><small class=text-muted>Year of release: {{ product.release_year }}</small></p>
-                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                    <!-- changed from price -->
+                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.discounted_price }}</p>
                     {% if product.category %}
                         <p class="small mt-1 mb-0">
                             <a class="text-muted" href="{% url 'books' %}?category={{ product.category.name }}">
