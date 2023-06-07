@@ -62,18 +62,10 @@ def book_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     discounted_price = Product.discounted_price
-    # quality = get_object_or_404(Quality)
-    # if product.variant == 'Fair':
-    #     product.price = int(product.price * 0.6)
-    # elif product.variant == 'Good':
-    #     product.price = int(product.price * 0.8)
-    # else:
-    #     product.price = product.price
     
     context = {
         'product': product,
         'discounted_price': discounted_price,
-        # 'quality': quality,
     }
     
     return render(request, 'products/book-detail.html', context)

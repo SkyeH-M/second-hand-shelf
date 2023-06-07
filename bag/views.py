@@ -19,12 +19,12 @@ def add_to_bag(request, item_id):
 
     if 'book_quality' in request.POST:
         quality = request.POST['book_quality']
-        if quality == 'Fair':
-            product.price = int(product.price * 0.6)
-        elif quality == 'Good':
-            product.price = int(product.price * 0.8)
-        else:
-            product.price = product.price
+        # if quality == 'Fair':
+        #     product.price = int(product.price * 0.6)
+        # elif quality == 'Good':
+        #     product.price = int(product.price * 0.8)
+        # else:
+        #     product.price = product.price
 
     bag = request.session.get('bag', {})
 
