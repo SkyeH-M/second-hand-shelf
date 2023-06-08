@@ -61,11 +61,11 @@ def book_detail(request, product_id):
     """ A view to display individual book details """
 
     product = get_object_or_404(Product, pk=product_id)
-    discounted_price = Product.discounted_price
+    # discounted_price = Product.discounted_price
     
     context = {
         'product': product,
-        'discounted_price': discounted_price,
+        # 'discounted_price': discounted_price,
     }
     
     return render(request, 'products/book-detail.html', context)

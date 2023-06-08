@@ -37,7 +37,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     # Yuksel Celik
     # variant = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    # rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_link = models.ImageField(null=True, blank=True)
     # Very Academy
     users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True)
@@ -85,3 +85,15 @@ class Product(models.Model):
 
 #     def __str__(self):
 #         return self.title
+
+
+class BookReview(models.Model):
+    """
+    A model for users to rate and reviews books, and for users
+    to see ratings and reviews from all other users 
+    """
+    product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
+    user = models.ForeignKey(Product, related_name="user_reviews", on_delete=models.CASCADE)
+    content = models.TextField(blank=True, null=True)
+    stars = models.IntegerField()
+    date_added = models.DateTimeField(auto_now_add=True)

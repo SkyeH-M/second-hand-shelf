@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, BookReview
 # removed Quality, QualityVariants from imports 
 
 
@@ -9,7 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
         'title',
         'category',
         'price',
-        'rating',
+        # 'rating',
         'image_link',
     )
 
@@ -40,5 +40,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(BookReview)
 # admin.site.register(Quality, QualityAdmin)
 # admin.site.register(QualityVariants, QualityVariantsAdmin)

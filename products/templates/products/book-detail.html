@@ -54,11 +54,11 @@
                             </a>
                         </p>
                     {% endif %}
-                    {% if product.rating %}
+                    <!-- {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
                         <small class="text-muted">No Rating</small>
-                    {% endif %}
+                    {% endif %} -->    
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_book' product.id %}">Edit</a> | 
@@ -106,7 +106,26 @@
                                             </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
+                                <div class="col-12">
+                                    <h2>Reviews</h2>
+                                    <div class="reviews-wrapper">
+                                        {% for review in product.reviews.all %}
+                                        <p><strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},</p>
+                                        <p><strong>Stars: </strong>{{ review.stars }}</p>
+                                        {{ review.content }}
+                                        {% empty %}
+                                        <p>This book has no reviews yet...</p>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="review-form">
+                                        {% if request.user.is_authenticated %}
+                                            <form method="POST" action="">
+                                                {% csrf_token %}
+                                            </form>
+                                        {% endif %}
+                                    </div>
+                                </div>
 
                             <div class="col-12">
                                 <a href="{% url 'books' %}" class="btn btn-outline-black rounded-0 mt-5">
