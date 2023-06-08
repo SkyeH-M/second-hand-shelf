@@ -92,6 +92,9 @@ class BookReview(models.Model):
     A model for users to rate and reviews books, and for users
     to see ratings and reviews from all other users 
     """
+    class Meta:
+        ordering = ['-date_added']
+
     product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
     user = models.ForeignKey(Product, related_name="user_reviews", on_delete=models.CASCADE)
     content = models.TextField(blank=True, null=True)
