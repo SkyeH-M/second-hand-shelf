@@ -41,25 +41,26 @@ class Product(models.Model):
     image_link = models.ImageField(null=True, blank=True)
     # Very Academy
     users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True)
+    # Rating and Review
 
-    def __str__(self):
-        return self.title
-    # Book Quality 
-    QUALITY_VARIANTS = (
-        ('fair', 'Fair'),
-        ('good', 'Good'),
-        ('great', 'Great'),
-    )
-    quality = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
+    # def __str__(self):
+    #     return self.title
+    # # Book Quality 
+    # QUALITY_VARIANTS = (
+    #     ('fair', 'Fair'),
+    #     ('good', 'Good'),
+    #     ('great', 'Great'),
+    # )
+    # quality = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
 
-    @property
-    def discounted_price(self):
-        if self.quality == 'fair':
-            return self.price * 0.6
-        elif self.quality == 'good':
-            return self.price * 0.8
-        else:
-            return self.price
+    # @property
+    # def discounted_price(self):
+    #     if self.quality == 'fair':
+    #         return self.price * 0.6
+    #     elif self.quality == 'good':
+    #         return self.price * 0.8
+    #     else:
+    #         return self.price
 
 # class Quality(models.Model):
 #     """ Model to map relationship between quality of book and its price """
