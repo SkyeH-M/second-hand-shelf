@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Product, Category
 # removed Quality, QualityVariant from imports
-from .forms import ProductForm
+from .forms import ProductForm, BookReviewForm
 
 def all_books(request):
     """ A view to display all books, including sorting and search queries """
@@ -71,8 +71,9 @@ def book_detail(request, product_id):
         'is_in_wishlist': is_in_wishlist,
         # 'discounted_price': discounted_price,
     }
+    template = 'products/book-detail.html'
     
-    return render(request, 'products/book-detail.html', context)
+    return render(request, template, context)
 
 @login_required
 def add_book(request):
@@ -133,11 +134,15 @@ def delete_book(request, product_id):
 def add_book_review(request, product_id):
     """ A view to add a book review """
     product = get_object_or_404(Product, pk=product_id)
-    if request.user.is_authenticated:
-        profile = get_object_or_404(UserProfile, user_id=request.user)
+    if request.method == 'POST':
+        form = BookReviewForm(request.POST or None)
+        if form.is_valid():
+            form.save()
     else:
-        profile = None
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            # form = BookReviewForm(request.POST)
-            book_reviews = product.reviews.all()
+        form = BookReviewForm()
+
+    context = {
+        'form': form,
+    }
+    template = 'products/book-detail.html'
+    return render(request, template, context)

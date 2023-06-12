@@ -139,16 +139,10 @@
             {% endfor %}
         </div>
         <div class="review-form">
-            {% if request.user.is_authenticated %}
                 <form action="{% url 'add_book_review' product.id %}" method="POST" class="review-form">
                     {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-5">
-                        {{ book_review_form.stars | as_crispy_field }}
-                        {{ book_review_form.content | as_crispy_field }}
-                    </fieldset>
-            {% else %}
+                    {{ form|crispy }}
                 <p class="text-center">Please <a href="{% url 'account_signup' %}">Register</a> or <a href="{% url 'account_login' %}">Login</a> to review a book.</p>
-            {% endif %}
                 </form>
         </div>
     </div>

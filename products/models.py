@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 
-
 class Category(models.Model):
 
     class Meta:
@@ -43,8 +42,8 @@ class Product(models.Model):
     users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True)
     # Rating and Review
 
-    # def __str__(self):
-    #     return self.title
+    def __str__(self):
+        return self.title
     # # Book Quality 
     # QUALITY_VARIANTS = (
     #     ('fair', 'Fair'),
@@ -108,3 +107,6 @@ class BookReview(models.Model):
     content = models.TextField(blank=True, null=True)
     stars = models.IntegerField(choices=STAR_CHOICES, default=3)
     date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.product
