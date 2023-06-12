@@ -95,8 +95,16 @@ class BookReview(models.Model):
     class Meta:
         ordering = ['-date_added']
 
+    STAR_CHOICES = (
+        (5, '5'),
+        (4, '4'),
+        (3, '3'),
+        (2, '2'),
+        (1, '1'),
+    )
+
     product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
     user = models.ForeignKey(Product, related_name="user_reviews", on_delete=models.CASCADE)
     content = models.TextField(blank=True, null=True)
-    stars = models.IntegerField()
+    stars = models.IntegerField(choices=STAR_CHOICES, default=3)
     date_added = models.DateTimeField(auto_now_add=True)
