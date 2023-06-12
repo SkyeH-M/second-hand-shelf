@@ -291,6 +291,14 @@ input[name='q']::placeholder {
     margin-bottom: 15px;
 }
 
+.remove_from_wishlist_btn {
+    width: 240px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+
 #delivery-banner {
     background-color: #244c2c;
 }

@@ -59,12 +59,15 @@ def all_books(request):
 
 def book_detail(request, product_id):
     """ A view to display individual book details """
-
     product = get_object_or_404(Product, pk=product_id)
+    is_in_wishlist = False
+    if product.users_wishlist.filter(id=request.user.id).exists():
+        is_in_wishlist = True
     # discounted_price = Product.discounted_price
     
     context = {
         'product': product,
+        'is_in_wishlist': is_in_wishlist,
         # 'discounted_price': discounted_price,
     }
     

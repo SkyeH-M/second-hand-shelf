@@ -54,6 +54,14 @@ def order_history(request, order_number):
 @login_required
 def wishlist(request):
     products = Product.objects.filter(users_wishlist=request.user)
+    # title = Product.title
+    # def check_if_in_wishlist(title):
+    #     products = Product.objects.filter(users_wishlist=request.user)
+    #     for p in products:
+    #         if p.title == title:
+    #             return True
+    #     return False
+
     context = {
         'wishlist': products,
     }
