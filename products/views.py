@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
 
 from .models import Product, Category
 # removed Quality, QualityVariant from imports
@@ -73,6 +74,7 @@ def book_detail(request, product_id):
     
     return render(request, 'products/book-detail.html', context)
 
+@login_required
 def add_book(request):
     """ Add a product to the store """
     if request.method == 'POST':
@@ -93,6 +95,7 @@ def add_book(request):
 
     return render(request, template, context)
 
+@login_required
 def edit_book(request, product_id):
     """ Edit a product in the store """
     product = get_object_or_404(Product, pk=product_id)
@@ -117,9 +120,24 @@ def edit_book(request, product_id):
 
     return render(request, template, context)
 
+@login_required
 def delete_book(request, product_id):
     """ Delete a product from the store """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, f'Book: "{product.title}" has been successfully deleted.')
     return redirect(reverse('books'))
+
+
+@login_required
+def add_book_review(request, product_id):
+    """ A view to add a book review """
+    product = get_object_or_404(Product, pk=product_id)
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user_id=request.user)
+    else:
+        profile = None
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            # form = BookReviewForm(request.POST)
+            book_reviews = product.reviews.all()
