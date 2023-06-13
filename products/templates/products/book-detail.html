@@ -129,12 +129,22 @@
     </div>
     <hr>
     <div class="col-12">
-        <h2>Reviews</h2>
-        <div class="reviews-wrapper">
+        <h2 class="text-center">Book Reviews</h2>
+        <div class="reviews-wrapper container-fluid">
             {% for review in product.reviews.all %}
-            <p><strong>Date: </strong>{{ review.date_added|date:"d-m-Y" }},</p>
-            <p><strong>Stars: </strong>{{ review.stars }}</p>
-            {{ review.content }}
+            <div class="card-wrapper">
+            <div class="card review-card text-center">
+            <div class="card-body">
+            <p class="card-title"><strong>User: </strong>{{ review.user }}</p>
+            <p><strong>Review Date: </strong>{{ review.date_added|date:"d-m-Y" }}</p>
+            <p><strong>Stars: </strong>{{ review.stars }} / 5</p>
+            {% if review.content|length != 0 %}
+            <p>{{ review.user }} said: {{ review.content }}</p>
+            {% else %}
+            {% endif %}
+            </div>
+            </div>
+            </div>
             <hr>
             {% empty %}
             <p>This book has no reviews yet...</p>
@@ -142,27 +152,29 @@
         </div>
         <hr>
         <div id="review-form">
+            <h2 class="text-center mt-2">Add Your Book Review</h2>
             <div class="review-form-wrapper form-group">
                 {% if request.user.is_authenticated %}
-                <form method="POST" action="{% url 'add_book_review' product.id %}#review-form" class="review-form">
+                <form method="POST" action="{% url 'add_book_review' product.id %}#review-form" class="review-form text-center">
                     {% csrf_token %}
                     <div class="form-field">
-                        <label>Give this book a star rating?</label>
-                        <div class="col mb-3 rating" >
-                            <input type="radio" name="stars" value="5" id="5"><label for="5">☆</label> 
-                            <input type="radio" name="stars" value="4" id="4"><label for="4">☆</label>
-                            <input type="radio" name="stars" value="3" id="3"><label for="3">☆</label>
+                        <p>Note: Adding a star rating is required to submit a review</p>
+                        <label>Give this book a star rating<span class="required">*</span></label>
+                        <div class="col mb-3 rating">
+                            <input type="radio" name="stars" value="1" id="1"><label for="1">☆</label> 
                             <input type="radio" name="stars" value="2" id="2"><label for="2">☆</label>
-                            <input type="radio" name="stars" value="1" id="1" checked><label for="1">☆</label>
+                            <input type="radio" name="stars" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="stars" value="4" id="4"><label for="4">☆</label>
+                            <input type="radio" name="stars" value="5" id="5" checked><label for="5">☆</label>
                         </div> 
                     </div>
-                    <div class="form-field col-6">
-                        <label>Give a written review?</label>
+                    <div class="form-field content-field">
+                        <label">Give a written review?</label>
                         <textarea class="textarea mb-5 form-control" name="content"></textarea>
                     </div>
                     <button class="btn submit-btn btn-black text-uppercase">Submit Review</button>
                 {% else %}
-                    <p class="text-center">Please <a href="{% url 'account_signup' %}">Register</a> or <a href="{% url 'account_login' %}">Login</a> to review a book.</p>
+                    <p class="text-center">Please <a class="link" href="{% url 'account_signup' %}">Register</a> or <a class="link" href="{% url 'account_login' %}">Login</a> to review a book.</p>
                 {% endif %}
             </div>
         </div>

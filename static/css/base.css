@@ -306,8 +306,9 @@ input[name='q']::placeholder {
 /* Star Rating */
 .rating {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: row-reverse;
+    color: #244c2c;
 }
 
 .rating>input {
@@ -339,6 +340,56 @@ input[name='q']::placeholder {
 
 .rating:hover>input:checked~label:before {
     opacity: 0.4
+}
+
+/* Review Display */
+ .reviews-wrapper {
+    display: flex;
+    overflow-x: auto;
+    max-height: 300px;
+}
+
+.review-card {
+   min-width: 300px;
+   height: 200px;
+   text-align: center;
+   overflow-y: auto;
+   margin-left: 20px;
+   background-color: #bbd8c0;
+   color: black;
+} 
+
+.card-title {
+    color: black;
+}
+
+.content-field {
+    justify-content: center;
+}
+
+.content-field textarea {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.link {
+    text-decoration: none;
+    color:#555;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: #244c2c;
+}
+
+#review-form {
+    border: solid black 1px;
+}
+
+.submit-btn:hover {
+    background-color: #244c2c;
 }
 
 /* fixed top navbar only on medium and up */

@@ -172,3 +172,11 @@ def add_book_review(request, product_id):
     # }
     # template = 'products/book-detail.html'
     return render(request, context)
+
+@login_required
+def edit_book_review(request, review_id):
+    """ Give users the ability to edit their own reviews """
+    review = get_object_or_404(BookReview, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
