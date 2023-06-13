@@ -180,3 +180,4 @@ def edit_book_review(request, review_id):
     product = review.product
 
     if request.method == 'POST':
+        form = BookReviewForm(request.POST, instance=review)
