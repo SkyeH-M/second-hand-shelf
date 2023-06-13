@@ -134,29 +134,41 @@ def delete_book(request, product_id):
 @login_required
 def add_book_review(request, product_id):
     """ A view to add a book review """
-    if request.user.is_authenticated:
-        profile = get_object_or_404(UserProfile, user_id=request.user)
-    else:
-        profile = None
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            book_form = BookReviewForm(request.POST)
-            reviews = product.reviews.all()
-            if reviews.filter(user=request.user).exists():
-                message.info(request, f"You've already reviewed {product.title}, sorry!")
-            return redirect(reverse('book_detail', args=[product.id]))
-
-            if book_form.is_valid():
-                book_form.save()
-                messages.success(request, f"Your review for '{product.title} has been successfully added'")
-            else:
-                messages.error(request, f"Sorry, your review couldn't be saved. Please check all form fields are valid")
-            return redirect(reverse('book_detail', args=[product.id]))
-    book_form = BookReviewForm()
     product = get_object_or_404(Product, pk=product_id)
-    context = {
-        'book_form': book_form,
-        'profile': profile,
-    }
+    # Add Review
+    if request.method == 'POST' and request.user.is_authenticated:
+        stars = request.POST.get('stars', 3)
+        content = request.POST.get('content', '')
+        review = BookReview.objects.create(
+            product=product, user=request.user, stars=stars,
+            content=content)
+        messages.success(request, f"Thanks for reviewing '{product.title}'")
+        return redirect('book_detail', product_id=product_id)
+
+    # product = get_object_or_404(Product, pk=product_id)
+    # if request.user.is_authenticated:
+    #     profile = get_object_or_404(UserProfile, user_id=request.user)
+    # else:
+    #     profile = None
+    # if request.user.is_authenticated:
+    #     if request.method == 'POST':
+    #         book_form = BookReviewForm(request.POST)
+    #         reviews = product.reviews.all()
+    #         if reviews.filter(user=request.user).exists():
+    #             message.info(request, f"You've already reviewed {product.title}, sorry!")
+    #         return redirect(reverse('book_detail', args=[product.id]))
+
+    #         if book_form.is_valid():
+    #             book_form.save()
+    #             messages.success(request, f"Your review for '{product.title} has been successfully added'")
+    #         else:
+    #             messages.error(request, f"Sorry, your review couldn't be saved. Please check all form fields are valid")
+    #         return redirect(reverse('book_detail', args=[product.id]))
+    # book_form = BookReviewForm()
+    # product = get_object_or_404(Product, pk=product_id)
+    # context = {
+    #     'book_form': book_form,
+    #     'profile': profile,
+    # }
     # template = 'products/book-detail.html'
     return render(request, context)

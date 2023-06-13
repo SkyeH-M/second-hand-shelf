@@ -127,6 +127,7 @@
             </div>
         </div>
     </div>
+    <hr>
     <div class="col-12">
         <h2>Reviews</h2>
         <div class="reviews-wrapper">
@@ -138,10 +139,23 @@
             <p>This book has no reviews yet...</p>
             {% endfor %}
         </div>
+        <hr>
         <div id="review-form">
-            <div class="review-form-wrapper">
+            <div class="review-form-wrapper form-group">
                 {% if request.user.is_authenticated %}
-                    {% include 'products/includes/book_review_form.html' %}
+                <form method="POST" action="{% url 'add_book_review' product.id %}#review-form" class="review-form">
+                    {% csrf_token %}
+                    <div class="form-field">
+                        <label>Give this book a star rating?</label>
+                        <div class="col mb-3 rating" name="stars">
+                            
+                        </div>  
+                    </div>
+                    <div class="form-field col-6">
+                        <label>Give a written review?</label>
+                        <textarea class="textarea mb-5 form-control" name="content"></textarea>
+                    </div>
+                    <button class="btn submit-btn btn-black text-uppercase">Submit Review</button>
                 {% else %}
                     <p class="text-center">Please <a href="{% url 'account_signup' %}">Register</a> or <a href="{% url 'account_login' %}">Login</a> to review a book.</p>
                 {% endif %}
