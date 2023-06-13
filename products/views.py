@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 
-from .models import Product, Category
+from .models import Product, Category, BookReview
 # removed Quality, QualityVariant from imports
 from .forms import ProductForm, BookReviewForm
 
@@ -133,16 +133,18 @@ def delete_book(request, product_id):
 @login_required
 def add_book_review(request, product_id):
     """ A view to add a book review """
-    product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
-        form = BookReviewForm(request.POST or None)
-        if form.is_valid():
-            form.save()
-    else:
-        form = BookReviewForm()
-
+        book_form = BookReviewForm(request.POST, request.FILES)
+        if book_form.is_valid():
+            book_form.save()
+            messages.success(request, f"Your review for '{product.title} has been successfully added'")
+        else:
+            messages.error(request, f"Sorry, your review couldn't be saved. Please check all form fields are valid")
+        return render(request, template_name='products/book-detail.html')
+    book_form = BookReviewForm()
+    product = get_object_or_404(Product, pk=product_id)
     context = {
-        'form': form,
+        'book_form': book_form,
     }
     template = 'products/book-detail.html'
     return render(request, template, context)

@@ -23,6 +23,11 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+class BookReviewAdmin(admin.ModelAdmin):
+    list_display = (
+        'content',
+        'stars',
+    )
 # class QualityAdmin(admin.ModelAdmin):
 #     list_display = (
 #         'name',

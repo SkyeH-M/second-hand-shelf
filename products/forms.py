@@ -25,11 +25,11 @@ class BookReviewForm(forms.ModelForm):
 
     class Meta:
         model = BookReview
-        fields = '__all__'
+        fields = ('content', 'stars',)
 
     # def __init__(self, *args, **kwargs):
     #     super().__init__(*args, **kwargs)
 
     #     for field_name, field in self.fields.items():
     #         field.widget.attrs['class'] = 'review-form-input'
-    #     # self.fields['body'].widget.attrs = {'rows': 5}
+        # self.fields['body'].widget.attrs = {'rows': 5}
