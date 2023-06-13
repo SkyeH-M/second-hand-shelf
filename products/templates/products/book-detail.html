@@ -47,6 +47,11 @@
                 <div class="book-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.title }}</p>
                     <p class="mb-0">By {{ product.author }}</p>
+                    {% if product.get_rating != 0 %}
+                        <p>Average Rating: {{ product.get_rating|floatformat:1 }} / 5</p>
+                    {% else %}
+                        <p>Average Rating: <small>This book hasn't been rated yet</small></p>
+                    {% endif %}
                     <p class="mb-0"><small class=text-muted>Book length: {{ product.pages }} pages</small></p>
                     <p class="mb-0"><small class=text-muted>Year of release: {{ product.release_year }}</small></p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
@@ -57,11 +62,6 @@
                             </a>
                         </p>
                     {% endif %}
-                    <!-- {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
-                    {% endif %} -->    
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_book' product.id %}">Edit</a> | 
@@ -132,9 +132,10 @@
         <h2>Reviews</h2>
         <div class="reviews-wrapper">
             {% for review in product.reviews.all %}
-            <p><strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},</p>
+            <p><strong>Date: </strong>{{ review.date_added|date:"d-m-Y" }},</p>
             <p><strong>Stars: </strong>{{ review.stars }}</p>
             {{ review.content }}
+            <hr>
             {% empty %}
             <p>This book has no reviews yet...</p>
             {% endfor %}
@@ -147,9 +148,13 @@
                     {% csrf_token %}
                     <div class="form-field">
                         <label>Give this book a star rating?</label>
-                        <div class="col mb-3 rating" name="stars">
-                            
-                        </div>  
+                        <div class="col mb-3 rating" >
+                            <input type="radio" name="stars" value="5" id="5"><label for="5">☆</label> 
+                            <input type="radio" name="stars" value="4" id="4"><label for="4">☆</label>
+                            <input type="radio" name="stars" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="stars" value="2" id="2"><label for="2">☆</label>
+                            <input type="radio" name="stars" value="1" id="1" checked><label for="1">☆</label>
+                        </div> 
                     </div>
                     <div class="form-field col-6">
                         <label>Give a written review?</label>

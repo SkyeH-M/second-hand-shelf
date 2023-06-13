@@ -44,9 +44,13 @@ class Product(models.Model):
     users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True)
     # Rating and Review
 
-    def calculate_rating(self):
-        self.average_rating = self.reviews.all().aggregate(Avg("stars"))['stars__avg']
-        self.save()
+    def get_rating(self):
+        """ Find average book rating """
+        total = sum(int(review['stars']) for review in self.reviews.values())
+        if self.reviews.count() > 0:
+            return total / self.reviews.count()
+        else:
+            return 0
 
     def __str__(self):
         return self.title
