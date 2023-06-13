@@ -138,16 +138,14 @@
             <p>This book has no reviews yet...</p>
             {% endfor %}
         </div>
-        <div class="review-form">
-                <form action="{% url 'add_book_review' product.id %}" method="POST" class="review-form">
-                    {% csrf_token %}
-                    {% if request.user.is_authenticated %}
-                    {{ form|crispy }}
-                    <button type="submit">Submit</button>
-                    <p>HELP</p>
+        <div id="review-form">
+            <div class="review-form-wrapper">
+                {% if request.user.is_authenticated %}
+                    {% include 'products/includes/book_review_form.html' %}
+                {% else %}
                     <p class="text-center">Please <a href="{% url 'account_signup' %}">Register</a> or <a href="{% url 'account_login' %}">Login</a> to review a book.</p>
-                </form>
-                    {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}

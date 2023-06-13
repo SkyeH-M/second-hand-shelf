@@ -25,8 +25,11 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class BookReviewAdmin(admin.ModelAdmin):
     list_display = (
+        'product',
+        'user',
         'content',
         'stars',
+        'date_added',
     )
 # class QualityAdmin(admin.ModelAdmin):
 #     list_display = (
@@ -45,6 +48,6 @@ class BookReviewAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(BookReview)
+admin.site.register(BookReview, BookReviewAdmin)
 # admin.site.register(Quality, QualityAdmin)
 # admin.site.register(QualityVariants, QualityVariantsAdmin)

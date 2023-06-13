@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.db.models import Avg
 
 class Category(models.Model):
 
@@ -34,6 +35,7 @@ class Product(models.Model):
     blurb = models.TextField()
     has_quality = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    average_rating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     # Yuksel Celik
     # variant = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
     # rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
@@ -41,6 +43,10 @@ class Product(models.Model):
     # Very Academy
     users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True)
     # Rating and Review
+
+    def calculate_rating(self):
+        self.average_rating = self.reviews.all().aggregate(Avg("stars"))['stars__avg']
+        self.save()
 
     def __str__(self):
         return self.title

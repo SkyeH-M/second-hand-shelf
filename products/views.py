@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Product, Category, BookReview
 # removed Quality, QualityVariant from imports
 from .forms import ProductForm, BookReviewForm
+from profiles.forms import UserProfile
 
 def all_books(request):
     """ A view to display all books, including sorting and search queries """
@@ -133,18 +134,29 @@ def delete_book(request, product_id):
 @login_required
 def add_book_review(request, product_id):
     """ A view to add a book review """
-    if request.method == 'POST':
-        book_form = BookReviewForm(request.POST, request.FILES)
-        if book_form.is_valid():
-            book_form.save()
-            messages.success(request, f"Your review for '{product.title} has been successfully added'")
-        else:
-            messages.error(request, f"Sorry, your review couldn't be saved. Please check all form fields are valid")
-        return render(request, template_name='products/book-detail.html')
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user_id=request.user)
+    else:
+        profile = None
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            book_form = BookReviewForm(request.POST)
+            reviews = product.reviews.all()
+            if reviews.filter(user=request.user).exists():
+                message.info(request, f"You've already reviewed {product.title}, sorry!")
+            return redirect(reverse('book_detail', args=[product.id]))
+
+            if book_form.is_valid():
+                book_form.save()
+                messages.success(request, f"Your review for '{product.title} has been successfully added'")
+            else:
+                messages.error(request, f"Sorry, your review couldn't be saved. Please check all form fields are valid")
+            return redirect(reverse('book_detail', args=[product.id]))
     book_form = BookReviewForm()
     product = get_object_or_404(Product, pk=product_id)
     context = {
         'book_form': book_form,
+        'profile': profile,
     }
-    template = 'products/book-detail.html'
-    return render(request, template, context)
+    # template = 'products/book-detail.html'
+    return render(request, context)
