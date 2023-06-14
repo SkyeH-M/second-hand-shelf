@@ -174,10 +174,26 @@ def add_book_review(request, product_id):
     return render(request, context)
 
 @login_required
-def edit_book_review(request, review_id):
+def edit_book_review(request, product_id, bookreview_id):
     """ Give users the ability to edit their own reviews """
-    review = get_object_or_404(BookReview, pk=review_id)
-    product = review.product
-
-    if request.method == 'POST':
-        form = BookReviewForm(request.POST, instance=review)
+    product = get_object_or_404(Product, pk=product_id)
+    if request.user.is_authenticated:
+        book = Product.objects.get(id=product_id)
+        bookreview = BookReview.objects.get(product=product, id=bookreview_id)
+        if request.user == bookreview.user:
+            if request.method == 'POST':
+                form = BookReviewForm(request.POST, instance=bookreview)
+                if form.is_valid():
+                    data = form.save(commit=False)
+                    data.save()
+                    messages.success(f"You've successfully updated your review of {product.title}")
+                    return redirect(reverse('book_detail', args=[product.id]))
+            else:
+                form = BookReviewForm(instance=bookreview)
+            return render(request, 'products/edit-book-review.html', {'form': form})
+        else:
+            messages.warning('Sorry, you can only edit your own reviews')
+            return redirect(reverse('book_detail', args=[product.id]))
+    else:
+        messages.warning('You must be logged in to edit your reviews')
+        return redirect(reverse('account_login'))

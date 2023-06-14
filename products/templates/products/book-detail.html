@@ -141,7 +141,9 @@
             {% if review.content|length != 0 %}
             <p>{{ review.user }} said: {{ review.content }}</p>
             {% else %}
+            <p></p>
             {% endif %}
+            <button><a href="{% url 'edit_book_review' product.id bookreview.id %}">Edit</a></button>
             </div>
             </div>
             </div>
