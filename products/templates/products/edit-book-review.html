@@ -10,13 +10,14 @@
 {% endblock %}
 
 {% block content %}
-<div id="review-form">
+<div id="review-form" class="edit-review-form-">
     <h2 class="text-center mt-2">Edit Your Book Review</h2>
     <div class="review-form-wrapper form-group">
         {% if request.user.is_authenticated %}
         <form method="POST" action="" class="review-form text-center">
             {% csrf_token %}
-            <div class="form-field">
+            {{ form | crispy }}
+            <!-- <div class="form-field">
                 <p>Note: Adding a star rating is required to submit a review</p>
                 <label>Give this book a star rating<span class="required">*</span></label>
                 <div class="col mb-3 rating">
@@ -29,9 +30,9 @@
             </div>
             <div class="form-field content-field">
                 <label">Give a written review?</label>
-                <textarea class="textarea mb-5 form-control" name="content"></textarea>
-            </div>
-            <button class="btn submit-btn btn-black text-uppercase">Edit Review</button>
+                <textarea class="textarea mb-5 form-control" name="content">{{ review.content }}</textarea>
+            </div> -->
+            <button class="btn submit-btn btn-black text-uppercase">Submit Edited Review</button>
         {% else %}
             <p class="text-center">Please <a class="link" href="{% url 'account_signup' %}">Register</a> or <a class="link" href="{% url 'account_login' %}">Login</a> to review a book.</p>
         {% endif %}

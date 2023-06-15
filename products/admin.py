@@ -27,8 +27,8 @@ class BookReviewAdmin(admin.ModelAdmin):
     list_display = (
         'product',
         'user',
-        'content',
         'stars',
+        'content',
         'date_added',
     )
 # class QualityAdmin(admin.ModelAdmin):

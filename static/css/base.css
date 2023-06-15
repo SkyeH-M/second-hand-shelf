@@ -386,6 +386,7 @@ input[name='q']::placeholder {
 
 #review-form {
     border: solid black 1px;
+    margin: 30px;
 }
 
 .submit-btn:hover {

@@ -150,7 +150,9 @@
             {% else %}
             <p></p>
             {% endif %}
-            <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="{% url 'edit_book_review' review.id %}" class="text-black">Edit</a></button>
+            {% if request.user == review.user %}
+                <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="{% url 'edit_book_review' review.id %}" class="text-black">Edit</a></button>
+            {% endif %}
             </div>
             </div>
             </div>

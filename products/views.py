@@ -142,6 +142,7 @@ def add_book_review(request, product_id):
         review = BookReview.objects.create(
             product=product, user=request.user, stars=stars,
             content=content)
+        review.save()
         messages.success(request, f"Thanks for reviewing '{product.title}'")
         return redirect('book_detail', product_id=product_id)
 
@@ -183,8 +184,8 @@ def edit_book_review(request, bookreview_id):
             if request.method == 'POST':
                 form = BookReviewForm(request.POST, instance=bookreview)
                 if form.is_valid():
-                    data = form.save(commit=False)
-                    data.save()
+                    review = form.save(commit=False) #changed review from data
+                    review.save() # same as above
                     messages.success(request, f"You've successfully updated your review of {product.title}")
                     return redirect(reverse('book_detail', args=[product.id]))
             else:
