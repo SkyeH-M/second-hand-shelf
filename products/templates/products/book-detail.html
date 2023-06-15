@@ -152,7 +152,27 @@
             {% endif %}
             {% if request.user == review.user %}
                 <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="{% url 'edit_book_review' review.id %}" class="text-black">Edit</a></button>
-                <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="{% url 'delete_book_review' review.id %}" class="text-black">Delete</a></button>
+                <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="#modal--{{ review.id }}" class="modal-trigger text-black" data-toggle="modal" data-target="#deleteBookReviewModal">Delete</a></button>
+                <!-- Delete book review modal -->
+                <div class="modal fade" id="deleteBookReviewModal" tabindex="-1" role="dialog" aria-labelledby="deleteBookReviewModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteBookReviewModalLabel">Are you sure you want to delete this book review?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Warning: This action cannot be undone</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close btn btn-secondary" data-dismiss="modal">Cancel</a>
+                                <button class="btn btn-danger"><a href="{% url 'delete_book_review' review.id %}" class="text-white">Delete</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {% endif %}
             </div>
             </div>
@@ -173,11 +193,11 @@
                         <p>Note: Adding a star rating is required to submit a review</p>
                         <label>Give this book a star rating<span class="required">*</span></label>
                         <div class="col mb-3 rating">
-                            <input type="radio" name="stars" value="1" id="1"><label for="1">☆</label> 
-                            <input type="radio" name="stars" value="2" id="2"><label for="2">☆</label>
-                            <input type="radio" name="stars" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="stars" value="5" id="5"><label for="5">☆</label> 
                             <input type="radio" name="stars" value="4" id="4"><label for="4">☆</label>
-                            <input type="radio" name="stars" value="5" id="5" checked><label for="5">☆</label>
+                            <input type="radio" name="stars" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="stars" value="2" id="2"><label for="2">☆</label>
+                            <input type="radio" name="stars" value="1" id="1" checked><label for="1">☆</label>
                         </div> 
                     </div>
                     <div class="form-field content-field">
