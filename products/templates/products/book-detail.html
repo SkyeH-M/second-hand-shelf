@@ -45,12 +45,19 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="book-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.title }}</p>
+                    <p class="mb-0 text-black">{{ product.title }}</p>
                     <p class="mb-0">By {{ product.author }}</p>
                     {% if product.get_rating != 0 %}
                         <p>Average Rating: {{ product.get_rating|floatformat:1 }} / 5</p>
                     {% else %}
-                        <p>Average Rating: <small>This book hasn't been rated yet</small></p>
+                        <p class="mb-1">Average Rating: <small>This book hasn't been rated yet</small></p>
+                        <button class="btn btn-outline-black rounded-0 text-uppercase text-black mb-1">
+                            <a href="#review-form">Click here to Rate or Review
+                                <span class="icon">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </span>
+                            </a>
+                        </button>
                     {% endif %}
                     <p class="mb-0"><small class=text-muted>Book length: {{ product.pages }} pages</small></p>
                     <p class="mb-0"><small class=text-muted>Year of release: {{ product.release_year }}</small></p>
@@ -143,7 +150,7 @@
             {% else %}
             <p></p>
             {% endif %}
-            <button><a href="{% url 'edit_book_review' review.id %}">Edit</a></button>
+            <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="{% url 'edit_book_review' review.id %}" class="text-black">Edit</a></button>
             </div>
             </div>
             </div>

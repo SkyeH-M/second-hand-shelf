@@ -236,8 +236,8 @@ input[name='q']::placeholder {
 }
 
 .img-fluid {
-    height: 500px;
-    width: 330px;
+    height: 375px;
+    width: 247.5px;
 }
 
 .card-title {
@@ -351,7 +351,7 @@ input[name='q']::placeholder {
 
 .review-card {
    min-width: 300px;
-   height: 200px;
+   height: 250px;
    text-align: center;
    overflow-y: auto;
    margin-left: 20px;
@@ -392,6 +392,61 @@ input[name='q']::placeholder {
     background-color: #244c2c;
 }
 
+.link-unstyled, .link-unstyled:link, .link-unstyled:hover {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+/* Footer */
+
+/* Matthew James Taylor Bottom Footer */
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#flex-container > footer {
+    margin-top: auto;
+}
+
+.page-footer {
+    background-color: #244c2c;
+}
+
+.social-media {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  
+  .social-media li {
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .social-media i {
+    font-size: 1.6rem;
+    color: white;
+    padding: 10px;
+  }
+  
+  .social-media a {
+    text-decoration: none;
+  }
+
+  .footer-copyright {
+    color: white;
+  }
+
+  .zoom {
+    padding: 20px;
+    transition: transform .2s;
+  }
+
+  .zoom:hover {
+    transform: scale(1.2);
+  }
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -409,6 +464,15 @@ input[name='q']::placeholder {
     .add_to_wishlist_btn {
         justify-content: center;
         width: 200px;
+    }
+
+    .img-fluid {
+        height: 500px;
+        width: 330px;
+    }
+
+    .social-media i {
+        font-size: 2rem;
     }
 }
 
@@ -438,8 +502,13 @@ input[name='q']::placeholder {
         font-size: 1rem;
     }
 
+    #delivery-banner {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     #delivery-banner h4 {
-        font-size: .9rem;
+        font-size: 1rem;
     }
 
     .btn.btn-outline-black.rounded-0,
@@ -455,5 +524,10 @@ input[name='q']::placeholder {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+
+    .bag-img {
+        height: 333px;
+        width: 220px;
     }
 }

@@ -37,7 +37,7 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <a href="{% url 'book_detail' product.id %}" class="text-decoration-none">
-                                        <h5 class="card-title">{{ product.title }}</h5>
+                                        <h5 class="card-title text-black">{{ product.title }}</h5>
                                     </a>
                                     <h6 class="card-title">By: {{ product.author }}</h6>
                                     <p class="card-text">{{ product.blurb }}</p>
@@ -50,7 +50,7 @@
                 {% endfor %}
             {% else %}
                 <p>You currently have no books in your wishlist, click the button below to find your new favourite read...</p>
-                <a href="{% url 'books' %}?category=all" class="btn btn-black rounded-0 my-2">
+                <a href="{% url 'books' %}?category=horror_mystery,classic_fiction,modern_fiction,clearance" class="btn btn-black rounded-0 my-2">
                     <span class="icon mr-2">
                         <i class="fas fa-book"></i>
                     </span>

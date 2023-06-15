@@ -38,10 +38,10 @@
 
     {% block extra_js %}
     {% endblock %}
-
     <title>Bookshop {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
+    <div id="flex-container">
     <header class="container-fluid fixed-top">
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -146,7 +146,33 @@
     {% endblock %}
 
     {% block footer %}
-      <footer></footer>
+      <!-- Footer -->
+    <footer class="page-footer">
+      <ul class="social-media text-center">
+        <li>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook link">
+                <i class="fa-brands fa-square-facebook zoom"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter link">
+                <i class="fa-brands fa-square-twitter zoom"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram link">
+                <i class="fa-brands fa-square-instagram zoom"></i>
+            </a>
+        </li>
+    </ul>
+      <div class="footer-copyright text-center">
+        <div class="container">
+          <!-- Kerstin Martin, automatically update copyright year -->
+          <p>Copyright &copy; <script defer>document.write(new Date().getFullYear())</script> Skye Hillier-Milton</p>
+        </div>
+      </div>
+  </footer>
+</div>
     {% endblock %}
 
     {% block postloadjs %}
