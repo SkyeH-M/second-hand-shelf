@@ -8,7 +8,7 @@ class Contact(models.Model):
     email = models.EmailField(max_length=150)
     subject = models.CharField(max_length=100)
     content = models.CharField(max_length=2000)
-    date_submitted = models.DateTimeField(default=timezone.now)
+    date_submitted = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
         verbose_name = 'Contact Form'
