@@ -1,1 +1,1 @@
-Second Hand Shelf Confirmation for Query sent on {{ form.date_submitted }}
+Second Hand Shelf Confirmation for message sent on {{ contact.date_submitted }}
