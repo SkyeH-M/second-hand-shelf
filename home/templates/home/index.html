@@ -15,33 +15,30 @@
 </div>
 <div class="container"> <!-- removed h-100 -->
         <div class="row">
-            <h3 class="display-4 logo-font text-black">
-                Check out our top reads this month
-            </h3>
+            <h5 class="display-4 book-feature-info text-black mt-4">
+                Check out our top reads and deals this month!
+            </h5>
         </div>
-        <div class="row">
-        <div class="col-lg-4 col-sm-8 my-auto">
-            <div class="my-5">
-                <img>
-                <h4>
-                    <a href="" class="book-feature-btn btn btn-lg rounded-0 text-uppercase py-3">Shop here</a>
-                </h4>
+        <div class="row feature-row">
+        <div class="my-auto">
+            <div class="my-3">
+                <a href="{% url 'books' %}?category=clearance">
+                    <img src="/media/best-deals.png" class="book-feature">
+                </a>
             </div>
         </div>
-        <div class="col-lg-4 col-sm-8 my-auto">
-            <div class="my-5">
-                <img>
-                <h4>
-                    <a href="" class="book-feature-btn btn btn-lg rounded-0 text-uppercase py-3">Shop here</a>
-                </h4>
+        <div class="my-auto">
+            <div class="my-3">
+                <a href="{% url 'books' %}?category=clearance">
+                    <img src="/media/best-deals.png" class="book-feature">
+                </a>
             </div>
         </div>
-        <div class="col-lg-4 col-sm-8 my-auto">
-            <div class="my-5">
-                <img>
-                <h4>
-                    <a href="" class="book-feature-btn btn btn-lg rounded-0 text-uppercase py-3">Shop here</a>
-                </h4>
+        <div class="my-auto">
+            <div class="my-3">
+                <a href="{% url 'books' %}?category=clearance">
+                    <img src="/media/best-deals.png" class="book-feature">
+                </a>
             </div>
         </div>
     </div>
