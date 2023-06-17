@@ -38,7 +38,7 @@
 
     {% block extra_js %}
     {% endblock %}
-    <title>Bookshop {% block extra_title %}{% endblock %}</title>
+    <title>Second Hand Shelf {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
     <div id="flex-container">
@@ -46,11 +46,12 @@
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <h2 class="logo-font text-black my-0"><strong>Bookshop</strong></h2>
+           <h2 class="logo-font text-black my-0"><strong>Second Hand Shelf</strong></h2>
+              <!-- <img src="/media/logo.png" class="title-img"> -->
           </a>
-        </div>
+        </div> 
         <!-- hero image above search and title? or above search, below title? -->
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 mx-auto mt-0">
           <form method="GET" action="{% url 'books' %}">
             <div class="input-group w-100">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search for your next read">
@@ -80,6 +81,7 @@
                   {% endif %}
                   <a href="{% url 'wishlist' %}" class="dropdown-item">My Wishlist</a>
                   <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                  <a href="{% url 'contact_us' %}" class="dropdown-item">Contact Us</a>
                   <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                 {% else %}
                   <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>

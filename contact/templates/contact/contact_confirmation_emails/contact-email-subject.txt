@@ -1,0 +1,1 @@
+Second Hand Shelf Confirmation for Query sent on {{ form.date_submitted }}
