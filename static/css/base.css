@@ -128,7 +128,6 @@ input[name='q']::placeholder {
     height: 350px;
     width: 100%;
     padding: 1rem;
-    /* text-align: center; */
 }
 
 .feature-row {
@@ -136,11 +135,16 @@ input[name='q']::placeholder {
     flex-wrap: wrap;
 }
 
+.feature-row > * {
+    width: 100%;
+}
+
 .book-feature-info {
     text-transform: uppercase;
     font-size: 2rem;
     margin-right: auto;
     margin-left: auto;
+    text-align: center;
 }
 
 /* Bootstrap Toasts */
@@ -507,6 +511,10 @@ input[name='q']::placeholder {
     .social-media i {
         font-size: 2rem;
     }
+
+    .feature-row > * {
+        width: calc(100% / 3);
+    }
 }
 
 @media (max-width: 991px) {
@@ -540,7 +548,7 @@ input[name='q']::placeholder {
     }
 
     #delivery-banner h4 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .btn.btn-outline-black.rounded-0,
@@ -562,9 +570,21 @@ input[name='q']::placeholder {
         height: 333px;
         width: 220px;
     }
-
+    
+    /* Matthew James Taylor - 3 Colum Layouts */
     .book-feature {
-        height: auto !important;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 15px !important;
+    }
+
+    .book-feature-wrapper {
+        height: 400px;
+        width: 400px;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
     }
