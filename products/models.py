@@ -35,7 +35,7 @@ class Product(models.Model):
     blurb = models.TextField()
     has_quality = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    average_rating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
+    averagerating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     # Yuksel Celik
     # variant = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
     # rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)

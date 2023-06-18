@@ -13,8 +13,7 @@
       "title": "Things Fall Apart",
       "release_year": 1958,
       "price": 9.99,
-      "rating": 3.72,
-      "category": 5
+      "category": 2
     }
   },
   {
@@ -31,7 +30,6 @@
       "title": "Fairy tales",
       "release_year": 1836,
       "price": 12.99,
-      "rating": 4.29,
       "category": 2
     }
   },
@@ -49,7 +47,6 @@
       "title": "The Divine Comedy",
       "release_year": 1315,
       "price": 14.99,
-      "rating": 4.07,
       "category": 2
     }
   },
@@ -67,7 +64,6 @@
       "title": "Pride and Prejudice",
       "release_year": 1813,
       "price": 8.99,
-      "rating": 4.28,
       "category": 2
     }
   },
@@ -85,7 +81,6 @@
       "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
       "release_year": 1952,
       "price": 14.99,
-      "rating": 4.28,
       "category": 2
     }
   },
@@ -103,7 +98,6 @@
       "title": "The Decameron",
       "release_year": 1351,
       "price": 8.99,
-      "rating": 3.88,
       "category": 2
     }
   },
@@ -121,7 +115,6 @@
       "title": "Ficciones",
       "release_year": 1965,
       "price": 10.99,
-      "rating": 4.42,
       "category": 2
     }
   },
@@ -139,7 +132,6 @@
       "title": "Wuthering Heights",
       "release_year": 1847,
       "price": 7.99,
-      "rating": 3.88,
       "category": 3
     }
   },
@@ -157,7 +149,6 @@
       "title": "The Stranger",
       "release_year": 1942,
       "price": 8.99,
-      "rating": 4.01,
       "category": 2
     }
   },
@@ -175,7 +166,6 @@
       "title": "Poems",
       "release_year": 1952,
       "price": 10.99,
-      "rating": 4.35,
       "category": 2
     }
   },
@@ -193,7 +183,6 @@
       "title": "Don Quijote De La Mancha",
       "release_year": 1610,
       "price": 6.99,
-      "rating": 3.89,
       "category": 3
     }
   },
@@ -211,7 +200,6 @@
       "title": "The Canterbury Tales",
       "release_year": 1450,
       "price": 5.99,
-      "rating": 3.52,
       "category": 3
     }
   },
@@ -229,7 +217,6 @@
       "title": "Selected Stories of Anton Chekhov",
       "release_year": 1903,
       "price": 9.99,
-      "rating": 4.38,
       "category": 2
     }
   },
@@ -247,7 +234,6 @@
       "title": "Nostromo",
       "release_year": 1904,
       "price": 7.99,
-      "rating": 3.81,
       "category": 3
     }
   },
@@ -265,7 +251,6 @@
       "title": "Great Expectations",
       "release_year": 1861,
       "price": 6.99,
-      "rating": 3.79,
       "category": 3
     }
   },
@@ -283,7 +268,6 @@
       "title": "Jacques the Fatalist",
       "release_year": 1796,
       "price": 9.99,
-      "rating": 3.81,
       "category": 2
     }
   },
@@ -301,7 +285,6 @@
       "title": "Berlin Alexanderplatz",
       "release_year": 1929,
       "price": 9.99,
-      "rating": 3.85,
       "category": 2
     }
   },
@@ -319,7 +302,6 @@
       "title": "Crime and Punishment",
       "release_year": 1866,
       "price": 8.99,
-      "rating": 4.26,
       "category": 2
     }
   },
@@ -337,7 +319,6 @@
       "title": "The Idiot",
       "release_year": 1869,
       "price": 8.99,
-      "rating": 4.20,
       "category": 2
     }
   },
@@ -355,7 +336,6 @@
       "title": "The Possessed/Demons",
       "release_year": 1872,
       "price": 8.99,
-      "rating": 4.29,
       "category": 2
     }
   },
@@ -373,7 +353,6 @@
       "title": "The Brothers Karamazov",
       "release_year": 1880,
       "price": 10.99,
-      "rating": 4.36,
       "category": 2
     }
   },
@@ -391,7 +370,6 @@
       "title": "Middlemarch",
       "release_year": 1871,
       "price": 8.99,
-      "rating": 4.01,
       "category": 3
     }
   },
@@ -409,7 +387,6 @@
       "title": "Invisible Man",
       "release_year": 1952,
       "price": 9.99,
-      "rating": 3.91,
       "category": 2
     }
   },
@@ -427,7 +404,6 @@
       "title": "Medea",
       "release_year": -431,
       "price": 8.99,
-      "rating": 3.92,
       "category": 2
     }
   },
@@ -445,7 +421,6 @@
       "title": "Absalom, Absalom!",
       "release_year": 1936,
       "price": 8.99,
-      "rating": 3.97,
       "category": 2
     }
   },
@@ -463,7 +438,6 @@
       "title": "The Sound and the Fury",
       "release_year": 1929,
       "price": 8.99,
-      "rating": 3.86,
       "category": 2
     }
   },
@@ -481,7 +455,6 @@
       "title": "Madame Bovary",
       "release_year": 1857,
       "price": 6.99,
-      "rating": 3.70,
       "category": 3
     }
   },
@@ -499,7 +472,6 @@
       "title": "Sentimental Education",
       "release_year": 1869,
       "price": 8.99,
-      "rating": 3.81,
       "category": 2
     }
   },
@@ -517,7 +489,6 @@
       "title": "Gypsy Ballads",
       "release_year": 1928,
       "price": 9.99,
-      "rating": 4.18,
       "category": 2
     }
   },
@@ -535,7 +506,6 @@
       "title": "One Hundred Years of Solitude",
       "release_year": 1967,
       "price": 9.99,
-      "rating": 4.11,
       "category": 2
     }
   },
@@ -553,7 +523,6 @@
       "title": "Love in the Time of Cholera",
       "release_year": 1985,
       "price": 9.99,
-      "rating": 3.93,
       "category": 2
     }
   },
@@ -571,7 +540,6 @@
       "title": "Faust",
       "release_year": 1832,
       "price": 9.99,
-      "rating": 3.91,
       "category": 2
     }
   },
@@ -589,7 +557,6 @@
       "title": "Dead Souls",
       "release_year": 1842,
       "price": 9.99,
-      "rating": 3.98,
       "category": 2
     }
   },
@@ -607,7 +574,6 @@
       "title": "The Tin Drum",
       "release_year": 1959,
       "price": 9.99,
-      "rating": 3.95,
       "category": 2
     }
   },
@@ -625,7 +591,6 @@
       "title": "The Devil to Pay in the Backlands",
       "release_year": 1956,
       "price": 9.99,
-      "rating": 4.60,
       "category": 2
     }
   },
@@ -643,7 +608,6 @@
       "title": "Hunger",
       "release_year": 1890,
       "price": 9.99,
-      "rating": 4.06,
       "category": 2
     }
   },
@@ -661,7 +625,6 @@
       "title": "The Old Man and the Sea",
       "release_year": 1952,
       "price": 6.99,
-      "rating": 3.80,
       "category": 3
     }
   },
@@ -679,7 +642,6 @@
       "title": "Iliad",
       "release_year": -735,
       "price": 10.99,
-      "rating": 3.90,
       "category": 2
     }
   },
@@ -697,7 +659,6 @@
       "title": "Odyssey",
       "release_year": -800,
       "price": 8.99,
-      "rating": 3.80,
       "category": 2
     }
   },
@@ -715,7 +676,6 @@
       "title": "A Doll's House",
       "release_year": 1879,
       "price": 6.99,
-      "rating": 3.76,
       "category": 3
     }
   },
@@ -733,7 +693,6 @@
       "title": "Ulysses",
       "release_year": 1922,
       "price": 6.99,
-      "rating": 3.75,
       "category": 3
     }
   },
@@ -751,7 +710,6 @@
       "title": "Stories",
       "release_year": 1924,
       "price": 12.99,
-      "rating": 4.34,
       "category": 2
     }
   },
@@ -769,7 +727,6 @@
       "title": "The Trial",
       "release_year": 1925,
       "price": 9.99,
-      "rating": 3.96,
       "category": 2
     }
   },
@@ -787,7 +744,6 @@
       "title": "The Castle",
       "release_year": 1926,
       "price": 9.99,
-      "rating": 3.94,
       "category": 2
     }
   },
@@ -805,7 +761,6 @@
       "title": "The recognition of Shakuntala",
       "release_year": 150,
       "price": 7.99,
-      "rating": 3.85,
       "category": 2
     }
   },
@@ -823,7 +778,6 @@
       "title": "The Sound of the Mountain",
       "release_year": 1954,
       "price": 9.99,
-      "rating": 3.87,
       "category": 2
     }
   },
@@ -841,7 +795,6 @@
       "title": "Zorba the Greek",
       "release_year": 1946,
       "price": 9.99,
-      "rating": 4.05,
       "category": 2
     }
   },
@@ -859,7 +812,6 @@
       "title": "Sons and Lovers",
       "release_year": 1913,
       "price": 6.99,
-      "rating": 3.64,
       "category": 3
     }
   },
@@ -877,7 +829,6 @@
       "title": "Independent People",
       "release_year": 1934,
       "price": 9.99,
-      "rating": 4.15,
       "category": 2
     }
   },
@@ -895,7 +846,6 @@
       "title": "Poems",
       "release_year": 1818,
       "price": 8.99,
-      "rating": 4.39,
       "category": 2
     }
   },
@@ -913,7 +863,6 @@
       "title": "The Golden Notebook",
       "release_year": 1962,
       "price": 10.99,
-      "rating": 3.76,
       "category": 2
     }
   },
@@ -931,7 +880,6 @@
       "title": "Pippi Longstocking",
       "release_year": 1945,
       "price": 7.99,
-      "rating": 4.15,
       "category": 2
     }
   },
@@ -949,7 +897,6 @@
       "title": "Diary of a Madman and Other Stories",
       "release_year": 1926,
       "price": 9.99,
-      "rating": 3.93,
       "category": 2
     }
   },
@@ -967,7 +914,6 @@
       "title": "Children of Gebelawi",
       "release_year": 1959,
       "price": 12.99,
-      "rating": 4.09,
       "category": 2
     }
   },
@@ -985,7 +931,6 @@
       "title": "Buddenbrooks",
       "release_year": 1901,
       "price": 10.99,
-      "rating": 4.18,
       "category": 2
     }
   },
@@ -1003,7 +948,6 @@
       "title": "The Magic Mountain",
       "release_year": 1924,
       "price": 10.99,
-      "rating": 4.13,
       "category": 2
     }
   },
@@ -1021,7 +965,6 @@
       "title": "Moby Dick",
       "release_year": 1851,
       "price": 6.99,
-      "rating": 3.53,
       "category": 3
     }
   },
@@ -1039,7 +982,6 @@
       "title": "Essays",
       "release_year": 1595,
       "price": 10.99,
-      "rating": 4.24,
       "category": 2
     }
   },
@@ -1057,7 +999,6 @@
       "title": "Beloved",
       "release_year": 1987,
       "price": 9.99,
-      "rating": 3.93,
       "category": 2
     }
   },
@@ -1075,7 +1016,6 @@
       "title": "The Tale of Genji",
       "release_year": 1006,
       "price": 14.99,
-      "rating": 3.72,
       "category": 2
     }
   },
@@ -1093,7 +1033,6 @@
       "title": "The Man Without Qualities",
       "release_year": 1931,
       "price": 9.99,
-      "rating": 4.19,
       "category": 2
     }
   },
@@ -1111,7 +1050,6 @@
       "title": "Lolita",
       "release_year": 1955,
       "price": 9.99,
-      "rating": 3.88,
       "category": 2
     }
   },
@@ -1129,7 +1067,6 @@
       "title": "Nineteen Eighty-Four",
       "release_year": 1949,
       "price": 4.99,
-      "rating": 4.19,
       "category": 3
     }
   },
@@ -1147,7 +1084,6 @@
       "title": "Metamorphoses",
       "release_year": 100,
       "price": 10.99,
-      "rating": 4.08,
       "category": 2
     }
   },
@@ -1165,7 +1101,6 @@
       "title": "The Book of Disquiet",
       "release_year": 1928,
       "price": 9.99,
-      "rating": 4.42,
       "category": 2
     }
   },
@@ -1183,7 +1118,6 @@
       "title": "Tales",
       "release_year": 1950,
       "price": 14.99,
-      "rating": 4.42,
       "category": 2
     }
   },
@@ -1201,7 +1135,6 @@
       "title": "In Search of Lost Time",
       "release_year": 1920,
       "price": 17.99,
-      "rating": 4.35,
       "category": 2
     }
   },
@@ -1219,7 +1152,6 @@
       "title": "Gargantua and Pantagruel",
       "release_year": 1533,
       "price": 12.99,
-      "rating": 3.68,
       "category": 3
     }
   },
@@ -1237,7 +1169,6 @@
       "title": "Pedro P\u00e1ramo",
       "release_year": 1955,
       "price": 8.99,
-      "rating": 4.06,
       "category": 2
     }
   },
@@ -1255,7 +1186,6 @@
       "title": "The Masnavi",
       "release_year": 1236,
       "price": 12.99,
-      "rating": 4.41,
       "category": 2
     }
   },
@@ -1273,7 +1203,6 @@
       "title": "Midnight's Children",
       "release_year": 1981,
       "price": 11.99,
-      "rating": 3.98,
       "category": 2
     }
   },
@@ -1291,7 +1220,6 @@
       "title": "Bostan",
       "release_year": 1257,
       "price": 9.99,
-      "rating": 4.36,
       "category": 2
     }
   },
@@ -1309,7 +1237,6 @@
       "title": "Season of Migration to the North",
       "release_year": 1966,
       "price": 8.99,
-      "rating": 3.71,
       "category": 3
     }
   },
@@ -1327,7 +1254,6 @@
       "title": "Blindness",
       "release_year": 1995,
       "price": 10.99,
-      "rating": 4.16,
       "category": 2
     }
   },
@@ -1345,7 +1271,6 @@
       "title": "Hamlet",
       "release_year": 1603,
       "price": 10.99,
-      "rating": 4.06,
       "category": 2
     }
   },
@@ -1363,7 +1288,6 @@
       "title": "King Lear",
       "release_year": 1608,
       "price": 9.99,
-      "rating": 3.91,
       "category": 2
     }
   },
@@ -1381,7 +1305,6 @@
       "title": "Othello",
       "release_year": 1609,
       "price": 9.99,
-      "rating": 3.89,
       "category": 2
     }
   },
@@ -1399,7 +1322,6 @@
       "title": "Oedipus the King",
       "release_year": -430,
       "price": 6.99,
-      "rating": 3.72,
       "category": 3
     }
   },
@@ -1417,7 +1339,6 @@
       "title": "The Red and the Black",
       "release_year": 1830,
       "price": 11.99,
-      "rating": 3.87,
       "category": 2
     }
   },
@@ -1435,7 +1356,6 @@
       "title": "The Life And Opinions of Tristram Shandy",
       "release_year": 1760,
       "price": 10.99,
-      "rating": 3.73,
       "category": 2
     }
   },
@@ -1453,7 +1373,6 @@
       "title": "Confessions of Zeno",
       "release_year": 1923,
       "price": 10.99,
-      "rating": 3.78,
       "category": 2
     }
   },
@@ -1471,7 +1390,6 @@
       "title": "Gulliver's Travels",
       "release_year": 1726,
       "price": 6.99,
-      "rating": 3.58,
       "category": 3
     }
   },
@@ -1489,7 +1407,6 @@
       "title": "War and Peace",
       "release_year": 1867,
       "price": 12.99,
-      "rating": 4.15,
       "category": 2
     }
   },
@@ -1507,7 +1424,6 @@
       "title": "Anna Karenina",
       "release_year": 1877,
       "price": 12.99,
-      "rating": 4.08,
       "category": 2
     }
   },
@@ -1525,7 +1441,6 @@
       "title": "The Death of Ivan Ilyich",
       "release_year": 1886,
       "price": 5.99,
-      "rating": 4.12,
       "category": 2
     }
   },
@@ -1543,7 +1458,6 @@
       "title": "The Adventures of Huckleberry Finn",
       "release_year": 1884,
       "price": 8.99,
-      "rating": 3.83,
       "category": 2
     }
   },
@@ -1561,7 +1475,6 @@
       "title": "Ramayana",
       "release_year": -450,
       "price": 8.99,
-      "rating": 4.20,
       "category": 2
     }
   },
@@ -1579,7 +1492,6 @@
       "title": "The Aeneid",
       "release_year": -23,
       "price": 10.99,
-      "rating": 3.86,
       "category": 2
     }
   },
@@ -1597,7 +1509,6 @@
       "title": "Mahabharata",
       "release_year": -700,
       "price": 9.99,
-      "rating": 4.45,
       "category": 2
     }
   },
@@ -1615,7 +1526,6 @@
       "title": "Leaves of Grass",
       "release_year": 1855,
       "price": 8.99,
-      "rating": 4.12,
       "category": 2
     }
   },
@@ -1633,7 +1543,6 @@
       "title": "Mrs Dalloway",
       "release_year": 1925,
       "price": 8.99,
-      "rating": 3.79,
       "category": 2
     }
   },
@@ -1651,7 +1560,6 @@
       "title": "To the Lighthouse",
       "release_year": 1927,
       "price": 8.99,
-      "rating": 3.80,
       "category": 2
     }
   },
@@ -1669,7 +1577,6 @@
       "title": "Memoirs of Hadrian",
       "release_year": 1951,
       "price": 9.99,
-      "rating": 4.23,
       "category": 2
     }
   },
@@ -1687,7 +1594,6 @@
       "title": "Our Wives Under the Sea",
       "release_year": 2022,
       "price": 9.99,
-      "rating": 3.85,
       "category": 1
     }
   },
@@ -1705,7 +1611,6 @@
       "title": "Dracula",
       "release_year": 1897,
       "price": 8.99,
-      "rating": 4.01,
       "category": 1
     }
   },
@@ -1723,7 +1628,6 @@
       "title": "The Haunting of Hill House",
       "release_year": 1959,
       "price": 9.99,
-      "rating": 3.82,
       "category": 1
     }
   },
@@ -1741,7 +1645,6 @@
       "title": "The Turn of the Screw",
       "release_year": 1898,
       "price": 5.99,
-      "rating": 3.39,
       "category": 1
     }
   },
@@ -1759,7 +1662,6 @@
       "title": "The Hollow Places",
       "release_year": 2020,
       "price": 9.99,
-      "rating": 3.80,
       "category": 1
     }
   },
@@ -1777,7 +1679,6 @@
       "title": "What Lies in the Woods",
       "release_year": 2023,
       "price": 10.99,
-      "rating": 4.01,
       "category": 1
     }
   },
@@ -1795,7 +1696,6 @@
       "title": "Maggots Screaming!",
       "release_year": 2022,
       "price": 10.99,
-      "rating": 4.34,
       "category": 1
     }
   },
@@ -1813,7 +1713,6 @@
       "title": "Normal People",
       "release_year": 2018,
       "price": 9.99,
-      "rating": 3.81,
       "category": 5
     }
   },
@@ -1831,7 +1730,6 @@
       "title": "Conversations with Friends",
       "release_year": 2017,
       "price": 8.99,
-      "rating": 3.78,
       "category": 5
     }
   },
@@ -1849,7 +1747,6 @@
       "title": "My Dark Vanessa",
       "release_year": 2020,
       "price": 9.99,
-      "rating": 4.09,
       "category": 5
     }
   },
@@ -1867,7 +1764,6 @@
       "title": "My Year of Rest and Relaxation",
       "release_year": 2018,
       "price": 7.99,
-      "rating": 3.68,
       "category": 5
     }
   },
@@ -1885,7 +1781,6 @@
       "title": "Her Body and Other Parties",
       "release_year": 2017,
       "price": 9.99,
-      "rating": 3.86,
       "category": 5
     }
   },
@@ -1903,8 +1798,7 @@
       "title": "Tell Me I'm Worthless",
       "release_year": 2021,
       "price": 9.99,
-      "rating": 3.75,
       "category": 1
     }
   }
-    ]
+]

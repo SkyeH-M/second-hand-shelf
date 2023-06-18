@@ -372,6 +372,21 @@ input[name='q']::placeholder {
     opacity: 0.4
 }
 
+.edit-review-button:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.delete-review-button:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.no-underline:hover {
+    text-decoration: none;
+    color: white !important;
+}
+
 /* Review Display */
 .reviews-wrapper {
     display: flex;
