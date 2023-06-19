@@ -27,8 +27,10 @@ def all_books(request):
                 products = products.annotate(lower_name=Lower('title')) 
             if sortkey == 'category':
                 sortkey = 'category__name'
-            if sortkey == 'averagerating':
-                sortkey == 'averagerating'
+            if sortkey == 'bookreview':
+                sortkey == 'stars'
+            # if sortkey == 'averagerating':
+            #     sortkey == 'averagerating'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -50,6 +52,7 @@ def all_books(request):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
+    print('current_sorting: ', current_sorting)
 
     context = {
         'products': products,
@@ -68,6 +71,8 @@ def book_detail(request, product_id):
     if product.users_wishlist.filter(id=request.user.id).exists():
         is_in_wishlist = True
     # discounted_price = Product.discounted_price
+    print('PRODUCT averagerating: ', product.averagerating)
+    print('PRODUCT get_rating: ', product.get_rating())
     
     context = {
         'product': product,

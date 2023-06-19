@@ -52,6 +52,11 @@ class Product(models.Model):
         else:
             return 0
 
+    def save(self, *args, **kwargs):
+        if self.averagerating == None:
+            self.averagerating = self.get_rating()
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title
     # # Book Quality 
