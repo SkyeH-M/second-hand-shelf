@@ -29,8 +29,6 @@ def all_books(request):
                 sortkey = 'category__name'
             if sortkey == 'bookreview':
                 sortkey == 'stars'
-            # if sortkey == 'averagerating':
-            #     sortkey == 'averagerating'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -144,15 +142,21 @@ def add_book_review(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     # Add Review
     if request.method == 'POST' and request.user.is_authenticated:
-        stars = request.POST.get('stars', 3)
-        content = request.POST.get('content', '')
-        product.averagerating = product.get_rating()
-        product.save()
-        review = BookReview.objects.create(
-            product=product, user=request.user, stars=stars,
-            content=content)
-        review.save()
-        messages.success(request, f"Thanks for reviewing '{product.title}'")
+        reviews = product.reviews.all()
+        if reviews.filter(user=request.user).exists() and request.user.is_superuser == False:
+            messages.info(request, f"Sorry you've already reviewed {product.title}, you can edit your review by clicking the edit button shown on your review card.")
+            return redirect(reverse('book_detail', args=[product.id]))
+        else:
+            stars = request.POST.get('stars', 3)
+            content = request.POST.get('content', '')
+            review = BookReview.objects.create(
+                product=product, user=request.user, stars=stars,
+                content=content)
+            review.save()
+        # below averagerating code suggested by Joshua from tutor support
+            product.averagerating = product.get_rating()
+            product.save()
+            messages.success(request, f"Thanks for reviewing '{product.title}'")
         return redirect('book_detail', product_id=product_id)
 
     # product = get_object_or_404(Product, pk=product_id)
@@ -210,6 +214,7 @@ def edit_book_review(request, bookreview_id):
 @login_required
 def delete_book_review(request, bookreview_id):
     """ Give users the ability to delete their own reviews """
+    product = get_object_or_404(Product, pk=product_id)
     if request.user.is_authenticated:
         bookreview = BookReview.objects.get(id=bookreview_id)
         product = bookreview.product

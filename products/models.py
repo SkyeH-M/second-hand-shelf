@@ -48,8 +48,7 @@ class Product(models.Model):
         """ Find average book rating """
         total = sum(int(review['stars']) for review in self.reviews.values())
         if self.reviews.count() > 0:
-            aggregated_total = total / self.reviews.count()
-            return aggregated_total
+            return total / self.reviews.count()
             # print(aggregated_total)
             # return total / self.reviews.count()
         else:

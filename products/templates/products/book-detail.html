@@ -151,8 +151,8 @@
             <p></p>
             {% endif %}
             {% if request.user == review.user %}
-                <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="{% url 'edit_book_review' review.id %}" class="text-black"></a>Edit</button>
-                <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="#modal--{{ review.id }}" class="modal-trigger text-black" data-toggle="modal" data-target="#deleteBookReviewModal"></a>Delete</button>
+                <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="{% url 'edit_book_review' review.id %}" class="text-black">Edit</a></button>
+                <button class="btn btn-outline-black rounded-0 text-uppercase mb-2"><a href="#modal--{{ review.id }}" class="modal-trigger text-black" data-toggle="modal" data-target="#deleteBookReviewModal">Delete</a></button>
                 <!-- Delete book review modal -->
                 <div class="modal fade" id="deleteBookReviewModal" tabindex="-1" role="dialog" aria-labelledby="deleteBookReviewModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
