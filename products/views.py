@@ -214,7 +214,7 @@ def edit_book_review(request, bookreview_id):
 @login_required
 def delete_book_review(request, bookreview_id):
     """ Give users the ability to delete their own reviews """
-    product = get_object_or_404(Product, pk=product_id)
+    # product = get_object_or_404(Product, pk=product_id)
     if request.user.is_authenticated:
         bookreview = BookReview.objects.get(id=bookreview_id)
         product = bookreview.product
