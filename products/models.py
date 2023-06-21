@@ -48,14 +48,20 @@ class Product(models.Model):
         """ Find average book rating """
         total = sum(int(review['stars']) for review in self.reviews.values())
         if self.reviews.count() > 0:
-            return total / self.reviews.count()
+            aggregated_total = total / self.reviews.count()
+            return aggregated_total
+            # print(aggregated_total)
+            # return total / self.reviews.count()
         else:
             return 0
 
-    def save(self, *args, **kwargs):
-        if self.averagerating == None:
-            self.averagerating = self.get_rating()
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     print(f" AVERAGE: {self.averagerating}")
+    #     if self.averagerating == None:
+    #         self.averagerating = self.get_rating()
+    #         # self.averagerating = self.aggregated_total
+    #     super(Product, self).save(*args, **kwargs)
+    #     return averagerating
 
     def __str__(self):
         return self.title
@@ -124,4 +130,4 @@ class BookReview(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.product
+        return self.product.title

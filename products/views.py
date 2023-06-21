@@ -71,8 +71,8 @@ def book_detail(request, product_id):
     if product.users_wishlist.filter(id=request.user.id).exists():
         is_in_wishlist = True
     # discounted_price = Product.discounted_price
-    print('PRODUCT averagerating: ', product.averagerating)
-    print('PRODUCT get_rating: ', product.get_rating())
+    # print('PRODUCT averagerating: ', product.averagerating)
+    # print('PRODUCT get_rating: ', product.get_rating())
     
     context = {
         'product': product,
@@ -146,6 +146,8 @@ def add_book_review(request, product_id):
     if request.method == 'POST' and request.user.is_authenticated:
         stars = request.POST.get('stars', 3)
         content = request.POST.get('content', '')
+        product.averagerating = product.get_rating()
+        product.save()
         review = BookReview.objects.create(
             product=product, user=request.user, stars=stars,
             content=content)
