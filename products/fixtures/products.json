@@ -1800,5 +1800,107 @@
       "price": 9.99,
       "category": 1
     }
+  },
+  {
+    "pk": 104,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK104",
+      "author": "Elliot Page",
+      "country": "Canada",
+      "image_link": "pageboy.png",
+      "language": "English",
+      "blurb": "Pageboy is a groundbreaking coming-of-age memoir from the Academy Award-nominated actor Elliot Page. A generation-defining actor and one of the most famous trans advocates of our time, Elliot will now be known as an uncommon literary talent, as he shares never-before-heard details and intimate interrogations on gender, love, mental health, relationships, and Hollywood.",
+      "pages": 271,
+      "title": "Pageboy: A Memoir",
+      "release_year": 2023,
+      "price": 15.99,
+      "category": 6
+    }
+  },
+  {
+    "pk": 105,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK105",
+      "author": "Ore Agbaje-Williams",
+      "country": "England",
+      "image_link": "the-three-of-us.jpg",
+      "language": "English",
+      "blurb": "Long-standing tensions between a husband, his wife, and her best friend finally come to a breaking point in this sharp domestic comedy of manners, told brilliantly over the course of one day. What if the two most important people in your life hated each other with a passion?",
+      "pages": 192,
+      "title": "The Three of Us",
+      "release_year": 2023,
+      "price": 8.99,
+      "category": 6
+    }
+  },
+  {
+    "pk": 106,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK106",
+      "author": "Kirsty Logan",
+      "country": "Scotland",
+      "image_link": "now-she-is-witch.jpg",
+      "language": "English",
+      "blurb": "She dug her mother's grave in the poison garden so it would stay hidden... From the snowy winter woods to the bright midnight sun; from lost and powerless to finding your path, Now She is Witch conjures a world of violence and beauty - a world where women grasp at power through witchcraft, sexuality and performance, and most of all through throwing each other to the wolves.",
+      "pages": 338,
+      "title": "Now She is Witch",
+      "release_year": 2023,
+      "price": 8.99,
+      "category": 6
+    }
+  },
+  {
+    "pk": 107,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK107",
+      "author": "Haley Jakobson",
+      "country": "America",
+      "image_link": "old-enough.jpg",
+      "language": "English",
+      "blurb": "A debut novel about a young bisexual woman who is pulled between a new sense of community and loyalty to a friendship she's outgrown. Savannah Sav Henry is almost the person she wants to be, or at least she's getting closer. It's the second semester of her sophomore year. She's finally come out as bisexual, is making friends with the other queers in her dorm, and has just about recovered from her disastrous first queer 'situationship.' She is cautiously optimistic that her life is about to begin. But when she learns that Izzie, her best friend from childhood, has gotten engaged, Sav faces a crisis of confidence. Things with Izzie haven't been the same since what happened between Sav and Izzie's older brother when they were sixteen. Now, with the wedding around the corner, Sav is forced to reckon with trauma she thought she could put behind her.",
+      "pages": 336,
+      "title": "Old Enough",
+      "release_year": 2023,
+      "price": 9.99,
+      "category": 6
+    }
+  },
+  {
+    "pk": 108,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK108",
+      "author": "Rebecca F. Kuang",
+      "country": "America",
+      "image_link": "yellowface.png",
+      "language": "English",
+      "blurb": "Authors June Hayward and Athena Liu were supposed to be twin rising stars: same year at Yale, same debut year in publishing. But Athena's a cross-genre literary darling, and June didn't even get a paperback release. Nobody wants stories about basic white girls, June thinks. So when June witnesses Athena's death in a freak accident, she acts on impulse: she steals Athena's just-finished masterpiece, an experimental novel about the unsung contributions of Chinese laborers to the British and French war efforts during World War I. So what if June edits Athena's novel and sends it to her agent as her own work? So what if she lets her new publisher rebrand her as Juniper Song--complete with an ambiguously ethnic author photo? Doesn't this piece of history deserve to be told, whoever the teller? That's what June claims, and the New York Times bestseller list seems to agree. But June can't get away from Athena's shadow, and emerging evidence threatens to bring June's (stolen) success down around her. As June races to protect her secret, she discovers exactly how far she will go to keep what she thinks she deserves.",
+      "pages": 350,
+      "title": "Yellowface",
+      "release_year": 2023,
+      "price": 10.99,
+      "category": 6
+    }
+  },
+  {
+    "pk": 109,
+    "model": "products.product",
+    "fields": {
+      "sku": "BOOK109",
+      "author": "Tembe Denton-Hurst",
+      "country": "America",
+      "image_link": "homebodies.jpg",
+      "language": "English",
+      "blurb": "Urgent, propulsive, and strikingly insightful, Homebodies is a thrilling debut novel about a young Black writer whose world is turned upside down when she loses her coveted job in media and pens a searing manifesto about racism in the industry.",
+      "pages": 320,
+      "title": "Homebodies",
+      "release_year": 2023,
+      "price": 8.99,
+      "category": 6
+    }
   }
 ]
