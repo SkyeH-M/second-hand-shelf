@@ -35,6 +35,8 @@ class Product(models.Model):
     blurb = models.TextField()
     has_quality = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    # fair_price = models.DecimalField(max_digits=6, decimal_places=2)
+    # good_price = models.DecimalField(max_digits=6, decimal_places=2)
     averagerating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     # Yuksel Celik
     # variant = models.CharField(max_length=10, choices=QUALITY_VARIANTS, default='Great')
@@ -81,16 +83,19 @@ class Product(models.Model):
     #     else:
     #         return self.price
 
-# class Quality(models.Model):
-#     """ Model to map relationship between quality of book and its price """
-#     class Meta:
-#         verbose_name_plural = 'Qualities'
+class Quality(models.Model):
+    """ Model to map relationship between quality of book and its price """
+    class Meta:
+        verbose_name_plural = 'Qualities'
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+    price_factor = models.DecimalField(max_digits=3, decimal_places=2)
 
-#     name = models.CharField(max_length=20)
-#     code = models.CharField(max_length=10, blank=True, null=True)
+    def calculate_price(self):
+        return self.product.price * self.price_factor
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
 
 # class QualityVariants(models.Model):

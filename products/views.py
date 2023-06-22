@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 
-from .models import Product, Category, BookReview
+from .models import Product, Category, BookReview, Quality
 # removed Quality, QualityVariant from imports
 from .forms import ProductForm, BookReviewForm
 from profiles.forms import UserProfile
@@ -66,16 +66,18 @@ def book_detail(request, product_id):
     """ A view to display individual book details """
     product = get_object_or_404(Product, pk=product_id)
     is_in_wishlist = False
+    selected_quality = None
     if product.users_wishlist.filter(id=request.user.id).exists():
         is_in_wishlist = True
-    # discounted_price = Product.discounted_price
-    # print('PRODUCT averagerating: ', product.averagerating)
-    # print('PRODUCT get_rating: ', product.get_rating())
     
+    if request.method == 'POST':
+        quality_id = request.POST.get('quality')
+        if quality_id:
+            selected_quality = get_object_or_404(Quality, pk=quality_id, product=product)
     context = {
         'product': product,
         'is_in_wishlist': is_in_wishlist,
-        # 'discounted_price': discounted_price,
+        'selected_quality': selected_quality,
     }
     template = 'products/book-detail.html'
     

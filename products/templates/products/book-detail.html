@@ -82,11 +82,14 @@
                             {% with product.has_quality as qual %}
                             {% if qual %}
                                 <div class="col-12">
-                                    <p><strong>Quality:</strong></p>
+                                    <p><strong>Choose your book quality:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="book_quality" id="id_book_quality">
-                                        <option value="Fair">Fair</option>
+                                        {% for quality in product.quality_set.all %}
+                                            <option value="{{ quality.id }}">{{ quality.name }}</option>
+                                        {% endfor %}
+                                        <!-- <option value="Fair">Fair</option>
                                         <option value="Good">Good</option>
-                                        <option value="Great" selected>Great</option>
+                                        <option value="Great" selected>Great</option> -->
                                     </select>
                                 </div>
                             {% endif %}
@@ -130,6 +133,10 @@
                             {% endwith %}
                         </div>
                     </form>
+                    {% if selected_quality %}
+                        <p>Selected Quality: {{ selected_quality.name }}</p>
+                        <p>Price: {{ selected_quality.calculate_price }}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
