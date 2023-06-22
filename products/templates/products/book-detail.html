@@ -61,7 +61,10 @@
                     {% endif %}
                     <p class="mb-0"><small class=text-muted>Book length: {{ product.pages }} pages</small></p>
                     <p class="mb-0"><small class=text-muted>Year of release: {{ product.release_year }}</small></p>
-                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                    <p id="product-price" data-price="{{ product.price }}"></p>
+                    <!-- <input type="hidden" id="hidden-price" value="{{ product.price }}"> -->
+                    <p class="mb-0" id="calculated-price"></p>
+                    <!-- <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p> -->
                     {% if product.category %}
                         <p class="small mt-1 mb-0">
                             <a class="text-muted" href="{% url 'books' %}?category={{ product.category.name }}">
@@ -83,13 +86,18 @@
                             {% if qual %}
                                 <div class="col-12">
                                     <p><strong>Choose your book quality:</strong></p>
-                                    <select class="form-control rounded-0 w-50" name="book_quality" id="id_book_quality">
+                                    <select class="form-control rounded-0 w-50" name="book_quality" id="quality-selector">
                                         {% for quality in product.quality_set.all %}
-                                            <option value="{{ quality.id }}">{{ quality.name }}</option>
+                                            {% if quality.name == 'great' %}
+                                                <option value="{{ quality.price_factor}}" selected>{{ quality.name }}</option>
+                                                
+                                            {% else %}
+                                                <option value="{{ quality.price_factor }}">{{ quality.name }}</option>
+                                            {% endif %}
+                                            <!-- <option value="{{ quality.price_factor }}">Fair</option>
+                                            <option value="{{ quality.price_factor }}">Good</option>
+                                            <option value="{{ quality.price_factor }}" selected>Great</option> -->
                                         {% endfor %}
-                                        <!-- <option value="Fair">Fair</option>
-                                        <option value="Good">Good</option>
-                                        <option value="Great" selected>Great</option> -->
                                     </select>
                                 </div>
                             {% endif %}
@@ -133,10 +141,10 @@
                             {% endwith %}
                         </div>
                     </form>
-                    {% if selected_quality %}
+                    <!-- {% if selected_quality %}
                         <p>Selected Quality: {{ selected_quality.name }}</p>
                         <p>Price: {{ selected_quality.calculate_price }}</p>
-                    {% endif %}
+                    {% endif %} -->
                 </div>
             </div>
         </div>
@@ -223,4 +231,17 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+<script>
+    const qualitySelector = document.getElementById('quality-selector');
+    const calculatedPrice = document.getElementById('calculated-price');
+    const originalPrice = parseFloat(document.getElementById('product-price').getAttribute('data-price'));
+
+    function updateDisplayedPrice() {
+        const priceFactor = parseFloat(qualitySelector.value);
+        const calculatedPriceValue = originalPrice * priceFactor;
+        calculatedPrice.textContent = `£${calculatedPriceValue.toFixed(2)}`;
+};
+    window.addEventListener('load', updateDisplayedPrice);
+    qualitySelector.addEventListener('change', updateDisplayedPrice);
+</script>
 {% endblock %}
