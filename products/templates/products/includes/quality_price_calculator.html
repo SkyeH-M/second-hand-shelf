@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    const qualitySelector = document.getElementById('quality-selector');
+    const calculatedPrice = document.getElementById('calculated-price');
+    const originalPrice = parseFloat(document.getElementById('product-price').getAttribute('data-price'));
+
+    function updateDisplayedPrice() {
+        const priceFactor = parseFloat(qualitySelector.value);
+        const calculatedPriceValue = originalPrice * priceFactor;
+        calculatedPrice.textContent = `£${calculatedPriceValue.toFixed(2)}`;
+};
+    window.addEventListener('load', updateDisplayedPrice);
+    qualitySelector.addEventListener('change', updateDisplayedPrice);
+</script>
