@@ -51,7 +51,7 @@
                     <div class="col-7">
                         <p class="my-0 text-black"><strong>{{ item.product.title }}</strong></p>
                         <p class="my-0"><strong>{{ item.product.author }}</strong></p>
-                        <p class="my-0 small">Quality: {% if item.product.has_quality %}{{ item.quality|upper }}{% else %}N/A{% endif %}</p>
+                        <p class="my-0 small" id="product-quality">Quality: {% if item.product.has_quality %}{{ item.quality|upper }}{% else %}N/A{% endif %}</p>
                         <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                     </div>
                     <div class="col-3 text-right">
@@ -150,5 +150,27 @@
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-{% include 'products/includes/quality_price_calculator.html' %}
+<!-- {% include 'products/includes/quality_price_calculator.html' %} -->
+<script type="text/javascript">
+    const calculatedPrice = document.getElementById('calculated-price');
+    const originalPrice = parseFloat(document.getElementById('product-price').getAttribute('data-price'));
+
+    function updateDisplayedPrice() {
+        // const priceFactor = parseFloat(qualitySelector.value);
+        productQuality = document.getElementById('product-quality')
+        // if (productQuality == 'Fair') {
+        //     calculatedPriceValue = originalPrice * 0.6;
+        // } else if (productQuality == 'Good') {
+        //     calculatedPriceValue = originalPrice * 0.8;
+        // } else {
+        //     calculatedPriceValue = originalPrice;
+        // }
+        // const calculatedPriceValue = originalPrice * priceFactor;
+        const calculatedPriceValue = originalPrice * Number(productQuality);
+        console.log(calculatedPriceValue)
+        calculatedPrice.textContent = `£${calculatedPriceValue.toFixed(2)}`;
+};
+    window.addEventListener('load', updateDisplayedPrice);
+    // qualitySelector.addEventListener('change', updateDisplayedPrice);
+</script>
 {% endblock %}
