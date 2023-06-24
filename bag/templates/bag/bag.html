@@ -144,12 +144,10 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        // var quality = $(this).data('book_quality');
-        var quality = $(this).data('text_quality')
+        var quality = $(this).data('book_quality');
+        // var quality = $(this).data('quality')
         var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'book_quality': quality};
-        // var data = {'csrfmiddlewaretoken': csrfToken, 'text_quality': text_quality};
-
         $.post(url, data)
          .done(function() {
             location.reload();
