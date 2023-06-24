@@ -7,13 +7,13 @@ def bag_contents(request):
 
     bag_items = []
     total = 0
+    item_price = 0
     product_count = 0
     bag = request.session.get('bag', {})
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
-            # item_price = product.price * Decimal(quality)
             total += item_data * product.price
             product_count += item_data
             bag_items.append({
@@ -21,12 +21,12 @@ def bag_contents(request):
                 'quantity': item_data,
                 'product': product,
                 'quality': quality,
-                # 'item_price': price
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
             for quality, quantity in item_data['items_by_quality'].items():
                 total += quantity * product.price * Decimal(quality)
+                item_price = product.price * Decimal(quality)
                 product_count += quantity
                 text_quality = None
                 if quality == '0.60':
@@ -56,6 +56,7 @@ def bag_contents(request):
     context = {
         'bag_items': bag_items,
         'total': total,
+        'item_price': item_price,
         'product_count': product_count,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,

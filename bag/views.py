@@ -102,6 +102,14 @@ def remove_from_bag(request, item_id):
             quality = request.POST['book_quality']
         bag = request.session.get('bag', {})
 
+        text_quality = None
+        if quality == '0.60':
+            text_quality = 'Fair'
+        elif quality == '0.80':
+            text_quality = 'Good'
+        else:
+            text_quality = 'Great'
+
         if quality:
             del bag[item_id]['items_by_quality'][quality]
             if not bag[item_id]['items_by_quality']:

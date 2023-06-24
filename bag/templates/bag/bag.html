@@ -46,7 +46,7 @@
                                 {% include "bag/book-info.html" %}
                             </div>
                             <div class="col-12 col-sm-6 order-sm-last">
-                                <p class="my-0">Price Each: £{{ item.product.price }}</p>
+                                <p class="my-0">Price Each: £{{ item_price|floatformat:2 }}</p>
                                 <!-- <p><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p> -->
                                 <p><strong>Subtotal: </strong>£{{ total|floatformat:2 }}</p>
                             </div>
@@ -85,7 +85,7 @@
                                 {% include 'bag/book-info.html' %}
                             </td>
                             <td class="py-3">
-                                <p class="my-0">£{{ item.product.price }}</p>
+                                <p class="my-0">£{{ item_price|floatformat:2 }}</p>
                             </td>
                             <td class="py-3 w-25">
                                 {% include 'bag/quantity-form.html' %}
@@ -94,7 +94,8 @@
                                 <p class="my-0">{{ item.text_quality }}</p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0">£{{ item.amended_price | calc_subtotal:item.quantity | floatformat:2 }}</p>
+                                <!-- <p class="my-0">£{{ item.amended_price | calc_subtotal:item.quantity | floatformat:2 }}</p> -->
+                                <p class="my-0">{{ total|floatformat:2 }}</p>
                             </td>
                         </tr>
                         {% endfor %}

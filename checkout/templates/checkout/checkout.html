@@ -51,13 +51,14 @@
                     <div class="col-7">
                         <p class="my-0 text-black"><strong>{{ item.product.title }}</strong></p>
                         <p class="my-0"><strong>{{ item.product.author }}</strong></p>
-                        <p class="my-0 small" id="product-quality">Quality: {% if item.product.has_quality %}{{ item.quality|upper }}{% else %}N/A{% endif %}</p>
+                        <p class="my-0 small" id="product-quality">Quality: {% if item.product.has_quality %}{{ item.text_quality|upper }}{% else %}N/A{% endif %}</p>
                         <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                     </div>
                     <div class="col-3 text-right">
                         <!-- <p class="my-0 small text-muted">£{{ item.product.price | calc_subtotal:item.quantity }}</p> -->
-                        <p id="product-price" data-price="{{ product.price }}"></p>
-                        <p class="my-0 small text-muted" id="calculated-price"></p>
+                        <p class="my-0 small text-muted">£{{ total|floatformat:2 }}</p>
+                        <!-- <p id="product-price" data-price="{{ product.price }}"></p>
+                        <p class="my-0 small text-muted" id="calculated-price"></p> -->
                     </div>
                 </div>
             {% endfor %}
@@ -150,7 +151,7 @@
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     const calculatedPrice = document.getElementById('calculated-price');
     const originalPrice = parseFloat(document.getElementById('product-price').getAttribute('data-price'));
 
@@ -161,5 +162,5 @@
         calculatedPrice.textContent = `£${calculatedPriceValue.toFixed(2)}`;
 };
     window.addEventListener('load', updateDisplayedPrice);
-</script>
+</script> -->
 {% endblock %}
