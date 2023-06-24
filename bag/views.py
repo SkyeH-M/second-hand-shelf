@@ -18,13 +18,14 @@ def add_to_bag(request, item_id):
 
     if 'book_quality' in request.POST:
         quality = request.POST['book_quality']
-        text_quality = None
-        if quality == '0.60':
-            text_quality = 'Fair'
-        elif quality == '0.80':
-            text_quality = 'Good'
-        else:
-            text_quality = 'Great'
+
+    text_quality = None
+    if quality == '0.60':
+        text_quality = 'Fair'
+    elif quality == '0.80':
+        text_quality = 'Good'
+    else:
+        text_quality = 'Great'
 
     bag = request.session.get('bag', {})
 
@@ -53,6 +54,14 @@ def add_to_bag(request, item_id):
 
 def adjust_bag(request, item_id):
     """ Adjust the quantity of the specified product to the specified amount """
+    # Keeping the below code in causes an error seen in screenshot 'Invalidoperation'
+    product = get_object_or_404(Product, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    quality = None
+    if 'book_quality' in request.POST:
+        quality = request.POST['book_quality']
+    bag = request.session.get('bag', {})
+
     text_quality = None
     if quality == '0.60':
         text_quality = 'Fair'
@@ -60,12 +69,6 @@ def adjust_bag(request, item_id):
         text_quality = 'Good'
     else:
         text_quality = 'Great'
-    product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
-    quality = None
-    if 'book_quality' in request.POST:
-        quality = request.POST['book_quality']
-    bag = request.session.get('bag', {})
 
     if quality:
         if quantity > 0:

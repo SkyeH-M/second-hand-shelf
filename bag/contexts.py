@@ -13,7 +13,7 @@ def bag_contents(request):
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
-            item_price = product.price * Decimal(quality)
+            # item_price = product.price * Decimal(quality)
             total += item_data * product.price
             product_count += item_data
             bag_items.append({
@@ -21,7 +21,7 @@ def bag_contents(request):
                 'quantity': item_data,
                 'product': product,
                 'quality': quality,
-                'item_price': price
+                # 'item_price': price
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
@@ -40,7 +40,7 @@ def bag_contents(request):
                     'quantity': quantity,
                     'product': product,
                     'quality': quality,
-                    # 'text_quality': text_quality,
+                    'text_quality': text_quality,
                     'amended_price': quantity * product.price * Decimal(quality)
                 })
 

@@ -1,4 +1,4 @@
-<form method="POST" action="{% url 'adjust_bag' item.item_id %}" class="form update-form">
+<form method="POST" action="{% url 'adjust_bag' item.item_id %}" class="form update-quantity-form">
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group input-group-{{ item.item_id }}">
