@@ -18,12 +18,13 @@ def add_to_bag(request, item_id):
 
     if 'book_quality' in request.POST:
         quality = request.POST['book_quality']
-        # if quality == 'Fair':
-        #     product.price = int(product.price * 0.6)
-        # elif quality == 'Good':
-        #     product.price = int(product.price * 0.8)
-        # else:
-        #     product.price = product.price
+        text_quality = None
+        if quality == '0.60':
+            text_quality = 'Fair'
+        elif quality == '0.80':
+            text_quality = 'Good'
+        else:
+            text_quality = 'Great'
 
     bag = request.session.get('bag', {})
 
@@ -31,13 +32,13 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if quality in bag[item_id]['items_by_quality'].keys():
                 bag[item_id]['items_by_quality'][quality] += quantity
-                messages.success(request, f"Updated quality '{quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
+                messages.success(request, f"Updated quality '{text_quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
             else:
                 bag[item_id]['items_by_quality'][quality] = quantity
-                messages.success(request, f"Added quality '{quality}' {product.title} to your bag")
+                messages.success(request, f"Added quality '{text_quality}' {product.title} to your bag")
         else:
             bag[item_id] = {'items_by_quality': {quality: quantity}}
-            messages.success(request, f"Added quality '{quality}' {product.title} to your bag")
+            messages.success(request, f"Added quality '{text_quality}' {product.title} to your bag")
     else: 
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
@@ -61,14 +62,21 @@ def adjust_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if quality:
-        if quantity > 0:
-            bag[item_id]['items_by_quality'][quality] = quantity
-            messages.success(request, f"Updated quality '{quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
+        text_quality = None
+        if quality == '0.60':
+            text_quality = 'Fair'
+        elif quality == '0.80':
+            text_quality = 'Good'
         else:
-            del bag[item_id]['items_by_quality'][quality]
-            if not bag[item_id]['items_by_quality']:
-                bag.pop(item_id)
-                messages.success(request, f"Removed quality '{quality}' {product.title} from your bag")
+            text_quality = 'Great'
+            if quantity > 0:
+                bag[item_id]['items_by_quality'][quality] = quantity
+                messages.success(request, f"Updated quality '{text_quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
+            else:
+                del bag[item_id]['items_by_quality'][quality]
+                if not bag[item_id]['items_by_quality']:
+                    bag.pop(item_id)
+                    messages.success(request, f"Removed quality '{text_quality}' {product.title} from your bag")
     else:
         if quantity > 0:
             bag[item_id] = quantity
@@ -96,7 +104,7 @@ def remove_from_bag(request, item_id):
             del bag[item_id]['items_by_quality'][quality]
             if not bag[item_id]['items_by_quality']:
                 bag.pop(item_id)
-                messages.success(request, f"Removed quality '{quality}' {product.title} from your bag")
+                messages.success(request, f"Removed quality '{text_quality}' {product.title} from your bag")
 
         else:
             bag.pop(item_id)
