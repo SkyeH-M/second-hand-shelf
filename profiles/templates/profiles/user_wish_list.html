@@ -41,7 +41,8 @@
                                     </a>
                                     <h6 class="card-title">By: {{ product.author }}</h6>
                                     <p class="card-text">{{ product.blurb }}</p>
-                                    <p class="card-text"><small class="text-muted">Price: {{ product.price }}</small></p>
+                                    <p class="card-text"><small class="text-muted">Price: £{{ product.price }} for 'Great' quality, 'Fair', and 'Good' quality will be reduced.
+                                    </small></p>
                                     <a href="{% url 'user_wishlist' product.id %}" class="btn btn-outline-black rounded-0 mt-5 text-uppercase" value="{{ product.id }}">Remove from Wishlist</a>
                                 </div>
                             </div>
