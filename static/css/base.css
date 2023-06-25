@@ -530,6 +530,10 @@ input[name='q']::placeholder {
     .feature-row > * {
         width: calc(100% / 3);
     }
+    
+    .signup {
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 991px) {
