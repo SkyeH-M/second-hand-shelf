@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from .models import UserProfile
 from .forms import UserProfileForm
 from products.models import Product
-from checkout.models import Order
+from checkout.models import Order, OrderLineItem
 
 def profile(request):
     """ Display the user's profile. """
@@ -36,6 +36,13 @@ def profile(request):
 
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
+    # bag = request.session.get('bag', {})
+    # for item_data in bag.items():
+    #     product = Product.objects.get(id=item_id)
+    #     for quality in item_data['items_by_quality'].items():
+    #         book_text_quality = OrderLineItem(
+    #             book_quality=product.text_quality,
+    #         )
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
@@ -46,6 +53,7 @@ def order_history(request, order_number):
     context = {
         'order': order,
         'from_profile': True,
+        # 'quality': product.text_quality,
     }
 
     return render(request, template, context)
@@ -54,13 +62,6 @@ def order_history(request, order_number):
 @login_required
 def wishlist(request):
     products = Product.objects.filter(users_wishlist=request.user)
-    # title = Product.title
-    # def check_if_in_wishlist(title):
-    #     products = Product.objects.filter(users_wishlist=request.user)
-    #     for p in products:
-    #         if p.title == title:
-    #             return True
-    #     return False
 
     context = {
         'wishlist': products,

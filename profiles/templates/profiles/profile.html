@@ -59,11 +59,12 @@
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}
                                             <li class="small">
-                                                {% if item.product.has_quality %}
-                                                    Quality {{ item.book_quality|upper }}
-                                                {% endif %}{{ item.product.title }} x{{ item.quantity }}
-                                            </li>
+                                                {{ item.product.title }} x{{ item.quantity }}
                                         {% endfor %}
+                                        {% for item in bag_items %}
+                                            Quality {{ item.text_quality|upper }}
+                                        {% endfor %}
+                                            </li>
                                     </ul>
                                 </td>
                                 <td>£{{ order.grand_total }}</td>

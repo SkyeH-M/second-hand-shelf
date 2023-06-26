@@ -61,16 +61,19 @@
                         <p class="small mb-0 text-black font-weight-bold">
                             {{ item.product.title }} x {{ item.quantity }}
                         </p>
+                {% endfor %}
+                {% for item in bag_items %}
                         <p class="small mb-0 text-black font-weight-bold">
                             <!-- Can't access text_quality value -->
-                            Quality: {{ text_quality|upper }}
+                            Quality: {{ item.text_quality|upper }}
                         </p>
                     </div>
+                {% endfor %}
                     <!-- Below I can't get the previous value of price because once checkout is completed, item_price = 0 -->
                     <!-- <div class="col-12 col-md-8 text-md-right">
                         <p class="small mb-0">{{ item.quantity }} @ £{{ item_price|floatformat:2 }} each</p>
                     </div> -->
-                {% endfor %}
+                <!-- removed end for-->
                 </div>
                 <div class="row">
                     <div class="col">
@@ -162,7 +165,8 @@
                         <p class="mb-0 text-black font-weight-bold">Delivery Cost</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.delivery_cost }}</p>
+                        <p class="mb-0">£{{ delivery|floatformat:2 }}</p>
+                        <!-- <p class="mb-0">{{ order.delivery_cost }}</p> -->
                     </div>
                 </div>
 
@@ -171,7 +175,8 @@
                         <p class="mb-0 text-black font-weight-bold">Grand Total</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.grand_total }}</p>
+                        <!-- <p class="mb-0">{{ order.grand_total }}</p> -->
+                        <p class="mb-0">£{{ grand_total|floatformat:2 }}</p>
                     </div>
                 </div>
 

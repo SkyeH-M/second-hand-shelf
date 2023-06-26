@@ -54,7 +54,6 @@ def add_to_bag(request, item_id):
 
 def adjust_bag(request, item_id):
     """ Adjust the quantity of the specified product to the specified amount """
-    # Keeping the below code in causes an error seen in screenshot 'Invalidoperation'
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     quality = None

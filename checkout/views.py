@@ -34,9 +34,21 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    quality = None
 
     if request.method == "POST":
+        if 'book_quality' in request.POST:
+            quality = request.POST['book_quality']
         bag = request.session.get('bag', {})
+
+        text_quality = None
+        if quality == '0.60':
+            text_quality = 'Fair'
+        elif quality == '0.80':
+            text_quality = 'Good'
+        else:
+            text_quality = 'Great'
+
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -62,6 +74,7 @@ def checkout(request):
                             order=order,
                             product=product,
                             quantity=item_data,
+                            # book_quality=product.text_quality,
                         )
                         order_line_item.save()
                     else:
@@ -70,7 +83,7 @@ def checkout(request):
                                 order=order, 
                                 product=product,
                                 quantity=quantity,
-                                book_quality=quality,
+                                # book_quality=product.text_quality,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
@@ -140,11 +153,9 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
-        # Save the user's info
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,
@@ -163,6 +174,7 @@ def checkout_success(request, order_number):
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:
+
         del request.session['bag']
 
     template = 'checkout/checkout_success.html'
