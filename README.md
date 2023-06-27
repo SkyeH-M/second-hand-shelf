@@ -89,3 +89,6 @@ The main goal of Second Hand Shelf is to provide a functional ecommerce experien
 
 ## Design
 ### Colour Scheme
+
+![Image of colour scheme]()
+The colour scheme of the Second Hand Shelf is comprised of black, white and different shades of green
