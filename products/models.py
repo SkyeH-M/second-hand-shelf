@@ -41,18 +41,8 @@ class Product(models.Model):
         total = sum(int(review['stars']) for review in self.reviews.values())
         if self.reviews.count() > 0:
             return total / self.reviews.count()
-            # print(aggregated_total)
-            # return total / self.reviews.count()
         else:
             return 0
-
-    # def save(self, *args, **kwargs):
-    #     print(f" AVERAGE: {self.averagerating}")
-    #     if self.averagerating == None:
-    #         self.averagerating = self.get_rating()
-    #         # self.averagerating = self.aggregated_total
-    #     super(Product, self).save(*args, **kwargs)
-    #     return averagerating
 
     def __str__(self):
         return self.title

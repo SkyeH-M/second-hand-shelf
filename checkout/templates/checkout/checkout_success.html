@@ -60,7 +60,7 @@
                     <div class="col-12 col-md-4">
                         <p class="small mb-0 text-black font-weight-bold">
                             <!-- Can't access text_quality value -->
-                            <!-- Quality: {{ item.book_quality|upper }} -->
+                            Quality: {{ item.text_quality|upper }}
                         </p>
                         <p class="small mb-0 text-black font-weight-bold">
                             Item: {{ item.product.title }} x {{ item.quantity }}
@@ -68,10 +68,9 @@
                     </div>
                     <!-- Below I can't get the previous value of price because once checkout is completed, item_price = 0 -->
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="small mb-0">{{ item.quantity }} at 
-                            {% for item in bag_items %} <!-- doesn't work -->
-                                £{{ item.item_price|floatformat:2 }} each</p> 
-                            {% endfor %}
+                        <p class="small mb-0">
+                            £{{ order.item_price|floatformat:2 }} each
+                        </p> 
                     </div>
                     {% endfor %}
                 <!-- removed end for-->
@@ -160,7 +159,7 @@
                         <p class="mb-0 text-black font-weight-bold">Delivery Cost</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">£{{ order.delivery_cost|floatformat:2 }}</p>
+                        <p class="mb-0">£{{ order.delivery|floatformat:2 }}</p>
                         <!-- <p class="mb-0">{{ order.delivery_cost }}</p> -->
                     </div>
                 </div>
@@ -193,6 +192,7 @@
                 <span class="text-uppercase">Check out the latest deals!</span>
             </a>
         {% endif %}
+        
         </div>
     </div>
 </div>

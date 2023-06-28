@@ -9,6 +9,7 @@ from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
+from .contexts import checkout_bag_contents
 
 import stripe
 import json
@@ -65,6 +66,10 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            current_bag = checkout_bag_contents(request)
+            order.delivery = current_bag['delivery']
+            print(f"CURRENT BAG {current_bag}")
+            order.grand_total = current_bag['grand_total']
             order.save()
             for item_id, item_data in bag.items():
                 try:
@@ -74,7 +79,6 @@ def checkout(request):
                             order=order,
                             product=product,
                             quantity=item_data,
-                            # book_quality=product.text_quality,
                         )
                         order_line_item.save()
                     else:
@@ -83,7 +87,6 @@ def checkout(request):
                                 order=order, 
                                 product=product,
                                 quantity=quantity,
-                                # book_quality=product.text_quality,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:

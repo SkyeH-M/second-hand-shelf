@@ -1,23 +1,11 @@
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+from decimal import Decimal
+
 from products.models import Product
 from checkout.models import Order
 
 def checkout_bag_contents(request):
-    order = Order.objects.get(
-        full_name__iexact=shipping_details.name,
-        email__iexact=billing_details.email,
-        phone_number__iexact=shipping_details.phone,
-        country__iexact=shipping_details.address.country,
-        postcode__iexact=shipping_details.address.postal_code,
-        town_or_city__iexact=shipping_details.address.city,
-        street_address1__iexact=shipping_details.address.line1,
-        street_address2__iexact=shipping_details.address.line2,
-        grand_total=grand_total,
-        original_bag=bag,
-        stripe_pid=pid,
-    )
-    
     bag_items = []
     total = 0
     item_price = 0
