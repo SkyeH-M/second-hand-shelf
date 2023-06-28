@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from checkout.models import OrderLineItem
 
 def bag_contents(request):
 
@@ -24,9 +25,11 @@ def bag_contents(request):
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
+            # item_prices = {}
             for quality, quantity in item_data['items_by_quality'].items():
                 total += quantity * product.price * Decimal(quality)
                 item_price = product.price * Decimal(quality)
+                # item_prices[quality] = item_price
                 product_count += quantity
                 text_quality = None
                 if quality == '0.60':
@@ -41,12 +44,15 @@ def bag_contents(request):
                     'product': product,
                     'quality': quality,
                     'text_quality': text_quality,
-                    'amended_price': quantity * product.price * Decimal(quality)
+                    'amended_price': quantity * product.price * Decimal(quality),
+                    # item_price shows individually calculated price per product
+                    'item_price': item_price
                 })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+        # free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - (total + delivery)
     else:
         delivery = 0
         free_delivery_delta = 0

@@ -5,13 +5,11 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 
 from .models import Product, Category, BookReview, Quality
-# removed Quality, QualityVariant from imports
 from .forms import ProductForm, BookReviewForm
 from profiles.forms import UserProfile
 
 def all_books(request):
     """ A view to display all books, including sorting and search queries """
-
     products = Product.objects.all()
     query = None
     categories = None
@@ -160,32 +158,6 @@ def add_book_review(request, product_id):
             messages.success(request, f"Thanks for reviewing '{product.title}'")
         return redirect('book_detail', product_id=product_id)
 
-    # product = get_object_or_404(Product, pk=product_id)
-    # if request.user.is_authenticated:
-    #     profile = get_object_or_404(UserProfile, user_id=request.user)
-    # else:
-    #     profile = None
-    # if request.user.is_authenticated:
-    #     if request.method == 'POST':
-    #         book_form = BookReviewForm(request.POST)
-    #         reviews = product.reviews.all()
-    #         if reviews.filter(user=request.user).exists():
-    #             message.info(request, f"You've already reviewed {product.title}, sorry!")
-    #         return redirect(reverse('book_detail', args=[product.id]))
-
-    #         if book_form.is_valid():
-    #             book_form.save()
-    #             messages.success(request, f"Your review for '{product.title} has been successfully added'")
-    #         else:
-    #             messages.error(request, f"Sorry, your review couldn't be saved. Please check all form fields are valid")
-    #         return redirect(reverse('book_detail', args=[product.id]))
-    # book_form = BookReviewForm()
-    # product = get_object_or_404(Product, pk=product_id)
-    # context = {
-    #     'book_form': book_form,
-    #     'profile': profile,
-    # }
-    # template = 'products/book-detail.html'
     return render(request, context)
 
 @login_required
@@ -198,8 +170,8 @@ def edit_book_review(request, bookreview_id):
             if request.method == 'POST':
                 form = BookReviewForm(request.POST, instance=bookreview)
                 if form.is_valid():
-                    review = form.save(commit=False) #changed review from data
-                    review.save() # same as above
+                    review = form.save(commit=False)
+                    review.save()
                     messages.success(request, f"You've successfully updated your review of {product.title}")
                     return redirect(reverse('book_detail', args=[product.id]))
             else:
@@ -215,7 +187,6 @@ def edit_book_review(request, bookreview_id):
 @login_required
 def delete_book_review(request, bookreview_id):
     """ Give users the ability to delete their own reviews """
-    # product = get_object_or_404(Product, pk=product_id)
     if request.user.is_authenticated:
         bookreview = BookReview.objects.get(id=bookreview_id)
         product = bookreview.product
