@@ -76,9 +76,10 @@ class OrderLineItem(models.Model):
         """
         # self.lineitem_total = self.product.price * self.quantity
         print('PRICE: ', self.product.price)
-        print('PRODUCT QUALITY: ', self.product.quality_set)
+        print('QUALITY: ', self.book_quality)
+        # print('PRODUCT QUALITY: ', self.product.quality_set)
         print('QUALITY: ', self.book_quality.price_factor)
-        print('QUANTITy: ', self.quantity)
+        print('QUANTITY: ', self.quantity)
         print('TEST: ', self.quantity * self.product.price * self.book_quality.price_factor)
         self.lineitem_total = (self.product.price * self.book_quality.price_factor) * self.quantity
         super(OrderLineItem, self).save(*args, **kwargs)
