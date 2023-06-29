@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from decimal import Decimal
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -75,30 +76,31 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
-                        quality = None
-                        if Quality.objects.filter(product=product, name=text_quality).exists():
-                            quality = Quality.objects.get(product=product, name=text_quality)
-                        else:
-                            quality = Quality.objects.create(product=product, name=text_quality)
+                        # quality = None
+                        # if Quality.objects.filter(product=product, name=text_quality).exists():
+                        #     quality = Quality.objects.get(product=product, name=text_quality)
+                        # else:
+                        #     quality = Quality.objects.create(product=product, name=text_quality)
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=item_data,
-                            book_quality=quality,
+                            # book_quality=quality,
                         )
                         order_line_item.save()
                     else:
                         for quality, quantity in item_data['items_by_quality'].items():
-                            quality = None
+                            quality_instance = None
                             if Quality.objects.filter(product=product, name=text_quality).exists():
-                                quality = Quality.objects.get(product=product, name=text_quality)
+                                quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
                             else:
-                                quality = Quality.objects.create(product=product, name=text_quality)
+                                quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
+                            
                             order_line_item = OrderLineItem(
                                 order=order, 
                                 product=product,
                                 quantity=quantity,
-                                book_quality=quality,
+                                book_quality=quality_instance,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
