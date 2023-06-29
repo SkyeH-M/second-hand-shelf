@@ -95,7 +95,6 @@ def checkout(request):
                                 quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
                             else:
                                 quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
-                            
                             order_line_item = OrderLineItem(
                                 order=order, 
                                 product=product,
