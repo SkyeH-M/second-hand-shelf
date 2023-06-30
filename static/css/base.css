@@ -528,6 +528,11 @@ input[name='q']::placeholder {
     .signup {
         margin-bottom: 20px;
     }
+    .bag-img {
+        height: 333px;
+        width: 220px;
+    }
+
 }
 
 @media (max-width: 991px) {
