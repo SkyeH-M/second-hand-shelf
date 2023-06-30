@@ -90,5 +90,35 @@ The main goal of Second Hand Shelf is to provide a functional ecommerce experien
 ## Design
 ### Colour Scheme
 
-![Image of colour scheme]()
-The colour scheme of the Second Hand Shelf is comprised of black, white and different shades of green
+![Image of colour scheme](/docs/images/colour-palette.png)
+
+The colour scheme of the Second Hand Shelf is primarily comprised of black, white and different shades of green.
+
+* The background is white to ensure the site is clean and readable and that the users' focus is always on the colours of the products instead of them being distracted by a busy background
+* The site text is predominately black and dark grey, again to ensure readability but also to provide enough contrast with the white background
+* The green colours highlighted throughout the site were chosen to evoke feelings of reliability and affordability given that the site is for a second hand book shop
+
+### Typography
+
+[Google Fonts](https://fonts.google.com/) was used to import the fonts featured in the site, both fonts used are of the type sans-serif to maintain consistency
+
+![Image of Stripe Element Font](/docs/images/inter-font.png)
+* I used the font Inter for the stripe elements in the checkout page as it's clearly readable and dyslexia friendly which is especially important when users are trying to place an order
+
+![Image of Body and Title Font](/docs/images/cabin-font.png)
+* I chose the Cabin font for both the header and body of the site so that text is consistent and always readable. Having important text such as the Title and page headers displayed in uppercase helps to highlight information that the user should pay attention to
+
+### Icons and Images
+
+* All icons used throughout the site were provided by [FontAwesome](https://fontawesome.com/) as their style is aesthetically pleasing while being consistent and easily understandable
+* I sourced an icon from [Flaticon](https://www.flaticon.com) that will be attributed in the credits section of this document. I then used [Favicon](https://favicon.io/) to convert this png to an icon file and imported that to my site. I installed a Favicon to help users distinguish this tab from others in their browser, the simple book related design and bright colours help to do this.
+* All product images will be attributed in the credits section, along with the hero image on the home page
+* The home page image serves to provide an aesthetically pleasing and colourful element to the page while making clear that this site is a bookshop 
+
+### Features
+The Second Hand Shelf is comprised of 12 core sections: Home page, Login, Signup, Profile, Wishlist, Products view, Book Detail, Book Reviews, Shopping Bag view, Checkout, Checkout Success, Contact
+
+| Section | Feature | Photograph or gif |
+| --- | --- | --- |
+| The Home page features an image of a book shop
+
