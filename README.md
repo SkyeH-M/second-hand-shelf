@@ -68,7 +68,6 @@ The main goal of Second Hand Shelf is to provide a functional ecommerce experien
 #### Sorting and Setting
 * Sort the list of available books
 * Sort by specific genre of book
-* Sort multiple categories of books simultaneously
 * Search for a book by title or specific words in the blurb
 * Easily see what I've searched for and the number of results found
 * Be shown on the book details page whether a particular book is in my wishlist
@@ -293,5 +292,18 @@ How to Clone
 | 5. View which books are in my wishlist | Yes, the wishlist is accessible from the navbar where users can view and manage their wishlist items, the button on book details to add a book to a users wishlist also changes to say 'remove from wishlist' when clicked to alert the user that this title is already in their wishlist | ![Remove from Wishlist button](/docs/images/remove-from-wishlist.png) |
 | 6. View book reviews and ratings from other users | Yes, users can see reviews from all other users who have left them for each particular book, they also see an aggregated rating out of 5 comprised of the ratings from all users. You can see that for reviews submitted by another user there are no edit or delete buttons as only the reviewer themselves can perform these functions | ![User reviews](/docs/images/user-reviews.png) |
 | Registration and User Accounts | | |
-
+| 1. Easily register for an account | Yes, the registration process is quick and simple and the user is sent a verification email to validate their account | ![User Registration](/docs/images/sign-up.png) |
+| 2. Easily login or logout | Yes, users can log in quickly and easily, with radio button functionality that allows users to select if they want their log in information to be stored for quicker log in next time | ![Log in](/docs/images/remember-me.png) |
+| 3. Easily recover my password in case I forget it | Yes, on the log in page a user can click 'Forgot Password' and be brought to a page where they enter their email and are sent a password reset link. The image to the side of this shows the development version of this email, but once deployed this will be sent to a user's real email address | ![Password reset email](/docs/images/password-reset-email.png) |
+| 4. Receive an email confirmation after registering | Yes, a user receives an email after submitting the registration form which provides a link for them to confirm their details and formally register their account | ![Confirm registration](/docs/images/confirm-registration.png) |
+| 5. Have a personalised user profile | Yes, users can provide and update their default delivery information which makes checking out quicker and easier | ![User profile](/docs/images/default-delivery.png) |
+| 6. Be able to contact site owners and receive confirmation of this | Yes, Users can submit the contact form whether they're logged in or not, upon submission a success message is displayed on screen alerting users that their message has been received. They are also sent a confirmation that their message was received with their message subject and content repeated to them along with information on when they can expect a response | ![Contact confirmation](/docs/images/contact-confirmation.png) |
+| Sorting and Setting | | |
+| 1. Sort the list of available books | Yes, Users can sort books by price, rating, language, and year of release from the main nav menu, on the All Books page users can also sort by price, rating, title and genre | ![Sorting](/docs/images/sorting.png) |
+| 2. Sort books by genre | Yes, users can sort by Horror/Mystery, Modern Fiction, Classic Fiction along with Clearance, and New Releases, as this site was created for educational purposes only the choice of genres is limited but would be expanded if created for a client | ![Genres](/docs/images/genres.png) |
+| 3. Search for a book by title or words in the blurb | Yes, users can search for books by title, author or words featured in the blurb as is evidenced in the image to the right. The search query 'help' is not featured in the titles of any of the books displayed but it is featured in the blurbs of them all | ![Search by title or keyword](/docs/images/search-by-word.png) |
+| 4. Easily see what I've searched for and the number of results | Yes, the search query is quoted back to the user above the results and this message shows how many products matched that specific criteria | ![Products found](/docs/images/products-found.png) |
+| 5. Be shown on the book details page whether a particular book is in my wishlist | Yes, the 'add to wishlist' button changes to a 'remove from wishlist' button when clicked the signify that it's been added/already in the user's wishlist | ![Wishlist on details page](/docs/images/remove-from-wishlist.png) |
+| Purchasing and Checkout | | |
+| 1. 
 
