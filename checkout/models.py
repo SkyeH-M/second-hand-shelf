@@ -64,7 +64,6 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    # book_quality = models.CharField(max_length=7, null=False, blank=False)
     book_quality = models.ForeignKey(Quality, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
@@ -75,12 +74,6 @@ class OrderLineItem(models.Model):
         and update the order total
         """
         # self.lineitem_total = self.product.price * self.quantity
-        print('PRICE: ', self.product.price)
-        print('QUALITY: ', self.book_quality)
-        # print('PRODUCT QUALITY: ', self.product.quality_set)
-        print('QUALITY: ', self.book_quality.price_factor)
-        print('QUANTITY: ', self.quantity)
-        print('TEST: ', self.quantity * self.product.price * self.book_quality.price_factor)
         self.lineitem_total = (self.product.price * self.book_quality.price_factor) * self.quantity
         super(OrderLineItem, self).save(*args, **kwargs)
 

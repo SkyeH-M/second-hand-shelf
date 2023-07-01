@@ -81,7 +81,7 @@ class BookReview(models.Model):
     product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name="user_reviews", on_delete=models.CASCADE)
     stars = models.IntegerField(choices=STAR_CHOICES)
-    content = models.TextField(blank=True, null=True)
+    content = models.TextField(blank=True, null=True, max_length=3000)
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
