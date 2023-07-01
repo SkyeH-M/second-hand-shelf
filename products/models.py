@@ -30,10 +30,10 @@ class Product(models.Model):
     blurb = models.TextField()
     has_quality = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    averagerating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
+    averagerating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True, editable=False)
     image_link = models.ImageField(null=True, blank=True)
     # Very Academy
-    users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True)
+    users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True, editable=False)
 
     def get_rating(self):
         """ Find average book rating """

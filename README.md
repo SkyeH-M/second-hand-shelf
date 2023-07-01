@@ -305,5 +305,32 @@ How to Clone
 | 4. Easily see what I've searched for and the number of results | Yes, the search query is quoted back to the user above the results and this message shows how many products matched that specific criteria | ![Products found](/docs/images/products-found.png) |
 | 5. Be shown on the book details page whether a particular book is in my wishlist | Yes, the 'add to wishlist' button changes to a 'remove from wishlist' button when clicked the signify that it's been added/already in the user's wishlist | ![Wishlist on details page](/docs/images/remove-from-wishlist.png) |
 | Purchasing and Checkout | | |
-| 1. 
+| 1. Easily select the quantity of a book when purchasing it | Yes, there is a quantity selector box on the book details page that can be used to adjust the quantity of a book added to the bag.  | ![Quantity selector](/docs/images/quantity-selector.png) |
+| 2. Easily select the quality of a book when purchasing it | Yes, users can select the quality of book they wish to purchase on the book details page, the quality selected determines the price of the item. The quality they have chosen is reiterated to them in messages and on the order summary encase they want to change their mind | ![Quality selector](/docs/images/quality-selector.png) |
+| 3. View items in my bag to be purchased | Yes, users can click the bag icon in the navbar to be taken to their shopping bag where a summary of their order is displayed. When an item is added to the bag a success message is shown to confirm this action and give an updated bag summary| ![Bag summary](/docs/images/shopping-bag.png) |
+| 4. Adjust the quantity of individual items in my bag | Yes, on the 'Shopping Bag' page there is a quantity selector to allow users to change and update the quantities of individual books in their order | ![Bag quantity selector](/docs/images/bag-quantity-selector.png) |
+| 5. Easily enter my payment information | Yes, users can simply enter their delivery information which when logged in can be saved and autofilled to expedite the process, then must enter their card number, expiry date, and CVC | ![Payment details](/docs/images/payment.png) |
+| 6. Feel my personal and payment information is safe and secure | Yes, payment information is handled by Stripe with none of this information being stored in the site database. Stripe is a certified PCI (Payment Card Industry) Service Provider which shows users that their information is safe. Personal information stored by the site would not be sold or reused for any purpose beyond allowing the registration of users, and the completion of orders | |
+| 7. View an order confirmation about checkout | Yes, upon the completion of the checkout users are redirected to a page that details their order confirmation and summary. This document is also available through the users Profile (if logged in) in their order history section | ![Order confirmation](/docs/images/order-confirmation.png) |
+| 8. Receive an email confirmation after checking out | Yes, users receive an email confirmation as soon as checkout has been completed, this message includes basic information about the order | ![Order confirmation email](/docs/images/order-confirmation-email.png) |
+| Admin and Store Management | | |
+| 1. Be able to add books | Yes, if you are logged in as the superuser you can access the product management section which brings you to a form to add new books, if an image isn't provided for this new book a default will be uploaded | ![Add a book](/docs/images/add-a-book.png) |
+| 2. Be able to edit/update a book | Yes, underneath each book in the all books and book detail pages there is an 'edit' button that when clicked brings the superuser to a pre-populated form whereby they can change any book information, including editing the price if there was a sale on | ![Edit/update a book](/docs/images/edit-a-book.png) |
+| 3. Be able to delete a book | Yes, a superuser can delete a book by clicking the 'delete' button underneath books in the all books and book detail pages and after doing so they will see a confirmation message | ![Delete a book](/docs/images/delete-a-book.gif) |
+
+### Full Testing
+
+The Second Hand Shelf site has been continually tested throughout development, including both manual and automated testing as shown above in this document
+
+* General:
+  * All navbar links direct the user to the correct page when clicked and items like Product Management do not appear unless the superuser is logged in
+  * All links throughout the site were tested and all bring users to the correct page or initiate the expected action
+  * All social media links in the footer direct the user to a new page when clicked 
+* Home page:
+  * The navbar hamburger icon drops down the navbar menu when clicked on mobile/smaller screens and each dropdown within the navbar displays correctly with links bringing users to the correct pages
+* Login page:
+  * Users must enter the correct username and password in order to login or they're met with an error message stating that this is not correct
+  * The 'forgot password' link brings users to the correct page and they are sent an email with a link to reset their password
+  * The 'remember me' radio button when clicked means that users log in information is saved for the next time they try to access their account
+* Sign up page:
 
