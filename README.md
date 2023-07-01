@@ -23,7 +23,6 @@ Second Hand Shelf is a second hand book selling website, users can browse books 
   * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
 
 * [Deployment](#deployment)
-  * [Local Deployment](#local-deployment)
 
 * [Testing](#testing)
   * [Automated Testing](#automated-testing)
@@ -216,4 +215,83 @@ Before development began I designed wireframes to aid in the creation of my site
 * [Tech Sini](https://techsini.com/multi-mockup/index.php) aided in the creation of a multi-device mockup image so that I could test the appearance and functionality of the site on multiple device sizes, and provided the image seen at the beginning of this document
 * [WAVE](https://wave.webaim.org/) Web Accessibility Evaluation Tool was used to test my site against accessibility criteria.
 * [W3C Markup Validator](https://validator.w3.org/) to validate HTML
+
+### Deployment
+
+The Second Hand Shelf is deployed using Heroku by the following steps:
+
+Elephant SQL
+1. Go to [ElephantSQL](https://www.elephantsql.com/) and either create an account or login via Github
+2. Click the 'Create New Instance' button
+3. Choose your plan (The Tiny Turtle free plan is acceptable), name your instance and leave the tags blank if you wish then click the 'Select Region' button
+4. Select a data centre that is closest to you
+5. Click the 'Review' button
+6. Double check your details then click the 'Create Instance' button
+7. Navigate to the ElephantSQL dashboard and click on the database instance name you provided for this project
+8. In the URL section copy the database URL to your clipboard
+9. We will shortly return to this tab so leave it open
+
+Heroku
+1. Log into Heroku and click the 'New' button, then the 'Create a new app' button
+2. Enter a name for your app (this must be unique), choose the region that is closest to you and click the 'Create app' button
+3. Click 'Reveal Config Vars'
+4. Navigate back to your ElephantSQL tab and ensure the database URL is copied to your clipboard
+5. On Heroku add a config var named 'DATABASE_URL' and paste your ElephantSQL database URL as the accompanying value, then click 'Add'
+6. Add all other necessary environment variables to this config var section from your project's .env file apart from the DEVELOPMENT variable
+7. Find the 'Deploy' tab for your app on Heroku and click it
+8. In the Deployment method section click 'Connect to Github', type your repo name and click 'Connect'
+9. Click 'Enable Automatic Deploys' to ensure that your Github repository and Heroku are synced if you make any further code or project changes
+10. Click 'Deploy Branch' to let Heroku begin building the site
+11. We must now initialise our empty database by clicking 'More' then 'Run console'
+12. In the terminal that has appeared type 'from second-hand-bookshop import db' and click enter
+13. Now type 'db.create_all()' and hit enter again
+14. Type 'exit()' to exit the python terminal and close the console, our Heroku database will now contain the tables and columns created from our models.py files
+15. Click the 'Open app' button to visit your built site
+
+!!!!!!!! CHECK IF THIS NEEDS EDITING FOR DEPLOYMENT PROCESS
+
+How to Fork the Second Hand Shelf
+1. Login to your Github account
+2. Navigate to the 'second-hand-bookshop' repository and click the 'Fork' button in the top right corner
+
+How to Clone
+1. Login to your Github account
+2. Navigate to the 'second-hand-bookshop' repository
+3. Click the green 'Code' button next to the 'Gitpod' button
+4. Click 'Open with Github desktop'
+5. Click the 'Choose...' button and navigate to a local path where you wish to store the cloned repository
+6. Click the 'Clone' button
+
+## Testing
+### Automated Testing
+
+### W3 Nu HTML Validator
+
+### W3C CSS Validation Service
+
+### Python Linter
+
+### Wave Testing
+
+### Lighthouse Testing
+## Desktop
+
+## Mobile
+
+## Improvements Made
+
+## Manual Testing
+### Testing User Stories
+
+| User Story | Was this met? | Evidence |
+| --- | --- | --- |
+| Viewing and Navigation | | |
+| 1. Ensure the site is responsive across device sizes | Yes, the site was designed using a mobile first framework to ensure responsivity, all text is readable, and all functionality is available no matter the screen size | ![Responsivity Gif](/docs/images/responsivity.gif) |
+| 2. View a large range of books for sale | Yes, There are over 100 products available on the site to ensure a wide range of books can be viewed and bought | ![Products count](/docs/images/products-count.png) |
+| 3. View individual product details | Yes, a book's title or cover image can be clicked to bring a user to the product details page for that product | ![Product details page](/docs/images/product-details-view.gif) |
+| 4. Easily view the total of purchases at any time | Yes, the shopping bag icon in the navbar automatically updates whenever a user adds or edits their shopping bag. A message giving a summary of the bag change also appears | ![View bag total](/docs/images/view-bag.png) |
+| 5. View which books are in my wishlist | Yes, the wishlist is accessible from the navbar where users can view and manage their wishlist items, the button on book details to add a book to a users wishlist also changes to say 'remove from wishlist' when clicked to alert the user that this title is already in their wishlist | ![Remove from Wishlist button](/docs/images/remove-from-wishlist.png) |
+| 6. View book reviews and ratings from other users | Yes, users can see reviews from all other users who have left them for each particular book, they also see an aggregated rating out of 5 comprised of the ratings from all users. You can see that for reviews submitted by another user there are no edit or delete buttons as only the reviewer themselves can perform these functions | ![User reviews](/docs/images/user-reviews.png) |
+| Registration and User Accounts | | |
+
 
