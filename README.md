@@ -197,6 +197,7 @@ Before development began I designed wireframes to aid in the creation of my site
 * [ALLY](https://color.a11y.com/) was used to test for colour contrast issues on the site
 * [AWS](https://aws.amazon.com/) to hold media files
 * [Bootstrap](https://getbootstrap.com/) was utilised to create a core html structure similar to Boutique Ado so that my time could be spend on providing functionality
+* [CI Python Linter](https://pep8ci.herokuapp.com/#)
 * [Coolors](https://coolors.co/) to create my colour palette for this README document
 * [ElephantSQL](https://www.elephantsql.com/) was used to host the database for this site
 * [Favicon](https://favicon.io/) was utilised to create a Favicon for my site's browser tab
@@ -210,7 +211,6 @@ Before development began I designed wireframes to aid in the creation of my site
 * [Jigsaw W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to validate CSS used
 * [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) was used as a templating language 
 * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) to test the quality and responsiveness of each page on the site
-* [Python Checker](https://www.pythonchecker.com/) to ensure PEP8 compliance for Python code
 * [Tech Sini](https://techsini.com/multi-mockup/index.php) aided in the creation of a multi-device mockup image so that I could test the appearance and functionality of the site on multiple device sizes, and provided the image seen at the beginning of this document
 * [WAVE](https://wave.webaim.org/) Web Accessibility Evaluation Tool was used to test my site against accessibility criteria.
 * [W3C Markup Validator](https://validator.w3.org/) to validate HTML
@@ -300,7 +300,37 @@ No errors were found on any of the JavaScript files or exerpts used, the screens
 
 ### Python Linter
 
-The following files were tested with a [Python Linter](https://pep8ci.herokuapp.com/)
+The following files were tested with a [Python Linter](https://pep8ci.herokuapp.com/) to ensure PEP8 compliance, and all files apart from settings.py passed with no errors.
+
+* [Bag contexts.py](/docs/images/bag-contexts.png)
+* [Bag views.py](/docs/images/bag-views.png)
+* [Bag urls.py](/docs/images/bag-urls.png)
+* [Bookshop urls.py](/docs/images/bookshop-urls.png)
+* [Bookshop settings.py](/docs/images/settings.png)
+* settings.py in the Bookshop app was the only file to show line length warnings, these affected the AUTH_PASSWORD_VALIDATORS and were not created, or updated by myself so I have left them as Django intended
+* [Checkout admin.py](/docs/images/checkout-admin.png)
+* [Checkout context.py](/docs/images/checkout-context.png)
+* [Checkout forms.py](/docs/images/checkout-forms.png)
+* [Checkout models.py](/docs/images/checkout-models.png)
+* [Checkout urls.py](/docs/images/checkout-urls.png)
+* [webhook-handler.py](/docs/images/webhook-handler.png)
+* [webhooks.py](/docs/images/webhooks.png)
+* [Contact admin.py](/docs/images/contact-admin.png)
+* [Contact forms.py](/docs/images/contact-forms.png)
+* [Contact models.py](/docs/images/contact-models.png)
+* [Contact urls.py](/docs/images/contact-urls.png)
+* [Contact views.py](/docs/images/contact-views.png)
+* [Home urls.py](/docs/images/home-urls.png)
+* [Home views.py](/docs/images/home-views.png)
+* [Products views.py](/docs/images/product-views.png)
+* [Products admin.py](/docs/images/products-admin.png)
+* [Products forms.py](/docs/images/products-forms.png)
+* [Products models.py](/docs/images/products-models.png)
+* [Products urls.py](/docs/images/products-urls.png)
+* [Profile forms.py](/docs/images/profile-forms.png)
+* [Profile urls.py](/docs/images/profile-urls.png)
+* [Profile models.py](/docs/images/profiles-models.png)
+* [Profile views.py](/docs/images/profiles-views.png)
 
 ### Wave Testing
 

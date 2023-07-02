@@ -8,6 +8,7 @@ from .forms import UserProfileForm
 from products.models import Product
 from checkout.models import Order, OrderLineItem
 
+
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -36,14 +37,6 @@ def profile(request):
 
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
-    # bag = request.session.get('bag', {})
-    # for item_data in bag.items():
-    #     product = Product.objects.get(id=item_id)
-    #     for quality in item_data['items_by_quality'].items():
-    #         book_text_quality = OrderLineItem(
-    #             book_quality=product.text_quality,
-    #         )
-
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'
@@ -53,7 +46,6 @@ def order_history(request, order_number):
     context = {
         'order': order,
         'from_profile': True,
-        # 'quality': product.text_quality,
     }
 
     return render(request, template, context)
@@ -75,7 +67,8 @@ def add_to_wishlist(request, id):
     product = get_object_or_404(Product, id=id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
-        messages.success(request, f"Removed {product.title} from your wishlist")
+        messages.success(request, f"Removed {product.title} "
+                         f"from your wishlist")
     else:
         product.users_wishlist.add(request.user)
         messages.success(request, f'Added {product.title} to your wishlist')

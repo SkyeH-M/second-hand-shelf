@@ -71,15 +71,20 @@ def book_detail(request, product_id):
     if request.method == 'POST':
         quality_id = request.POST.get('quality')
         if quality_id:
-            selected_quality = get_object_or_404(Quality, pk=quality_id, product=product)
+            selected_quality = get_object_or_404(
+                                                 Quality,
+                                                 pk=quality_id,
+                                                 product=product
+            )
     context = {
         'product': product,
         'is_in_wishlist': is_in_wishlist,
         'selected_quality': selected_quality,
     }
     template = 'products/book-detail.html'
-    
+
     return render(request, template, context)
+
 
 @login_required
 def add_book(request):
@@ -102,6 +107,7 @@ def add_book(request):
 
     return render(request, template, context)
 
+
 @login_required
 def edit_book(request, product_id):
     """ Edit a product in the store """
@@ -110,7 +116,8 @@ def edit_book(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Successfully updated book: "{product.title}"')
+            messages.success(request, f'Successfully updated book: '
+                             f"'{product.title}'")
             return redirect(reverse('book_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product. Please \
@@ -126,6 +133,7 @@ def edit_book(request, product_id):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def delete_book(request, product_id):
@@ -143,8 +151,12 @@ def add_book_review(request, product_id):
     # Add Review
     if request.method == 'POST' and request.user.is_authenticated:
         reviews = product.reviews.all()
-        if reviews.filter(user=request.user).exists() and request.user.is_superuser == False:
-            messages.info(request, f"Sorry you've already reviewed {product.title}, you can edit your review by clicking the edit button shown on your review card.")
+        if reviews.filter(user=request.user).exists():
+            if request.user.is_superuser is False:
+                messages.info(request, f"Sorry you've already reviewed "
+                              f"{product.title}, you can edit your "
+                              f"review by clicking the edit button shown"
+                              f" on your review card.")
             return redirect(reverse('book_detail', args=[product.id]))
         else:
             stars = request.POST.get('stars', 3)
@@ -156,10 +168,12 @@ def add_book_review(request, product_id):
         # below averagerating code suggested by Joshua from tutor support
             product.averagerating = product.get_rating()
             product.save()
-            messages.success(request, f"Thanks for reviewing '{product.title}'")
+            messages.success(request, f"Thanks for reviewing "
+                             f"'{product.title}'")
         return redirect('book_detail', product_id=product_id)
 
     return render(request, context)
+
 
 @login_required
 def edit_book_review(request, bookreview_id):
@@ -173,17 +187,20 @@ def edit_book_review(request, bookreview_id):
                 if form.is_valid():
                     review = form.save(commit=False)
                     review.save()
-                    messages.success(request, f"You've successfully updated your review of {product.title}")
+                    messages.success(request, f"You've successfully updated your "
+                                     f"review of {product.title}")
                     return redirect(reverse('book_detail', args=[product.id]))
             else:
                 form = BookReviewForm(instance=bookreview)
-            return render(request, 'products/edit-book-review.html', {'form': form})
+            return render(request, 'products/edit-book-review.html',
+                          {'form': form})
         else:
             messages.warning('Sorry, you can only edit your own reviews')
             return redirect(reverse('book_detail', args=[product.id]))
     else:
         messages.warning('You must be logged in to edit your reviews')
         return redirect(reverse('account_login'))
+
 
 @login_required
 def delete_book_review(request, bookreview_id):
@@ -193,7 +210,8 @@ def delete_book_review(request, bookreview_id):
         product = bookreview.product
         if request.user == bookreview.user:
             bookreview.delete()
-            messages.success(request, 'Your book review was successfully deleted')
+            messages.success(request, 'Your book review was '
+                             f'successfully deleted')
         return redirect(reverse('book_detail', args=[product.id]))
     else:
         messages.warning('You must be logged in to edit your reviews')
