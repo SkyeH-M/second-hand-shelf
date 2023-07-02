@@ -10,17 +10,12 @@ from .forms import ContactForm
 def contact_us(request):
     """
     Display Contact Us page and form, then
-    sends this form to site manager 
+    sends this form to site manager
     """
     if request.method == 'POST':
         """ Send user an email to acknowledge their message """
         form = ContactForm(request.POST)
         if form.is_valid():
-        # name = form['name'],
-        # email = form['email'],
-        # subject = form['subject'],
-        # content = form['content']
-        # Below method prints only values whereas above prints whole form
             name = request.POST.get('name'),
             email = request.POST.get('email'),
             subject = request.POST.get('subject'),
@@ -28,11 +23,13 @@ def contact_us(request):
             contact = form.save()
             customer_email = email
             email_subject = render_to_string(
-                'contact/contact_confirmation_emails/contact-email-subject.txt',
+                'contact/contact_confirmation_emails/' +
+                'contact-email-subject.txt',
                 {'contact': contact})
             email_body = render_to_string(
                 'contact/contact_confirmation_emails/contact-email-body.txt',
-                {'contact': contact, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+                {'contact': contact,
+                    'contact_email': settings.DEFAULT_FROM_EMAIL})
 
             send_mail(
                 email_subject,

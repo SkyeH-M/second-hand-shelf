@@ -1,9 +1,9 @@
-from django import forms 
+from django import forms
 from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
-    """ 
+    """
     Form for the contact form for users to submit
     queries or comments
     """
@@ -24,7 +24,7 @@ class ContactForm(forms.ModelForm):
         widget=forms.Textarea(
             attrs={'class': 'form-control',
                    'placeholder': 'Add your message here'}))
-    
+
     class Meta:
         model = Contact
         exclude = ('date-submitted',)

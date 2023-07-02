@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.models import Avg
 
+
 class Category(models.Model):
 
     class Meta:
@@ -13,13 +14,14 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_friendly_name(self):
         return self.friendly_name
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     title = models.CharField(max_length=254)
     author = models.CharField(max_length=254)
@@ -30,10 +32,12 @@ class Product(models.Model):
     blurb = models.TextField()
     has_quality = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    averagerating = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True, editable=False)
+    averagerating = models.DecimalField(max_digits=4, decimal_places=2,
+                                        null=True, blank=True, editable=False)
     image_link = models.ImageField(null=True, blank=True)
     # Very Academy
-    users_wishlist = models.ManyToManyField(User, related_name="user_wishlist", blank=True, editable=False)
+    users_wishlist = models.ManyToManyField(User, related_name="user_wishlist",
+                                            blank=True, editable=False)
 
     def get_rating(self):
         """ Find average book rating """
@@ -65,7 +69,7 @@ class Quality(models.Model):
 class BookReview(models.Model):
     """
     A model for users to rate and reviews books, and for users
-    to see ratings and reviews from all other users 
+    to see ratings and reviews from all other users
     """
     class Meta:
         ordering = ['-date_added']
@@ -78,8 +82,10 @@ class BookReview(models.Model):
         (1, '1'),
     )
 
-    product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
-    user = models.ForeignKey(User, related_name="user_reviews", on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name="reviews",
+                                on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="user_reviews",
+                             on_delete=models.CASCADE)
     stars = models.IntegerField(choices=STAR_CHOICES)
     content = models.TextField(blank=True, null=True, max_length=3000)
     date_added = models.DateTimeField(auto_now_add=True)

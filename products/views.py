@@ -8,6 +8,7 @@ from .models import Product, Category, BookReview, Quality
 from .forms import ProductForm, BookReviewForm
 from profiles.forms import UserProfile
 
+
 def all_books(request):
     """ A view to display all books, including sorting and search queries """
     products = Product.objects.all()
@@ -22,7 +23,7 @@ def all_books(request):
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('title')) 
+                products = products.annotate(lower_name=Lower('title'))
             if sortkey == 'category':
                 sortkey = 'category__name'
             if sortkey == 'bookreview':
@@ -43,7 +44,7 @@ def all_books(request):
             if not query:
                 messages.error(request, "Please enter search criteria")
                 return redirect(reverse('books'))
-            
+
             queries = Q(title__icontains=query) | Q(blurb__icontains=query)
             products = products.filter(queries)
 
@@ -55,7 +56,7 @@ def all_books(request):
         'current_categories': categories,
         'current_sorting': current_sorting,
     }
-    
+
     return render(request, 'products/books.html', context)
 
 
@@ -66,7 +67,7 @@ def book_detail(request, product_id):
     selected_quality = None
     if product.users_wishlist.filter(id=request.user.id).exists():
         is_in_wishlist = True
-    
+
     if request.method == 'POST':
         quality_id = request.POST.get('quality')
         if quality_id:

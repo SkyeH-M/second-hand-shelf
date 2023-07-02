@@ -8,12 +8,10 @@ class ProductAdmin(admin.ModelAdmin):
         'title',
         'category',
         'price',
-        # 'rating',
         'image_link',
     )
-    # exclude = ('users_wishlist',)
 
-    readonly_fields=('users_wishlist', 'averagerating',)
+    readonly_fields = ('users_wishlist', 'averagerating',)
     ordering = ('sku',)
 
 
@@ -32,6 +30,7 @@ class BookReviewAdmin(admin.ModelAdmin):
         'content',
         'date_added',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)

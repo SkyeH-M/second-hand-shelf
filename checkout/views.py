@@ -92,7 +92,9 @@ def checkout(request):
                         for quality, quantity in item_data['items_by_quality'].items():
                             quality_instance = None
                             if Quality.objects.filter(product=product, name=text_quality).exists():
-                                quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
+                                # CHECK BELOW LINE AS IT BROKE BUT ADDITION SEEMS TO WORK
+                                quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
+                                # quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
                             else:
                                 quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
                             order_line_item = OrderLineItem(
