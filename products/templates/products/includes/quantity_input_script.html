@@ -6,10 +6,11 @@
     * which prevents any errors 
     */
     function handleEnableDisable(itemId, quality) {
+        var currentValue;
         if (quality) {
-            var currentValue = parseInt($(`.quality_${itemId}_${quality}`).val());
+            currentValue = parseInt($(`.quality_${itemId}_${quality}`).val());
         } else {
-            var currentValue = parseInt($(`.id_qty_${itemId}`).val());
+            currentValue = parseInt($(`.id_qty_${itemId}`).val()); /* removed var */
         }
 
         var minusDisabled = currentValue < 2;
@@ -41,14 +42,15 @@
 
     // Increment quantity
     $('.increment-qty').click(function(e) {
+        var allQuantityInputs;
        e.preventDefault();
        var itemId = $(this).data('item_id');
        var quality = $(this).data('quality');
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
        if (quality) {
-          var allQuantityInputs = $(`.input-group-${itemId} input[data-quality='${quality}']`);
+          allQuantityInputs = $(`.input-group-${itemId} input[data-quality='${quality}']`);
        } else {
-          var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+          allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
        }
        var currentValue = parseInt($(closestInput).val());
        $(allQuantityInputs).val(currentValue + 1);
@@ -57,14 +59,15 @@
 
     // Decrement quantity
     $('.decrement-qty').click(function(e) {
+        var allQuantityInputs;
        e.preventDefault();
        var itemId = $(this).data('item_id');
        var quality = $(this).data('quality');
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
        if (quality) {
-          var allQuantityInputs = $(`.input-group-${itemId} input[data-quality='${quality}']`);
+          allQuantityInputs = $(`.input-group-${itemId} input[data-quality='${quality}']`);
        } else {
-          var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+          allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
        }
        var currentValue = parseInt($(closestInput).val());
        $(allQuantityInputs).val(currentValue - 1);

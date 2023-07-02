@@ -31,7 +31,7 @@ card.addEventListener('change', function (event) {
                 <i class="fas fa-times"></i>
             </span>
             <span>${event.error.message}</span>
-        `
+        `;
         $(errorDiv).html(html);
     } else {
         errorDiv.textContent = '';
@@ -96,7 +96,7 @@ form.addEventListener('submit', function(ev) {
                     $('#payment-form').fadeToggle(100);
                     $('#loading-overlay').fadeToggle(100);
                     card.update({ 'disabled': false });
-                    $('#submit-button').attr("disabled", false)
+                    $('#submit-button').attr("disabled", false);
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
                         form.submit();
@@ -105,5 +105,5 @@ form.addEventListener('submit', function(ev) {
             });
         }).fail(function() {
             location.reload();
-        })
+        });
     });

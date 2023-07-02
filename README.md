@@ -400,6 +400,16 @@ The Second Hand Shelf site has been continually tested throughout development, i
 * To establish the beginning of my products.json file I utilised the data from Github user Benoitvallon with his [100 Best Books](https://github.com/benoitvallon/100-best-books) project. I altered and formatted this json file to fit the needs of my project and added additional books to fill out different genres
 
 ### Media
-* 
+* The Title, author, page length, language, year of release and blurb for each book not found within the 100 Best Books attributed above were sourced from [Goodreads](https://www.goodreads.com/) 
+* The book cover images for Classic Fiction (those from the 100 Best Books) were sourced from Benoitvallon's Github repository
+* All books in the Horror/Mystery section were sourced from [Waterstones](https://www.waterstones.com/)
+* Images for the books in the Modern Fiction genre were sourced from Goodreads
+* The book cover for the title 'Maggots Screaming' was sourced from [Goulish Books](https://perpetualpublishing.com/product/maggots-screaming/)
+* The hero image on the Home page was sourced from Ugur Akdemir on [Unsplash](https://unsplash.com/photos/wBhsiYCkSIs)
+* The icon used to create the Favicon for the site was sourced from [Flaticon](https://www.flaticon.com/free-icon/library_405692?term=book&page=1&position=61&origin=search&related_id=405692) created by Freepik
+* All other text was created by myself (Skye Hillier-Milton) 
 
 ## Acknowledgements
+* I'd like to acknowledge the authors of code sections and other helpful material credited above as without their work this project may not have achieved what it has
+* I'd like to thank my college mentor Robert Mclaughlin, and my CI mentor Akshat Garg for their input and advice throughout the development of this project and throughout the course itself
+* I'd finally like to acknowledge the work of multiple different members of the Code Institute Tutor Support who were vital in the resolving of several bugs, and the implementation of some functionality
