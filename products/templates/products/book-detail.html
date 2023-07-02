@@ -61,8 +61,8 @@
                     <p class="mb-0"><small class=text-muted>Year of release: {{ product.release_year }}</small></p>
                     <p id="product-price" data-price="{{ product.price }}"></p>
                     <!-- <input type="hidden" id="hidden-price" value="{{ product.price }}"> -->
-                    <!-- <p class="mb-0" id="calculated-price"></p> -->
-                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                    <p class="mb-0" id="calculated-price" class="lead mb-0 font-weight-bold text-left"></p>
+                    <!-- <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p> -->
                     {% if product.category %}
                         <p class="small mt-1 mb-0">
                             <a class="text-muted" href="{% url 'books' %}?category={{ product.category.name }}">

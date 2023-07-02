@@ -5,6 +5,7 @@ from decimal import Decimal
 from products.models import Product
 from checkout.models import Order
 
+
 def checkout_bag_contents(request):
     bag_items = []
     total = 0
@@ -51,8 +52,7 @@ def checkout_bag_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
-    grand_total = delivery + total 
+    grand_total = delivery + total
 
     context = {
         'bag_items': bag_items,

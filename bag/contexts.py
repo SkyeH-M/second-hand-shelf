@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 from checkout.models import OrderLineItem
 
+
 def bag_contents(request):
 
     bag_items = []
@@ -45,19 +46,17 @@ def bag_contents(request):
                     'quality': quality,
                     'text_quality': text_quality,
                     'amended_price': quantity * product.price * Decimal(quality),
-                    # item_price shows individually calculated price per product
                     'item_price': item_price
                 })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
-        # free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - (total + delivery)
     else:
         delivery = 0
         free_delivery_delta = 0
-    
-    grand_total = delivery + total 
+
+    grand_total = delivery + total
 
     context = {
         'bag_items': bag_items,
@@ -69,6 +68,4 @@ def bag_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
     }
-    print(f"Bag: {bag}")
     return context
-

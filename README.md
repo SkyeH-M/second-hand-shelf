@@ -267,22 +267,40 @@ How to Clone
 ### W3 Nu HTML Validator
 The W3 Nu HTML Validator was used multiple times throughout development to ensure the HTML used was all up to industry standards, the results are as follows:
 
-* [Home page]()
-* [Sign Up page]()
-* [Log In page]()
-* [Product Management page]()
-* [Wishlist page]()
-* [Profile page]()
-* [Contact Us page]()
-* [All Books page]()
-* [Book Detail page]()
-* [Shopping Bag page]()
-* [Checkout page]()
-* [Checkout Success page]()
+* [Home page](/docs/images/home-html.png)
+* [Sign Up page](/docs/images/sign-up-html.png)
+* [Log In page](/docs/images/login-html.png)
+* [Product Management page](/docs/images/product-management-html.png)
+* [Wishlist page](/docs/images/wishlist-html.png)
+* [Profile page](/docs/images/profile-html.png)
+* [Contact Us page](/docs/images/contact-html.png)
+* [All Books page](/docs/images/all-books-html.png)
+* [Book Detail page](/docs/images/book-detail-html.png)
+* [Shopping Bag page](/docs/images/shopping-bag-html.png)
+* [Checkout page](/docs/images/checkout-html.png)
+* [Checkout Success page](/docs/images/checkout-success-html.png)
 
 ### W3C CSS Validation Service
+The W3C CSS Validation Service was used to validate the two CSS files contained within the project, the results are as follows:
+
+* [Base.css](/docs/images/base-css-validator.png)
+* [Profile.css](/docs/images/profile-css-validator.png)
+
+The only CSS warnings given were '-webkit-user-select', '-moz-user-select', and '-ms-user-select' are vendor extensions so I didn't feel these needed to be addressed as they don't comprise the quality of the css
+
+### JS Hint
+JS Hint was used to validate the JavaScript found throughout the project with the results being:
+
+* [Profile](/docs/images/profile-JS-Hint.png)
+* [Stripe](/docs/images/Stripe-JS-Hint.png)
+* [Quality Price Calculator](/docs/images/quality-price-calculator-JS-Hint.png)
+* [Quantity Input Calculator](/docs/images/quantity-input-calculator-JS-Hint.png)
+
+No errors were found on any of the JavaScript files or exerpts used, the screenshots show 'One undefined variable' being listed for multiple files but doesn't provide an explanation of this, or which variable it thinks is undefined. For this reason, along with me manually checking each file I have chosen to ignore this warning
 
 ### Python Linter
+
+The following files were tested with a [Python Linter](https://pep8ci.herokuapp.com/)
 
 ### Wave Testing
 

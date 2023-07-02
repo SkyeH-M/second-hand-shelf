@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -69,7 +70,6 @@ def checkout(request):
             order.original_bag = json.dumps(bag)
             current_bag = checkout_bag_contents(request)
             order.delivery = current_bag['delivery']
-            print(f"CURRENT BAG {current_bag}")
             order.grand_total = current_bag['grand_total']
             order.save()
             for item_id, item_data in bag.items():

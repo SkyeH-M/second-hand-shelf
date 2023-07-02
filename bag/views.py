@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
 from products.models import Product
+
 
 def view_bag(request):
     """ A view that renders the bag contents page """
@@ -11,7 +13,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
-    product = get_object_or_404(Product, pk=item_id)    
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     quality = None
@@ -33,17 +35,23 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if quality in bag[item_id]['items_by_quality'].keys():
                 bag[item_id]['items_by_quality'][quality] += quantity
-                messages.success(request, f"Updated quality '{text_quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
+                messages.success(request,
+                                 f"Updated quality '{text_quality}' "
+                                 f"{product.title} quantity to "
+                                 f"{bag[item_id]['items_by_quality'][quality]}") 
             else:
                 bag[item_id]['items_by_quality'][quality] = quantity
-                messages.success(request, f"Added quality '{text_quality}' {product.title} to your bag")
+                messages.success(request, f"Added quality '{text_quality}' "
+                                 f"{product.title} to your bag")
         else:
             bag[item_id] = {'items_by_quality': {quality: quantity}}
-            messages.success(request, f"Added quality '{text_quality}' {product.title} to your bag")
-    else: 
+            messages.success(request, f"Added quality '{text_quality}' "
+                             f"{product.title} to your bag")
+    else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
-            messages.success(request, f"Updated {product.title} quantity to {bag[item_id]}")
+            messages.success(request, f"Updated {product.title}"
+                             f"quantity to {bag[item_id]}")
         else:
             bag[item_id] = quantity
             messages.success(request, f"Added {product.title} to your bag")
@@ -53,7 +61,9 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    """ Adjust the quantity of the specified product to the specified amount """
+    """
+    Adjust the quantity of the specified product to the specified amount
+    """
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     quality = None
@@ -72,12 +82,15 @@ def adjust_bag(request, item_id):
     if quality:
         if quantity > 0:
             bag[item_id]['items_by_quality'][quality] = quantity
-            messages.success(request, f"Updated quality '{text_quality}' {product.title} quantity to {bag[item_id]['items_by_quality'][quality]}")
+            messages.success(request, f"Updated quality '{text_quality}' "
+                             f"{product.title} quantity to "
+                             f"{bag[item_id]['items_by_quality'][quality]}")
         else:
             del bag[item_id]['items_by_quality'][quality]
             if not bag[item_id]['items_by_quality']:
                 bag.pop(item_id)
-                messages.success(request, f"Removed quality '{text_quality}' {product.title} from your bag")
+                messages.success(request, f"Removed quality '{text_quality}' "
+                                 f"{product.title} from your bag")
     else:
         if quantity > 0:
             bag[item_id] = quantity
@@ -94,7 +107,7 @@ def adjust_bag(request, item_id):
 def remove_from_bag(request, item_id):
     """ Remove the item from the bag """
 
-    try: 
+    try:
         product = get_object_or_404(Product, pk=item_id)
         quality = None
         if 'book_quality' in request.POST:
@@ -113,8 +126,8 @@ def remove_from_bag(request, item_id):
             del bag[item_id]['items_by_quality'][quality]
             if not bag[item_id]['items_by_quality']:
                 bag.pop(item_id)
-                messages.success(request, f"Removed quality '{text_quality}' {product.title} from your bag")
-
+                messages.success(request, f"Removed quality '{text_quality}' "
+                                 f"{product.title} from your bag")
         else:
             bag.pop(item_id)
             messages.success(request, f"Removed {product.title} from your bag")
