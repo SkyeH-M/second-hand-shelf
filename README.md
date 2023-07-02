@@ -34,7 +34,7 @@ Second Hand Shelf is a second hand book selling website, users can browse books 
   * [Bugs](#bugs)
 
 * [Credits](#credits)
-  * [Code Sections](#code-sections)
+  * [Code Sections/Tutorials](#code-sectionstutorials)
   * [Media](#media)
   * [Text](#text)
   * [Acknowledgements](#acknowledgements)
@@ -388,8 +388,18 @@ The Second Hand Shelf site has been continually tested throughout development, i
 | 6. My most problematic and time-consuming bug was a bug related to the book quality being accurately logged and representing during and after checkout. As seen [here](/docs/bugs/bug6.png) in the admin an order would display the correct quality and price factor in the bag but after checkout was completed each book would be stored as a default quality of 'Great' meaning pricing was not being accurately calculated | Yes | With the help of tutor support I altered the book_quality field on my OrderLineItem model to a ForeignKey pointing to the Quality model so I could access it's price_factor field. I then overwrote the save function for the OrderLineItem model to calculate the lineitem_total by multiplying the product's full price by the relevant book quality price factor, multiplied by the quantity of items bought. I then had to calculate a quality_instance based on the product and it's price factor in order to save this to the OrderLineItem model so the price could be represented accurately in the checkout HTML templates |
 
 ## Credits
-### Code Sections
+### Code Sections/Tutorials
+* For the automatically updating copyright date I used [Kerstin Martin's](https://kerstinmartin.com/blog/copyright-notice) blog post
+* To position my footer properly I used [Matthew James Taylor's](https://matthewjamestaylor.com/bottom-footer#problem) Bottom Footer article and used Flexbox to accomplish this
+* To develop my Contact model I took inspiration from Github user (and CI alumni) [ShonaOB](https://github.com/ShonaOB/terrariumsupplies/blob/main/communications/models.py) and adapted the functionality of this to fit my individual needs
+* To develop the foundation of my wishlist functionality I used the [Very Academy](https://github.com/veryacademy/django-ecommerce-project/tree/main/Part-07%20Wish%20List) Django Ecommerce project Github repo as inspiration 
+* For the book rating and review functionality I utilised Github user [SteinOveHelset's](https://github.com/SteinOveHelset/saulgadgets/tree/master/apps/store) SaulGadgets repo as a base and altered the design and functionality to fit the book review format, also adding defensive programming
+* For the functionality of the star rating radio input itself I utilised [this](https://bbbootstrap.com/snippets/bootstrap-rate-your-experience-template-star-ratings-30972576) Bootstrap example and altered it to my needs
+
+### Other Credits
+* To establish the beginning of my products.json file I utilised the data from Github user Benoitvallon with his [100 Best Books](https://github.com/benoitvallon/100-best-books) project. I altered and formatted this json file to fit the needs of my project and added additional books to fill out different genres
 
 ### Media
+* 
 
 ## Acknowledgements

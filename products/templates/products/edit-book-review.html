@@ -17,21 +17,6 @@
         <form method="POST" action="" class="review-form text-center">
             {% csrf_token %}
             {{ form | crispy }}
-            <!-- <div class="form-field">
-                <p>Note: Adding a star rating is required to submit a review</p>
-                <label>Give this book a star rating<span class="required">*</span></label>
-                <div class="col mb-3 rating">
-                    <input type="radio" name="stars" value="1" id="1"><label for="1">☆</label> 
-                    <input type="radio" name="stars" value="2" id="2"><label for="2">☆</label>
-                    <input type="radio" name="stars" value="3" id="3"><label for="3">☆</label>
-                    <input type="radio" name="stars" value="4" id="4"><label for="4">☆</label>
-                    <input type="radio" name="stars" value="5" id="5" checked><label for="5">☆</label>
-                </div> 
-            </div>
-            <div class="form-field content-field">
-                <label">Give a written review?</label>
-                <textarea class="textarea mb-5 form-control" name="content">{{ review.content }}</textarea>
-            </div> -->
             <button class="btn submit-btn btn-black text-uppercase">Submit Edited Review</button>
         {% else %}
             <p class="text-center">Please <a class="link" href="{% url 'account_signup' %}">Register</a> or <a class="link" href="{% url 'account_login' %}">Login</a> to review a book.</p>
