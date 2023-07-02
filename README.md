@@ -265,6 +265,20 @@ How to Clone
 ### Automated Testing
 
 ### W3 Nu HTML Validator
+The W3 Nu HTML Validator was used multiple times throughout development to ensure the HTML used was all up to industry standards, the results are as follows:
+
+* [Home page]()
+* [Sign Up page]()
+* [Log In page]()
+* [Product Management page]()
+* [Wishlist page]()
+* [Profile page]()
+* [Contact Us page]()
+* [All Books page]()
+* [Book Detail page]()
+* [Shopping Bag page]()
+* [Checkout page]()
+* [Checkout Success page]()
 
 ### W3C CSS Validation Service
 

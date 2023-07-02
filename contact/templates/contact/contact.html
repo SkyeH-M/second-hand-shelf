@@ -14,10 +14,11 @@
     <h2 class="text-center mt-2">Contact Us</h2>
     <p class="text-center">Fields marked with * are required, please fill them in</p>
     <div class="contact-form-wrapper form-group">
-        <form method="POST" action="" class="contact-form text-center">
+        <form method="POST" class="contact-form text-center">
             {% csrf_token %}
             {{ form|crispy }}
         <button class="btn submit-btn btn-black text-uppercase">Send your message</button>
+        </form>
     </div>
 </div>
 {% endblock %}

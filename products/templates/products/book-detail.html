@@ -17,14 +17,14 @@
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container my-3">
                     {% if is_in_wishlist %}
-                        <a href="{% url 'user_wishlist' product.id %}" class="btn btn-outline-black rounded-0 text-uppercase remove_from_wishlist_btn" value="{{ product.id }}">
+                        <a href="{% url 'user_wishlist' product.id %}" class="btn btn-outline-black rounded-0 text-uppercase remove_from_wishlist_btn" data-value="{{ product.id }}">
                             <span class="icon">
                                 <i class="fa-solid fa-minus"></i>
                             </span>
                             Remove from Wishlist
                         </a>
                     {% else %}
-                        <a href="{% url 'user_wishlist' product.id %}" class="btn btn-outline-black rounded-0 text-uppercase add_to_wishlist_btn" value="{{ product.id }}">
+                        <a href="{% url 'user_wishlist' product.id %}" class="btn btn-outline-black rounded-0 text-uppercase add_to_wishlist_btn" data-value="{{ product.id }}">
                             <span class="icon">
                                 <i class="fa-solid fa-star"></i>
                             </span>
@@ -51,13 +51,11 @@
                         <p>Average Rating: {{ product.get_rating|floatformat:1 }} / 5</p>
                     {% else %}
                         <p class="mb-1">Average Rating: <small>This book hasn't been rated yet</small></p>
-                        <button class="btn btn-outline-black rounded-0 text-uppercase text-black add-rating-btn mb-1">
-                            <a href="#review-form" class="text-black no-underline">Click here to Rate or Review
-                                <span class="icon">
-                                    <i class="fa-solid fa-pencil"></i>
-                                </span>
-                            </a>
-                        </button>
+                        <a href="#review-form" class="text-black no-underline btn btn-outline-black rounded-0 text-uppercase add-rating-btn mb-1">Click here to Rate or Review 
+                            <span class="icon">
+                                <i class="fa-solid fa-pencil"></i>                               
+                            </span>
+                        </a>
                     {% endif %}
                     <p class="mb-0"><small class=text-muted>Book length: {{ product.pages }} pages</small></p>
                     <p class="mb-0"><small class=text-muted>Year of release: {{ product.release_year }}</small></p>
@@ -137,10 +135,6 @@
                             {% endwith %}
                         </div>
                     </form>
-                    <!-- {% if selected_quality %}
-                        <p>Selected Quality: {{ selected_quality.name }}</p>
-                        <p>Price: {{ selected_quality.calculate_price }}</p>
-                    {% endif %} -->
                 </div>
             </div>
         </div>
