@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
@@ -11,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-skyehm-secondhandbooksh-t2yx3bjnrlu.ws-eu101.gitpod.io',
-                 'localhost']
+                 'localhost', 'second-hand-shelf.herokuapp.com']
 
 # Application definition
 
@@ -102,13 +103,17 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'bookshop.wsgi.application'
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else: 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -153,6 +158,6 @@ STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'secondhandshelf@example.com'
 DEBUG = "DEVELOPMENT" in os.environ
-
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
