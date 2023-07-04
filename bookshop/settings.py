@@ -9,7 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['second-hand-shelf-592f61246782.herokuapp.com', 'localhost', '8000-skyehm-secondhandbooksh-t2yx3bjnrlu.ws-eu101.gitpod.io']
 
