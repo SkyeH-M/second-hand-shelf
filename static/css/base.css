@@ -107,6 +107,10 @@ a.category-badge > span.badge:hover {
     right: 10px;
 }
 
+.hidden {
+    display: none;
+}
+
 .btt-link,
 .update-link,
 .remove-item {
@@ -493,6 +497,14 @@ input[name='q']::placeholder {
     padding: 40px;
 }
 
+.forgot-password {
+    color: black !important;
+}
+
+.sign-up {
+    color: black !important;
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -565,7 +577,7 @@ input[name='q']::placeholder {
         margin-bottom: 10px;
     }
 
-    #delivery-banner h4 {
+    #delivery-banner h1 {
         font-size: 1.2rem;
     }
 

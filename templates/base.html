@@ -56,18 +56,16 @@
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
            <h2 class="logo-font text-black my-0"><strong>Second Hand Shelf</strong></h2>
-              <!-- <img src="/media/logo.png" class="title-img"> -->
           </a>
         </div> 
-        <!-- hero image above search and title? or above search, below title? -->
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 mx-auto mt-0">
           <form method="GET" action="{% url 'books' %}">
             <div class="input-group w-100">
-                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search for your next read">
+                <input class="form-control border border-black rounded-0" id="search" type="text" name="q" placeholder="Search for your next read" aria-label="search bar">
                 <div class="input-group-append">
                     <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                         <span class="icon">
-                          <i class="fa-solid fa-magnifying-glass"></i>
+                          <i class="fa-solid fa-magnifying-glass" alt="magnifying glass icon"><span class="hidden">Search Button</span></i>
                         </span>
                     </button>
                 </div>
@@ -134,7 +132,7 @@
       </div>
       <div id="delivery-banner" class="row text-center">
         <div class="col text-white">
-          <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>
+          <h1 class="logo-font delivery-banner my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h1>
         </div>
       </div>
     </header>

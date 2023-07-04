@@ -3,7 +3,7 @@
 Second Hand Shelf is a second hand book selling website, users can browse books by genre, or by different filtering criteria like alphabetised title, year of release, language, price, or rating. They can also view specific offers like clearance items, or new releases. Basic functionality of the site is comprised of the user being able to register for an account, log in and out, and complete orders by paying and receiving a confirmation email. Additional functionality has been added for user experience and this will be discussed further on in the document.
 
 ![Image of my responsive site]()
-[Link to the deployed site]()
+[Link to the deployed site](https://second-hand-shelf-592f61246782.herokuapp.com/)
 
 ## Contents 
 
@@ -162,7 +162,7 @@ FINISH !!!!!!!!
 * [Lighthouse Accessibility Score]() !!!! FINISH
 * I used the [Ally Color Contrast Accessibility Validator](https://color.a11y.com/) to check for any colour contrast issues and received the following result
 ![ALLY result](/docs/images/ally.png)
-* WAVE !!! FINISH
+* [WAVE](https://wave.webaim.org/) was utilised to test the web accessibility of each page on the site, the results of which are fully explored in the Automated Testing section further down in this document
 
 ### Wireframes
 Before development began I designed wireframes to aid in the creation of my site, when these were created I didn't intend on including a contact form so unfortunately this is missing from the wireframes
@@ -334,6 +334,12 @@ The following files were tested with a [Python Linter](https://pep8ci.herokuapp.
 * [Profile views.py](/docs/images/profiles-views.png)
 
 ### Wave Testing
+* I assessed my site using WAVE before and after deployment to ensure there were no web accessibility issues present. The results of these tests are below:
+* [Home page](/docs/images/WAVE-Home.png), the only warning present for the home page referred to a 'Skipped heading level' this relates to the page title being a h2, and the delivery banner being h1. If I altered this so that the title was a h1 and the delivery banner was lower I receive a warning about there not being a h1 heading on the mobile version of the page. Therefore, I am happy to leave this warning as it is
+* [All Books page](/docs/images/Wave-all-books.png), there are 218 warnings listed as WAVE reported 2 warnings on the page which are multiplied by the number of books displayed. The warnings they raised are having a 'Redundant link' users can click the book cover image or the title to be taken to the book detail page, this is by design to give users choice. The other warning states that the price variable could be a 'Possible heading', I want the price variable to be a paragraph tag so that it fits in aesthetically with the book title, author, and other informational fields.
+* [Book Detail page](/docs/images/Wave-book-detail.png) the only warning present here is a 'Suspicious link text' related to the 'Click here to Rate or Review' button, I feel as though this button text is clearly descriptive to users
+* [Sign Up page](/docs/images/Wave-signin.png) 
+* 
 
 ### Lighthouse Testing
 ## Desktop
