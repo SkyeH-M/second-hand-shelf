@@ -248,7 +248,48 @@ Heroku
 14. Type 'exit()' to exit the python terminal and close the console, our Heroku database will now contain the tables and columns created from our models.py files
 15. Click the 'Open app' button to visit your built site
 
-!!!!!!!! CHECK IF THIS NEEDS EDITING FOR DEPLOYMENT PROCESS
+AWS
+1. Navigate to [AWS](https://aws.amazon.com/), login or create an account if you don't already have one
+2. Search for S3 in Services, and click the 'Create bucket' button
+3. Enter a bucket name (this should relate to your heroku app name), select the region closest to you
+4. Uncheck 'Block all public access' and acknowledge that the bucket will be public, click 'ACLs enabled' and 'Bucket owner preferred', click 'Create bucket'
+5. Click the bucket instance you just created and navigate to the Properties tab
+5. Scroll down to 'static website hosting' and click 'use this bucket to host a website'
+6. Enter default values of index.html for the Index document, and error.html for the Error document then click 'Save'
+7. On the Permissions tab paste the following code into the CORS configuration editor: 
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+8. Click 'Save'
+9. Navigate to 'Bucket Policy' and select 'policy generator', the type of which is 'S3 Bucket Policy', type * into the Principal field, and select 'get object' for the action
+10. Copy your arn from the Bucket Policy tab and paste this into the ARN field on the policy generator page, then click 'Add Statement', then 'Generate Policy'
+11. Copy the code displayed to your clipboard and paste this into the Bucket Policy editor. Before saving add a '/*' to the end of the Resource key, then click 'Save'
+12. Navigate to the 'Access Control List' tab, click 'edit' and enable List for Everyone (public access) and accept the warning box
+13. From the AWS site search for 'IAM', click 'User Groups' and then click 'Create New Group'
+14. Name this group something that makes sense for the logic of your project, I named this 'manage-second-hand-shelf', then click 'Create Group'
+15. From the IAM dashboard click 'Policies' then 'Create Policy'
+16. Click the 'JSON' tab and select 'import policy', search for 'S3' and import the 'AmazonS3FullAccess' policy
+17. Find your arn from the Bucket Policy page in S3 and copy this, paste this into the 'Resource' key in the JSON tab instead of the '*' value. The format should be
+"Resource": [
+    'your_arn_here',
+    'your_arn_here/*'
+]
+18. Click 'Review Policy', give it a name and description, e.g name: second-hand-shelf-policy, description: Access to S3 bucket for Second Hand Shelf static files
+19. Click 'Create Policy'
+20. Navigate back to the 'User Groups' page and click on the group you created
+21. Click 'Attach Policy', search for the policy you just created and select it, then click 'Attach Policy'
+22. Finally navigate to the 'Users' page and click 'Add User'
 
 How to Fork the Second Hand Shelf
 1. Login to your Github account
