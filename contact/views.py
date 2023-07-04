@@ -16,9 +16,9 @@ def contact_us(request):
         """ Send user an email to acknowledge their message """
         form = ContactForm(request.POST)
         if form.is_valid():
-            name = request.POST.get('name'),
-            email = request.POST.get('email'),
-            subject = request.POST.get('subject'),
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            subject = request.POST.get('subject')
             content = request.POST.get('content')
             contact = form.save()
             customer_email = email
