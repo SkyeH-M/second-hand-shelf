@@ -290,6 +290,61 @@ AWS
 20. Navigate back to the 'User Groups' page and click on the group you created
 21. Click 'Attach Policy', search for the policy you just created and select it, then click 'Attach Policy'
 22. Finally navigate to the 'Users' page and click 'Add User'
+23. Create a user named 'your-site-name-staticfiles-user', my username was 'second-hand-shelf-staticfiles-user', click 'Next' then select the group we created earlier and click 'Next' again and 'Create User' to add your user to this group
+24. In the Identity and Access Management tab click on Users, click on the username of the user you just created
+25. Click the 'security credentials' tab, scroll down to 'access keys' and click 'create access key'
+26. On the 'Access key best practices & alternatives' page click 'Other' as our use case, follow this process to the end and click the 'download .csv' button
+27. Save this .csv file as they are only available to us once and will be used to authenticate our user from our Django app
+
+Back in the Gitpod CLI:
+1. Type 'pip3 install boto3' into the terminal
+2. Type 'pip3 install django-storages' into the terminal
+3. Type 'pip3 freeze > requirements.txt' into the terminal to update this file
+4. In settings.py add 'storages', to our installed apps
+5. Still in settings.py add the following code:
+if 'USE_AWS' in os.environ:
+  AWS_STORAGE_BUCKET_NAME = 'your_aws_bucket_name_here'
+  AWS_S3_REGION_NAME = 'your_aws_region_name_here'
+  AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+  AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+  STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+  STATICFILES_LOCATION = 'static'
+  DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+  MEDIAFILES_LOCATION = 'media'
+
+  STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+  MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+6. Navigate to Heroku and add these AWS keys to our config variables, the AWS_ACCESS_KEY_ID, and AWS_SECRET_ACCESS_KEY can be found in the .csv file we downloaded and saved earlier
+7. Add the key 'USE_AWS' with the value 'True' (without quotation marks) to our Heroku config vars
+8. Back in our workspace create a base level file called 'custom_storages.py' and add the following code:
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+9. Add, commit and push your changes using the syntax 'git add .', 'git commit -m "add a message here", 'git push'
+
+Back on AWS:
+1. Navigating to our bucket we can now see a static folder in our bucket containing all of our static files
+2. In S3 click 'Create folder' and name this folder 'media', click 'Save'
+3. Click the just created 'media' folder, then click 'upload', 'Add files' and select all the product and site images for the website
+4. Click 'Next' and under 'manage public permissions' select 'grant public read access to this object(s)', click 'Next' again and click 'Upload'
+
+In Django admin:
+1. Login to your superuser account on Django admin
+2. Click 'email addresses' and set your superuser's email address to verified and primary
+
+Stripe:
+1. Login to your Stripe account, click 'Developers' and 'API keys' and locate your publishable key and secret key
+2. Check these keys and values are added to your Heroku config vars, if not add them now
+3. Create a new webhook end point by going to Webhooks in the Developers menu, click 'Add endpoint' and paste your deployed url here but adding '/checkout/wh/' to the end of the url, click to receive all events then click 'Add endpoint'
+4. Click to reveal your Signing secret and add this value to your Heroku config vars
+5. Ensure all the variables in Heroku config vars match the names you've provided in your settings.py file
+
+1. Your deployed site should now appear and function the same way as your development site with all static and media files loading and displaying appropriately
 
 How to Fork the Second Hand Shelf
 1. Login to your Github account
