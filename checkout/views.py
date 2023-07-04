@@ -76,16 +76,10 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
-                        # quality = None
-                        # if Quality.objects.filter(product=product, name=text_quality).exists():
-                        #     quality = Quality.objects.get(product=product, name=text_quality)
-                        # else:
-                        #     quality = Quality.objects.create(product=product, name=text_quality)
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=item_data,
-                            # book_quality=quality,
                         )
                         order_line_item.save()
                     else:

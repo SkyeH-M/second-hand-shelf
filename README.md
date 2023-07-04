@@ -159,9 +159,10 @@ The Second Hand Shelf is comprised of 12 core sections: Home page, Signup, Login
 ### Accessibility
 FINISH !!!!!!!!
 * Throughout the development of this site accessibility was a priority, semantic html, alt tags, and aria-labels are used wherever possible to assist screen readers. The fonts chosen are ones I believe to be dyslexia friendly and readable no matter what screen size the user is on.
-* Lighthouse
-* Ally
-* WAVE
+* [Lighthouse Accessibility Score]() !!!! FINISH
+* I used the [Ally Color Contrast Accessibility Validator](https://color.a11y.com/) to check for any colour contrast issues and received the following result
+![ALLY result](/docs/images/ally.png)
+* WAVE !!! FINISH
 
 ### Wireframes
 Before development began I designed wireframes to aid in the creation of my site, when these were created I didn't intend on including a contact form so unfortunately this is missing from the wireframes
@@ -438,6 +439,12 @@ The Second Hand Shelf site has been continually tested throughout development, i
   * The checkout success page displays a confirmation that the order has been processed along with an order summary featuring key information 
   * An email is sent to users confirming their order has been successfully processed
 
+* Update:
+  * After deploying the site I now have evidence that confirmation emails are sent to users' actual email addresses, the screenshots of these will be linked below:
+  * [Registration Validation](/docs/images/confirm-your-email.png)
+  * [Contact Form Confirmation](/docs/images/contact-confirmation-email.png)
+  * [Order Confirmation](/docs/images/order-confirmation-real-email.png)
+
 ## Bugs 
 
 | Bug | Has this been solved? | How? |
@@ -448,6 +455,7 @@ The Second Hand Shelf site has been continually tested throughout development, i
 | 4. [This](/docs/bugs/bug4.png) bug occured when trying to checkout early on in development, the Stripe secret key and potentially other environment variables were not being loaded or accessed appropriately, preventing checkout | Yes | I created a .env file (which I ensured was covered by .gitignore) and declared my Stripe environment variables there, along with exporting them in the terminal and saving them to the Gitpod environment variables section |
 | 5. [This](/docs/bugs/bug5.gif) bug rendered my quantity update button non-functional where if the quantity was altered and 'update' was clicked the page would refresh and revert back to the original quantity | Yes | I discovered that the placement of my text_quality code was potentially producing an additional quality parameter, [evidenced here](/docs/bugs/quantity-update-bug.png) and assigning the quality value from a string representing a number (on which calculations could be performed) to a string representing the text_quality value. I moved the relevant code and this became functional once again |
 | 6. My most problematic and time-consuming bug was a bug related to the book quality being accurately logged and representing during and after checkout. As seen [here](/docs/bugs/bug6.png) in the admin an order would display the correct quality and price factor in the bag but after checkout was completed each book would be stored as a default quality of 'Great' meaning pricing was not being accurately calculated | Yes | With the help of tutor support I altered the book_quality field on my OrderLineItem model to a ForeignKey pointing to the Quality model so I could access it's price_factor field. I then overwrote the save function for the OrderLineItem model to calculate the lineitem_total by multiplying the product's full price by the relevant book quality price factor, multiplied by the quantity of items bought. I then had to calculate a quality_instance based on the product and it's price factor in order to save this to the OrderLineItem model so the price could be represented accurately in the checkout HTML templates |
+| 7. After deploying my site to Heroku the Contact Form served a 'Server Error (500)' when the form was submit [e.g](/docs/bugs/contact-error.png). After setting DEBUG to True in Heroku Config Vars and settings.py I received the following [error message](/docs/bugs/contact-expanded-error.png) | Yes | I found [this](https://stackoverflow.com/questions/73462412/how-can-i-fix-not-enough-values-to-unpack-expected-2-got-1) post on StackOverflow which suggested to remove trailing commas from the 'if request.method == 'POST':' block and this resulted in the form being successfully submit and an email being received |
 
 ## Credits
 ### Code Sections/Tutorials
