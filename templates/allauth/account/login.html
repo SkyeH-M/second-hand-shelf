@@ -31,7 +31,7 @@ for a Second Hand Shelf account and sign in below:{% endblocktrans %}</p>
 
 {% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}" class="sign-up">sign up</a> first.{% endblocktrans %}</p>
+<a href="{{ signup_url }}" class="sign-in-page">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
 <form class="login" method="POST" action="{% url 'account_login' %}">

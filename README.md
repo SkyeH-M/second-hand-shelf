@@ -339,7 +339,11 @@ The following files were tested with a [Python Linter](https://pep8ci.herokuapp.
 * [All Books page](/docs/images/Wave-all-books.png), there are 218 warnings listed as WAVE reported 2 warnings on the page which are multiplied by the number of books displayed. The warnings they raised are having a 'Redundant link' users can click the book cover image or the title to be taken to the book detail page, this is by design to give users choice. The other warning states that the price variable could be a 'Possible heading', I want the price variable to be a paragraph tag so that it fits in aesthetically with the book title, author, and other informational fields.
 * [Book Detail page](/docs/images/Wave-book-detail.png) the only warning present here is a 'Suspicious link text' related to the 'Click here to Rate or Review' button, I feel as though this button text is clearly descriptive to users
 * [Sign Up page](/docs/images/Wave-signin.png) 
-* 
+* [Registration page](/docs/images/Wave-sign-up.png)
+* [Contact page](/docs/images/Wave-contact.png)
+* [Shopping Bag page](/docs/images/Wave-shopping-bag.png)
+* [Checkout Confirmation page](/docs/images/WAVE-checkout-confirmation.png) The only warning presented for this page is a 'Redundant link' for the 'Check out the latest deals' button, I don't see where this link is being replicated, and the button is valuable for redirected users back to the products page
+* Unfortunately I couldn't access pages that require the user to be logged in so I couldn't do WAVE testing on all pages but I have conducted manual testing on all pages.
 
 ### Lighthouse Testing
 ## Desktop

@@ -501,7 +501,11 @@ input[name='q']::placeholder {
     color: black !important;
 }
 
-.sign-up {
+.sign-in-page {
+    color: black !important;
+}
+
+.sign-up-page {
     color: black !important;
 }
 
