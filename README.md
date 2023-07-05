@@ -14,6 +14,7 @@ Second Hand Shelf is a second hand book selling website, users can browse books 
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
   * [Icons and Images](#icons-and-images)
+  * [Models](#models)
   * [Features](#features)
   * [Accessibility](#accessibility)
   * [Wireframes](#wireframes)
@@ -112,6 +113,10 @@ The colour scheme of the Second Hand Shelf is primarily comprised of black, whit
 * I sourced an icon from [Flaticon](https://www.flaticon.com) that will be attributed in the credits section of this document. I then used [Favicon](https://favicon.io/) to convert this png to an icon file and imported that to my site. I installed a Favicon to help users distinguish this tab from others in their browser, the simple book related design and bright colours help to do this.
 * All product images will be attributed in the credits section, along with the hero image on the home page
 * The home page image serves to provide an aesthetically pleasing and colourful element to the page while making clear that this site is a bookshop 
+
+### Models
+I created 3 unique models for this project, Bookreview, Contact, and Quality, and designed a model schema diagram to illustrate the relationship between models. I used [DrawSQL](https://drawsql.app/diagrams) to create these diagrams and was limited by the data types available on their site so some of the data types listed are incorrect. The accurate data and model field types can be found in each respective models.py file but I still wanted to use this software to illustrate the relationship between models. The DrawSQL site doesn't allow Foreign Keys to be attached to the entire model and so I have had to link fields to other specific fields where again this is inaccurate to the actual models. Below is the model diagram purely for representational purposes, the models coloured in pink are the ones I created from scratch for this project
+![Model image](/docs/images/models.png)
 
 ### Features
 The Second Hand Shelf is comprised of 12 core sections: Home page, Signup, Login, Profile, Wishlist, Products view, Book Detail, Book Reviews, Shopping Bag view, Checkout, Checkout Success, Contact Us
