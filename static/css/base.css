@@ -331,9 +331,9 @@ input[name='q']::placeholder {
     background-color: #244c2c;
 }
 
-#delivery-banner h1, .delivery-banner h1{
+/* #delivery-banner h1, .delivery-banner h1{
     font-size: 1.6rem !important;
-}
+} */
 
 /* Star Rating */
 .rating {
