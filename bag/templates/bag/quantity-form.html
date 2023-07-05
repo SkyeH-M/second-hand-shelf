@@ -6,19 +6,19 @@
                 <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.item_id }}"
                     data-item_id="{{ item.item_id }}">
                     <span>
-                        <i class="fas fa-minus fa-sm"></i>
+                        <i class="fas fa-minus fa-sm"><span class="hidden">Minus</span></i>
                     </span>
                 </button>
             </div>
             <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }}"
                 type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
                 data-item_id="{{ item.item_id  }}" id="id_qty_{{ item.item_id  }}">
-            <div class="input-group-append">
+            <div class="input-group-append" aria-label="quantity number">
                 <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ item.item_id }}
                     {% if item.quality %}increment-quality_{{ item.item_id }}_{{ item.quality}}{% endif %}"
                     data-item_id="{{ item.item_id  }}">
                     <span>
-                        <i class="fas fa-plus fa-sm"></i>
+                        <i class="fas fa-plus fa-sm"><span class="hidden">Plus</span></i>
                     </span>
                 </button>
             </div>
