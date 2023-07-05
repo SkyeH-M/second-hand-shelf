@@ -124,7 +124,7 @@ input[name='q']::placeholder {
 /* Featured books section */
 .book-feature {
     height: 350px;
-    width: 100%;
+    width: 350px;
     padding: 1rem;
 }
 
