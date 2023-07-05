@@ -331,6 +331,10 @@ input[name='q']::placeholder {
     background-color: #244c2c;
 }
 
+#delivery-banner h1 {
+    font-size: 1.6rem;
+}
+
 /* Star Rating */
 .rating {
     display: flex;
