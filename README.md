@@ -2,7 +2,7 @@
 
 Second Hand Shelf is a second hand book selling website, users can browse books by genre, or by different filtering criteria like alphabetised title, year of release, language, price, or rating. They can also view specific offers like clearance items, or new releases. Basic functionality of the site is comprised of the user being able to register for an account, log in and out, and complete orders by paying and receiving a confirmation email. Additional functionality has been added for user experience and this will be discussed further on in the document.
 
-![Image of my responsive site]()
+![Image of my responsive site](/docs/images/tech-sini.png)
 [Link to the deployed site](https://second-hand-shelf-592f61246782.herokuapp.com/)
 
 ## Contents 

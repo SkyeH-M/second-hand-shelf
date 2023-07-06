@@ -643,4 +643,43 @@ input[name='q']::placeholder {
         font-size: 0.8rem;
        
     }
+
+    .img-container {
+        height: 300px;
+        width: 110%;
+        overflow-x: hidden;
+    }
+    
+    footer {
+        width: 110%;
+    }
+
+    .book-feature-wrapper {
+        margin-left: 20px;
+    }
+
+    .book-feature img {
+        margin-left: 20px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .book-feature-wrapper {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 300px) {
+    .book-feature {
+        height: 250px;
+        width: auto;
+        margin-bottom: 0;
+        margin-left: 13px;
+    }
+
+    .book-feature-wrapper {
+        height: 250px;
+        width: auto;
+        margin-left: 13px;
+    }
 }
