@@ -162,9 +162,9 @@ The Second Hand Shelf is comprised of 12 core sections: Home page, Signup, Login
   * I also wanted to potentially add a 'My Reviews' page to the site where users can view their own reviews of different books without having to search through all the existing reviews from other users. In addition, functionality whereby users could like or comment on others' reviews would make the site more engaging and interactive
 
 ### Accessibility
-FINISH !!!!!!!!
 * Throughout the development of this site accessibility was a priority, semantic html, alt tags, and aria-labels are used wherever possible to assist screen readers. The fonts chosen are ones I believe to be dyslexia friendly and readable no matter what screen size the user is on.
-* [Lighthouse Accessibility Score]() !!!! FINISH
+* Lighthouse gave my site a score of 100 for almost all pages, with some having a score of 97, this demonstrates that I have prioritised accessibility throughout development and have implemented accessible features where needed. The only thing that downgraded my accessibility score is that on mobile testing it flags that there is no h1 element (this issue will be discussed further in the WAVE testing section).
+![Lighthouse Accessibility Score](/docs/images/accessibility.png) 
 * I used the [Ally Color Contrast Accessibility Validator](https://color.a11y.com/) to check for any colour contrast issues and received the following result
 ![ALLY result](/docs/images/ally.png)
 * [WAVE](https://wave.webaim.org/) was utilised to test the web accessibility of each page on the site, the results of which are fully explored in the Automated Testing section further down in this document
@@ -448,6 +448,13 @@ The following files were tested with a [Python Linter](https://pep8ci.herokuapp.
 
 ### Lighthouse Testing
 ## Desktop
+* [Home page](/docs/images/lighthouse-home-d.png)
+* [Sign up page](/docs/images/lighthouse-signup-d.png)
+* [Log in page](/docs/images/lighthouse-login-d.png)
+* [Profile page](/docs/images/lighthouse-profile-d.png)
+* [Wishlist page](/docs/images/lighthouse-wishlist-d.png)
+* [All Books page](/docs/images/lighthouse-all-books-d.png)
+* [Book detail page](/docs/images/lighthouse)
 
 ## Mobile
 

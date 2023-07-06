@@ -101,7 +101,7 @@
                                     <div class="input-group input-group-{{ product.id }}">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}"
-                                                data-item_id="{{ product.id }}">
+                                                data-item_id="{{ product.id }}" aria-label="minus button">
                                                 <span class="icon">
                                                     <i class="fas fa-minus"><span class="hidden">Minus</span></i>
                                                 </span>
@@ -114,7 +114,7 @@
                                             aria-label="item quantity">
                                             <div class="input-group-append">
                                                 <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                                                    data-item_id="{{ product.id }}">
+                                                    data-item_id="{{ product.id }}" aria-label="plus button">
                                                         <span class="icon">
                                                             <i class="fas fa-plus"><span class="hidden">Plus</span></i>
                                                         </span>
@@ -207,8 +207,8 @@
                         </div> 
                     </div>
                     <div class="form-field content-field">
-                        <label">Give a written review?</label>
-                        <textarea class="textarea mb-5 form-control" name="content"></textarea>
+                        <label for="writtenReview">Give a written review?</label>
+                        <textarea class="textarea mb-5 form-control" name="content" id="writtenReview"></textarea>
                     </div>
                     <button class="btn submit-btn btn-black text-uppercase">Submit Review</button>
                 {% else %}
