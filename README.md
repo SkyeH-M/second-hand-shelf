@@ -453,10 +453,29 @@ The following files were tested with a [Python Linter](https://pep8ci.herokuapp.
 * [Log in page](/docs/images/lighthouse-login-d.png)
 * [Profile page](/docs/images/lighthouse-profile-d.png)
 * [Wishlist page](/docs/images/lighthouse-wishlist-d.png)
+* [Contact page](/docs/images/lighthouse-contact-d.png)
 * [All Books page](/docs/images/lighthouse-all-books-d.png)
-* [Book detail page](/docs/images/lighthouse)
+* [Book detail page](/docs/images/lighthouse-book-detail-d.png)
+* [Shopping bag page](/docs/images/lighthouse-bag-d.png)
+* [Checkout page](/docs/images/lighthouse-checkout-d.png)
+* [Checkout Success page](/docs/images/lighthouse-checkout-success-d.png)
 
 ## Mobile
+* [Home page](/docs/images/lighthouse-home-m.png)
+* [Sign up page](/docs/images/lighthouse-signup-m.png)
+* [Log in page](/docs/images/lighthouse-login-m.png)
+* [Profile page](/docs/images/lighthouse-profile-m.png)
+* [Wishlist page](/docs/images/lighthouse-wishlist-m.png)
+* [Contact page](/docs/images/lighthouse-contact-m.png)
+* [All Books page](/docs/images/lighthouse-all-books-m.png)
+* [Book detail page](/docs/images/lighthouse-book-detail-m.png)
+* [Shopping bag page](/docs/images/lighthouse-bag-m.png)
+* [Checkout page](/docs/images/lighthouse-checkout-m.png)
+* [Checkout Success page](/docs/images/lighthouse-checkout-success-m.png)
+
+* Reflections:
+* I am mostly satisfied with the Lighthouse results for desktop but I recognise that the mobile performance scores are not as good as I would like them to be. The main advice Lighthouse gave to improve mobile performance scores was to implement an efficient cache control policy, I did this through the AWS S3 website which improved performance scores. I was unable to eliminate render-blocking resources as when I added a defer attribute to script files in base.html it rendered the Stripe payment box unusable and removed the toast messages from the site.
+* I recognise that site performance is vitally important for user experience but at this time I am unable to improve these scores further without sacrifising the functionality of the site so I have chosen to leave this as it is.
 
 ## Improvements Made
 
