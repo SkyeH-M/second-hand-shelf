@@ -58,7 +58,7 @@ body {
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: #244c2c; /* Changed from black */
+    background: #244c2c;
     color: white !important;
 }
 
@@ -331,10 +331,6 @@ input[name='q']::placeholder {
     background-color: #244c2c;
 }
 
-/* #delivery-banner h1, .delivery-banner h1{
-    font-size: 1.6rem !important;
-} */
-
 /* Star Rating */
 .rating {
     display: flex;
@@ -524,7 +520,7 @@ input[name='q']::placeholder {
     }
 
     .header-container {
-        padding-top: 164px; /* Changed from 164px */
+        padding-top: 164px;
     }
 
     .add_to_wishlist_btn {
@@ -600,8 +596,22 @@ input[name='q']::placeholder {
         font-size: .75rem;
     }
 
-    .increment-qty, .decrement-qty {
+    .keep-shopping {
+        padding: 2px !important;
+    }
+
+    /* .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    } */
+
+    .increment-qty, .decrement-qty {
+        padding: 0 !important;
+        height: 38px;
+        width: 38px;
+    }
+
+    .qty_input {
+        height: 38px !important;
     }
 
     .bag-img {
@@ -625,6 +635,12 @@ input[name='q']::placeholder {
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .book-feature-info {
+        font-size: 1.2rem;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
