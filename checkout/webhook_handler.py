@@ -124,24 +124,37 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
+                    print('Entering first loop') # prints
+                    quality_instance = None
+                    product = get_object_or_404(Product, pk=item_id)
+                    if Quality.objects.filter(product=product, name=text_quality).exists():
+                        # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
+                        quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
+                    else:
+                        quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
+                    # product = Product.objects.get(id=item_id)
+                    # print(f'product: {product}')
+                    # print(f'product type: {type(product)}')
+                    # if isinstance(item_data, int):
+                    #     order_line_item = OrderLineItem(
+                    #         order=order,
+                    #         product=product,
+                    #         quantity=item_data,
+                    #     )
+                    #     order_line_item.save()
+                    # else:
+                        # can't alter line length below or error (see screenshot)
+                    print('Entering the loop') # doesn't print
+                    for quality, quantity in item_data['items_by_quality'].items():
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=item_data,
+                            quantity=quantity,
+                            book_quality=quality_instance, # changed from quality
                         )
                         order_line_item.save()
-                    else:
-                        # can't alter line length below or error (see screenshot)
-                        for quality, quantity in item_data['items_by_quality'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                book_quality=quality,
-                            )
-                        order_line_item.save()
+                        print(f"orderlineitem wh: {order_line_item}")
+                        print(f"type of orderlineitem wh: {type(order_line_item)}")
             except Exception as e:
                 if order:
                     order.delete()

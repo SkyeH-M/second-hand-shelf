@@ -28,7 +28,7 @@ def add_to_bag(request, item_id):
         text_quality = 'Good'
     else:
         text_quality = 'Great'
-
+    
     bag = request.session.get('bag', {})
 
     if quality:
