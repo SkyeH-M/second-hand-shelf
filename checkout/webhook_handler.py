@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.shortcuts import get_object_or_404
 
 from .models import Order, OrderLineItem
 from products.models import Product
@@ -125,16 +126,9 @@ class StripeWH_Handler:
                 )
                 for item_id, item_data in json.loads(bag).items():
                     print('Entering first loop') # prints
-                    quality_instance = None
-                    product = get_object_or_404(Product, pk=item_id)
-                    if Quality.objects.filter(product=product, name=text_quality).exists():
-                        # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
-                        quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
-                    else:
-                        quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
-                    # product = Product.objects.get(id=item_id)
-                    # print(f'product: {product}')
-                    # print(f'product type: {type(product)}')
+                    product = Product.objects.get(id=item_id)
+                    print(f'product: {product}')
+                    print(f'product type: {type(product)}')
                     # if isinstance(item_data, int):
                     #     order_line_item = OrderLineItem(
                     #         order=order,
@@ -144,16 +138,17 @@ class StripeWH_Handler:
                     #     order_line_item.save()
                     # else:
                         # can't alter line length below or error (see screenshot)
-                    print('Entering the loop') # doesn't print
+                    print('Entering the loop') # prints
+                    print(f"Items by quality {item_data['items_by_quality']}") # prints
                     for quality, quantity in item_data['items_by_quality'].items():
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=quantity,
-                            book_quality=quality_instance, # changed from quality
+                            book_quality=quality
                         )
                         order_line_item.save()
-                        print(f"orderlineitem wh: {order_line_item}")
+                        print(f"orderlineitem wh: {order_line_item}") # doesn't print
                         print(f"type of orderlineitem wh: {type(order_line_item)}")
             except Exception as e:
                 if order:
