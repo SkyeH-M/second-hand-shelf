@@ -38,18 +38,21 @@ class StripeWH_Handler:
         )
 
     def checkout_quality(self, bag, order):
-        # bag = request.session.get('bag', {})
-        text_quality = None
-        if quality == '0.60':
-            text_quality = 'Fair'
-        elif quality == '0.80':
-            text_quality = 'Good'
-        else:
-            text_quality = 'Great'
+        # checkout_bag = intent.metadata.bag
+        # bag_data = json.loads(bag)
+        # print(f"bag {bag_data}") # {"92": {"items_by_quality": {"0.60": 1}}, "93": {"items_by_quality": {"0.60": 1}}}
         for item_id, item_data in json.loads(bag).items():
+        # for item_id, item_data in bag_data.items():
             product = Product.objects.get(id=item_id)
             for quality, quantity in item_data['items_by_quality'].items():
                 quality_instance = None
+                text_quality = None
+                if quality == '0.60':
+                    text_quality = 'Fair'
+                elif quality == '0.80':
+                    text_quality = 'Good'
+                else:
+                    text_quality = 'Great'
                 if Quality.objects.filter(product=product, name=text_quality).exists():
                     quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
                 else:
@@ -79,7 +82,7 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
-        print(f'meta data bag {bag}')
+        # print(f'meta data bag {bag}')
         save_info = intent.metadata.save_info
 
         stripe_charge = stripe.Charge.retrieve(
@@ -154,7 +157,7 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
-                self.checkout_quality(request, bag=bag, order=order)
+                self.checkout_quality(bag, order)
 
             except Exception as e:
                 if order:
