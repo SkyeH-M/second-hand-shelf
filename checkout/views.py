@@ -42,7 +42,7 @@ def checkout(request):
         if 'book_quality' in request.POST:
             quality = request.POST['book_quality']
         bag = request.session.get('bag', {})
-        print(f'BAG: {bag}')
+        # print(f'BAG: {bag}')
         text_quality = None
         if quality == '0.60':
             text_quality = 'Fair'

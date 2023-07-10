@@ -37,34 +37,31 @@ class StripeWH_Handler:
             [customer_email]
         )
 
-    def checkout_quality(request):
-        if request.method == "POST":
-            if 'book_quality' in request.POST:
-                quality = request.POST['book_quality']
-                bag = request.session.get('bag', {})
-                text_quality = None
-                if quality == '0.60':
-                    text_quality = 'Fair'
-                elif quality == '0.80':
-                    text_quality = 'Good'
+    def checkout_quality(self, bag, order):
+        # bag = request.session.get('bag', {})
+        text_quality = None
+        if quality == '0.60':
+            text_quality = 'Fair'
+        elif quality == '0.80':
+            text_quality = 'Good'
+        else:
+            text_quality = 'Great'
+        for item_id, item_data in json.loads(bag).items():
+            product = Product.objects.get(id=item_id)
+            for quality, quantity in item_data['items_by_quality'].items():
+                quality_instance = None
+                if Quality.objects.filter(product=product, name=text_quality).exists():
+                    quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
                 else:
-                    text_quality = 'Great'
-            for item_id, item_data in json.loads(bag).items():
-                product = Product.objects.get(id=item_id)
-                for quality, quantity in item_data['items_by_quality'].items():
-                    quality_instance = None
-                    if Quality.objects.filter(product=product, name=text_quality).exists():
-                        quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
-                    else:
-                        quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
-                        print(f"QUALITY INSTANCE{quality_instance}")
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=quantity,
-                        book_quality=quality_instance,
-                    )
-                    order_line_item.save()
+                    quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
+                    print(f"QUALITY INSTANCE{quality_instance}")
+                order_line_item = OrderLineItem(
+                    order=order,
+                    product=product,
+                    quantity=quantity,
+                    book_quality=quality_instance,
+                )
+                order_line_item.save()
 
     def handle_event(self, event):
         """
@@ -78,9 +75,11 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
+        request = self.request
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
+        print(f'meta data bag {bag}')
         save_info = intent.metadata.save_info
 
         stripe_charge = stripe.Charge.retrieve(
@@ -155,7 +154,7 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
-                self.checkout_quality(request=self.request, bag=bag, order=order)
+                self.checkout_quality(request, bag=bag, order=order)
 
             except Exception as e:
                 if order:
