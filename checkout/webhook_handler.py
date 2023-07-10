@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-import traceback
+from decimal import Decimal
 
 from .models import Order, OrderLineItem
 from .views import checkout
@@ -126,34 +126,42 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
-                for item_id, item_data in json.loads(bag).items():
+                if request.method == "POST":
+                    if 'book_quality' in request.POST:
+                        quality = request.POST['book_quality']
+                        bag = request.session.get('bag', {})
+                        text_quality = None
+                        if quality == '0.60':
+                            text_quality = 'Fair'
+                        elif quality == '0.80':
+                            text_quality = 'Good'
+                        else:
+                            text_quality = 'Great'
+                    for item_id, item_data in json.loads(bag).items():
                     # print('Entering first loop') # prints
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
-                    else:
-                        # can't alter line length below or error (see screenshot)
-                        # print('Entering the loop') # prints
-                        # print(f"Items by quality {item_data['items_by_quality']}") # prints
-                        # print(f"Items by quality type {type(item_data['items_by_quality'])}")
+                        product = Product.objects.get(id=item_id)
+                    # can't alter line length below or error (see screenshot)
+                    # print('Entering the loop') # prints
+                    # print(f"Items by quality {item_data['items_by_quality']}") # prints
+                    # print(f"Items by quality type {type(item_data['items_by_quality'])}")
                         for quality, quantity in item_data['items_by_quality'].items():
+                            quality_instance = None
+                            if Quality.objects.filter(product=product, name=text_quality).exists():
+                                quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
+                                print(f'WH Quality instance type: {type(quality_instance)}')
+                                print('Working')
+                            else:
+                                quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
                             # print("HELP") # prints
                             # print(f"Quality {quality}")
                             # print(f"Quality type {type(quality)}") # for 'fair' it's a str
+                                print(f"QUALITY INSTANCE{quality_instance}")
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                book_quality=quality,
+                                book_quality=quality_instance,
                             )
-                            # print(f"orderlineitem wh: {order_line_item}") # doesn't print
-                            # print(type(order_line_item.book_quality))
-                        # print(f"type of orderlineitem wh: {type(order_line_item)}")
                             order_line_item.save()
             except Exception as e:
                 if order:

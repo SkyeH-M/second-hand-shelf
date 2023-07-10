@@ -43,7 +43,6 @@ def bag_contents(request):
                     'product': product,
                     'quality': quality,
                     'text_quality': text_quality,
-                    'amended_price': quantity * product.price * Decimal(quality),
                     'item_price': item_price,
                 })
 

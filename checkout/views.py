@@ -11,7 +11,6 @@ from products.models import Product, Quality
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
-# from .contexts import checkout_bag_contents
 
 import stripe
 import json
@@ -45,17 +44,11 @@ def checkout(request):
         bag = request.session.get('bag', {})
         print(f'BAG: {bag}')
         text_quality = None
-        # if quality == '0.60':
-        #     text_quality = 'Fair'
-        # elif quality == '0.80':
-        #     text_quality = 'Good'
-        # else:
-        #     text_quality = 'Great'
         if quality == '0.60':
             text_quality = 'Fair'
-        if quality == '0.80':
+        elif quality == '0.80':
             text_quality = 'Good'
-        if quality == '1.0':
+        else:
             text_quality = 'Great'
 
         form_data = {
@@ -81,34 +74,24 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
+                    for quality, quantity in item_data['items_by_quality'].items():
+                        quality_instance = None
+                        product = get_object_or_404(Product, pk=item_id)
+                        if Quality.objects.filter(product=product, name=text_quality).exists():
+                            # CHECK BELOW LINE AS IT BROKE BUT ADDITION SEEMS TO WORK
+                            # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
+                            quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
+                            # print(f'Quality instance: {quality_instance}')
+                            # print(f'Quality instance type: {type(quality_instance)}')
+                        else:
+                            quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
                         order_line_item = OrderLineItem(
-                            order=order,
+                            order=order, 
                             product=product,
-                            quantity=item_data,
+                            quantity=quantity,
+                            book_quality=quality_instance,
                         )
                         order_line_item.save()
-                    else:
-                        for quality, quantity in item_data['items_by_quality'].items():
-                            quality_instance = None
-                            product = get_object_or_404(Product, pk=item_id)
-                            if Quality.objects.filter(product=product, name=text_quality).exists():
-                                # CHECK BELOW LINE AS IT BROKE BUT ADDITION SEEMS TO WORK
-                                # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
-                                quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
-                                # print(f'Quality instance: {quality_instance}')
-                                # print(f'Quality instance type: {type(quality_instance)}')
-                            else:
-                                quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
-                            order_line_item = OrderLineItem(
-                                order=order, 
-                                product=product,
-                                quantity=quantity,
-                                book_quality=quality_instance,
-                            )
-                            order_line_item.save()
-                            # print(f"orderlineitem: {order_line_item}")
-                            # print(f"type of orderlineitem: {type(order_line_item)}")
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "

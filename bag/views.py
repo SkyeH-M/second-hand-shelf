@@ -20,6 +20,7 @@ def add_to_bag(request, item_id):
 
     if 'book_quality' in request.POST:
         quality = request.POST['book_quality']
+        bag = request.session.get('bag', {})
 
     text_quality = None
     if quality == '0.60':
@@ -28,8 +29,6 @@ def add_to_bag(request, item_id):
         text_quality = 'Good'
     else:
         text_quality = 'Great'
-    
-    bag = request.session.get('bag', {})
 
     if quality:
         if item_id in list(bag.keys()):
