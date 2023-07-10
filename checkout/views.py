@@ -11,7 +11,7 @@ from products.models import Product, Quality
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
-from .contexts import checkout_bag_contents
+# from .contexts import checkout_bag_contents
 
 import stripe
 import json
@@ -45,11 +45,17 @@ def checkout(request):
         bag = request.session.get('bag', {})
         print(f'BAG: {bag}')
         text_quality = None
+        # if quality == '0.60':
+        #     text_quality = 'Fair'
+        # elif quality == '0.80':
+        #     text_quality = 'Good'
+        # else:
+        #     text_quality = 'Great'
         if quality == '0.60':
             text_quality = 'Fair'
-        elif quality == '0.80':
+        if quality == '0.80':
             text_quality = 'Good'
-        else:
+        if quality == '1.0':
             text_quality = 'Great'
 
         form_data = {
@@ -68,21 +74,21 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            current_bag = checkout_bag_contents(request)
+            current_bag = bag_contents(request) # changed from checkout_bag_contents
             order.delivery = current_bag['delivery']
             order.grand_total = current_bag['grand_total']
             order.save()
             for item_id, item_data in bag.items():
                 try:
-                    # product = Product.objects.get(id=item_id)
-                    # if isinstance(item_data, int):
-                    #     order_line_item = OrderLineItem(
-                    #         order=order,
-                    #         product=product,
-                    #         quantity=item_data,
-                    #     )
-                    #     order_line_item.save()
-                    # else:
+                    product = Product.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
+                    else:
                         for quality, quantity in item_data['items_by_quality'].items():
                             quality_instance = None
                             product = get_object_or_404(Product, pk=item_id)
@@ -90,8 +96,8 @@ def checkout(request):
                                 # CHECK BELOW LINE AS IT BROKE BUT ADDITION SEEMS TO WORK
                                 # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
                                 quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
-                                print(f'Quality instance: {quality_instance}')
-                                print(f'Quality instance type: {type(quality_instance)}')
+                                # print(f'Quality instance: {quality_instance}')
+                                # print(f'Quality instance type: {type(quality_instance)}')
                             else:
                                 quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
                             order_line_item = OrderLineItem(
@@ -101,8 +107,8 @@ def checkout(request):
                                 book_quality=quality_instance,
                             )
                             order_line_item.save()
-                            print(f"orderlineitem: {order_line_item}")
-                            print(f"type of orderlineitem: {type(order_line_item)}")
+                            # print(f"orderlineitem: {order_line_item}")
+                            # print(f"type of orderlineitem: {type(order_line_item)}")
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
@@ -191,7 +197,6 @@ def checkout_success(request, order_number):
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:
-
         del request.session['bag']
 
     template = 'checkout/checkout_success.html'

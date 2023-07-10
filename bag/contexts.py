@@ -26,11 +26,9 @@ def bag_contents(request):
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
-            # item_prices = {}
             for quality, quantity in item_data['items_by_quality'].items():
                 total += quantity * product.price * Decimal(quality)
                 item_price = product.price * Decimal(quality)
-                # item_prices[quality] = item_price
                 product_count += quantity
                 text_quality = None
                 if quality == '0.60':
@@ -46,7 +44,7 @@ def bag_contents(request):
                     'quality': quality,
                     'text_quality': text_quality,
                     'amended_price': quantity * product.price * Decimal(quality),
-                    'item_price': item_price
+                    'item_price': item_price,
                 })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:

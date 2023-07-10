@@ -3,14 +3,16 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+import traceback
 
 from .models import Order, OrderLineItem
+from .views import checkout
 from products.models import Product
 from profiles.models import UserProfile
 
+import stripe
 import json
 import time
-import stripe
 
 
 class StripeWH_Handler:
@@ -66,8 +68,8 @@ class StripeWH_Handler:
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile = UserProfile.objects.get(user__username=username)
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
@@ -125,31 +127,34 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
-                    print('Entering first loop') # prints
+                    # print('Entering first loop') # prints
                     product = Product.objects.get(id=item_id)
-                    print(f'product: {product}')
-                    print(f'product type: {type(product)}')
-                    # if isinstance(item_data, int):
-                    #     order_line_item = OrderLineItem(
-                    #         order=order,
-                    #         product=product,
-                    #         quantity=item_data,
-                    #     )
-                    #     order_line_item.save()
-                    # else:
-                        # can't alter line length below or error (see screenshot)
-                    print('Entering the loop') # prints
-                    print(f"Items by quality {item_data['items_by_quality']}") # prints
-                    for quality, quantity in item_data['items_by_quality'].items():
+                    if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=quantity,
-                            book_quality=quality
+                            quantity=item_data,
                         )
                         order_line_item.save()
-                        print(f"orderlineitem wh: {order_line_item}") # doesn't print
-                        print(f"type of orderlineitem wh: {type(order_line_item)}")
+                    else:
+                        # can't alter line length below or error (see screenshot)
+                        # print('Entering the loop') # prints
+                        # print(f"Items by quality {item_data['items_by_quality']}") # prints
+                        # print(f"Items by quality type {type(item_data['items_by_quality'])}")
+                        for quality, quantity in item_data['items_by_quality'].items():
+                            # print("HELP") # prints
+                            # print(f"Quality {quality}")
+                            # print(f"Quality type {type(quality)}") # for 'fair' it's a str
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                                book_quality=quality,
+                            )
+                            # print(f"orderlineitem wh: {order_line_item}") # doesn't print
+                            # print(type(order_line_item.book_quality))
+                        # print(f"type of orderlineitem wh: {type(order_line_item)}")
+                            order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()
