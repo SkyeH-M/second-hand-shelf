@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from .models import UserProfile
 from .forms import UserProfileForm
 from products.models import Product
-from checkout.models import Order, OrderLineItem
+from checkout.models import Order
 
 
 def profile(request):

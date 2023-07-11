@@ -5,7 +5,6 @@ from .models import Product, Category, BookReview
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        # fields = '__all__'
         exclude = ('has_quality',)
 
     def __init__(self, *args, **kwargs):

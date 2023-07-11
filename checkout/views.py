@@ -73,16 +73,23 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    for quality, quantity in item_data['items_by_quality'].items():
+                    for quality, quantity in item_data['items_by_\
+                            quality'].items():
                         quality_instance = None
                         product = get_object_or_404(Product, pk=item_id)
-                        if Quality.objects.filter(product=product, name=text_quality).exists():
+                        if Quality.objects.filter(
+                                product=product, name=text_quality).exists():
                             # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
-                            quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
+                            quality_instance = Quality.objects.get(
+                                product=product,
+                                price_factor=Decimal(quality)
+                            )
                         else:
-                            quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
+                            quality_instance = Quality.objects.create(
+                                product=product, price_factor=Decimal(quality)
+                            )
                         order_line_item = OrderLineItem(
-                            order=order, 
+                            order=order,
                             product=product,
                             quantity=quantity,
                             book_quality=quality_instance,
@@ -90,14 +97,17 @@ def checkout(request):
                         order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found in \
+                        our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success',
+                        args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
             Please double check your information.')
@@ -145,6 +155,7 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
 
 def checkout_success(request, order_number):
     """

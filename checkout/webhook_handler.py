@@ -2,11 +2,9 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
-from django.shortcuts import get_object_or_404
 from decimal import Decimal
 
 from .models import Order, OrderLineItem
-from .views import checkout
 from products.models import Product, Quality
 from profiles.models import UserProfile
 
@@ -38,11 +36,7 @@ class StripeWH_Handler:
         )
 
     def checkout_quality(self, bag, order):
-        # checkout_bag = intent.metadata.bag
-        # bag_data = json.loads(bag)
-        # print(f"bag {bag_data}") # {"92": {"items_by_quality": {"0.60": 1}}, "93": {"items_by_quality": {"0.60": 1}}}
         for item_id, item_data in json.loads(bag).items():
-        # for item_id, item_data in bag_data.items():
             product = Product.objects.get(id=item_id)
             for quality, quantity in item_data['items_by_quality'].items():
                 quality_instance = None
@@ -53,10 +47,13 @@ class StripeWH_Handler:
                     text_quality = 'Good'
                 else:
                     text_quality = 'Great'
-                if Quality.objects.filter(product=product, name=text_quality).exists():
-                    quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
+                if Quality.objects.filter(product=product,
+                                          name=text_quality).exists():
+                    quality_instance = Quality.objects.get(
+                        product=product, price_factor=Decimal(quality))
                 else:
-                    quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
+                    quality_instance = Quality.objects.create(
+                        product=product, price_factor=Decimal(quality))
                     print(f"QUALITY INSTANCE{quality_instance}")
                 order_line_item = OrderLineItem(
                     order=order,
@@ -78,11 +75,10 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
-        request = self.request
+        # request = self.request
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
-        # print(f'meta data bag {bag}')
         save_info = intent.metadata.save_info
 
         stripe_charge = stripe.Charge.retrieve(

@@ -10,9 +10,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
-# DEBUG = True
 
-ALLOWED_HOSTS = ['second-hand-shelf-592f61246782.herokuapp.com', 'localhost', '8000-skyehm-secondhandbooksh-t2yx3bjnrlu.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = [
+    'second-hand-shelf-592f61246782.herokuapp.com',
+    'localhost',
+    '8000-skyehm-secondhandbooksh-t2yx3bjnrlu.ws-eu101.gitpod.io']
 
 # Application definition
 
@@ -106,7 +108,7 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-else: 
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -188,7 +190,5 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-# ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

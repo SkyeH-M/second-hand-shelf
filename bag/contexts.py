@@ -2,7 +2,6 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
-from checkout.models import OrderLineItem
 
 
 def bag_contents(request):
@@ -22,7 +21,6 @@ def bag_contents(request):
                 'item_id': item_id,
                 'quantity': item_data,
                 'product': product,
-                'quality': quality,
             })
         else:
             product = get_object_or_404(Product, pk=item_id)

@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Product, Category, BookReview, Quality
 from .forms import ProductForm, BookReviewForm
-from profiles.forms import UserProfile
 
 
 def all_books(request):
@@ -26,7 +25,6 @@ def all_books(request):
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'averagerating':
-                # sortkey = 'averagerating' this orders high-low but not low-high
                 products = products.order_by(F(
                     'averagerating').desc(nulls_last=True))
             else:
@@ -38,7 +36,6 @@ def all_books(request):
                 if sortkey == 'bookreview':
                     sortkey = 'stars'
 
-               
                     if direction == 'desc':
                         sortkey = f'-{sortkey}'
                 products = products.order_by(sortkey)
@@ -149,7 +146,8 @@ def delete_book(request, product_id):
     """ Delete a product from the store """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, f'Book: "{product.title}" has been successfully deleted.')
+    messages.success(request, f'Book: "{product.title}" \
+                     has been successfully deleted.')
     return redirect(reverse('books'))
 
 
@@ -180,7 +178,7 @@ def add_book_review(request, product_id):
                              f"'{product.title}'")
         return redirect('book_detail', product_id=product_id)
 
-    return render(request, context)
+    return render(request)
 
 
 @login_required
@@ -195,8 +193,8 @@ def edit_book_review(request, bookreview_id):
                 if form.is_valid():
                     review = form.save(commit=False)
                     review.save()
-                    messages.success(request, f"You've successfully updated your "
-                                     f"review of {product.title}")
+                    messages.success(request, f"You've successfully updated "
+                                     f"your review of {product.title}")
                     return redirect(reverse('book_detail', args=[product.id]))
             else:
                 form = BookReviewForm(instance=bookreview)
@@ -218,8 +216,8 @@ def delete_book_review(request, bookreview_id):
         product = bookreview.product
         if request.user == bookreview.user:
             bookreview.delete()
-            messages.success(request, 'Your book review was '
-                             f'successfully deleted')
+            messages.success(request, 'Your book review was \
+                             successfully deleted')
         return redirect(reverse('book_detail', args=[product.id]))
     else:
         messages.warning('You must be logged in to edit your reviews')
