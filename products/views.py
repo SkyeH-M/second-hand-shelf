@@ -22,7 +22,7 @@ def all_books(request):
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'averagerating':
-                # sortkey = 'averagerating'
+                # sortkey = 'averagerating' this orders high-low but not low-high
                 products = products.order_by(F(
                     'averagerating').desc(nulls_last=True))
             else:

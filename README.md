@@ -582,6 +582,13 @@ The Second Hand Shelf site has been continually tested throughout development, i
   * [Contact Form Confirmation](/docs/images/contact-confirmation-email.png)
   * [Order Confirmation](/docs/images/order-confirmation-real-email.png)
 
+### User Testing
+This site was tested by three individuals on different devices in order to ascertain whether the site functions correctly for others. This also provided a very valuable opportunity for me to be made aware of any bugs that I hadn't noticed.
+The site was tested by Rossanne Hamilton from my CI cohort, my partner Isabelle Harley, and my dad Neill Milton
+* Rossanne Hamilton tested the site on a Gigabyte Gaming Laptop, she reported no notable errors but did notice one bug. Thankfully Rossanne noticed that when ordering products by rating (high to low) products with no rating appear before those with low ratings. I was then able to resolve this issue and have documented it in the bugs section below.
+* Neill Milton tested the site on a Mac desktop and found no issues related to either aesthetics or functionality
+* Isabelle Harley tested the site on a Macbook Air 2017 and discovered that only if you purchase 2 different 'fair' quality books an order confirmation email is not sent to the user. This became an extensive bug and will be detailed below in the bugs section
+
 ## Bugs 
 
 | Bug | Has this been solved? | How? |
@@ -619,4 +626,5 @@ The Second Hand Shelf site has been continually tested throughout development, i
 ## Acknowledgements
 * I'd like to acknowledge the authors of code sections and other helpful material credited above as without their work this project may not have achieved what it has
 * I'd like to thank my college mentor Robert Mclaughlin, and my CI mentor Akshat Garg for their input and advice throughout the development of this project and throughout the course itself
+* I'd like to thank all the individuals who offered to spend their time testing my site, and especially those who discovered and reported notable bugs so that I could rectify these
 * I'd finally like to acknowledge the work of multiple different members of the Code Institute Tutor Support who were vital in the resolving of several bugs, and the implementation of some functionality
