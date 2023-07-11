@@ -18,6 +18,10 @@ def all_books(request):
     direction = None
 
     if request.GET:
+
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -34,8 +38,7 @@ def all_books(request):
                 if sortkey == 'bookreview':
                     sortkey = 'stars'
 
-                if 'direction' in request.GET:
-                    direction = request.GET['direction']
+               
                     if direction == 'desc':
                         sortkey = f'-{sortkey}'
                 products = products.order_by(sortkey)
