@@ -42,7 +42,6 @@ def checkout(request):
         if 'book_quality' in request.POST:
             quality = request.POST['book_quality']
         bag = request.session.get('bag', {})
-        # print(f'BAG: {bag}')
         text_quality = None
         if quality == '0.60':
             text_quality = 'Fair'
@@ -67,7 +66,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            current_bag = bag_contents(request) # changed from checkout_bag_contents
+            current_bag = bag_contents(request)
             order.delivery = current_bag['delivery']
             order.grand_total = current_bag['grand_total']
             order.save()
@@ -78,11 +77,8 @@ def checkout(request):
                         quality_instance = None
                         product = get_object_or_404(Product, pk=item_id)
                         if Quality.objects.filter(product=product, name=text_quality).exists():
-                            # CHECK BELOW LINE AS IT BROKE BUT ADDITION SEEMS TO WORK
                             # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
                             quality_instance = Quality.objects.get(product=product, price_factor=Decimal(quality))
-                            # print(f'Quality instance: {quality_instance}')
-                            # print(f'Quality instance type: {type(quality_instance)}')
                         else:
                             quality_instance = Quality.objects.create(product=product, price_factor=Decimal(quality))
                         order_line_item = OrderLineItem(

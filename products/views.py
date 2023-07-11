@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, F
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 
@@ -21,18 +21,24 @@ def all_books(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('title'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
-            if sortkey == 'bookreview':
-                sortkey == 'stars'
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+            if sortkey == 'averagerating':
+                # sortkey = 'averagerating'
+                products = products.order_by(F(
+                    'averagerating').desc(nulls_last=True))
+            else:
+                if sortkey == 'name':
+                    sortkey = 'lower_name'
+                    products = products.annotate(lower_name=Lower('title'))
+                if sortkey == 'category':
+                    sortkey = 'category__name'
+                if sortkey == 'bookreview':
+                    sortkey = 'stars'
+
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                products = products.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -148,7 +154,6 @@ def delete_book(request, product_id):
 def add_book_review(request, product_id):
     """ A view to add a book review """
     product = get_object_or_404(Product, pk=product_id)
-    # Add Review
     if request.method == 'POST' and request.user.is_authenticated:
         reviews = product.reviews.all()
         if reviews.filter(user=request.user).exists():

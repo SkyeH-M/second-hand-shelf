@@ -84,4 +84,4 @@ class OrderLineItem(models.Model):
         super(OrderLineItem, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_number}, quality {self.book_quality}, typeofquality {type(self.book_quality)}'
+        return f'SKU {self.product.sku} on order {self.order.order_number}'
