@@ -93,6 +93,7 @@ class BookReview(models.Model):
     def __str__(self):
         return self.product.title
 
+
 @receiver(post_save, sender=BookReview)
 def update_rating(sender, instance, created, **kwargs):
     instance.product.averagerating = instance.product.get_rating()

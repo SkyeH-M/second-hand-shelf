@@ -31,6 +31,7 @@ Second Hand Shelf is a second hand book selling website, users can browse books 
     * [W3C CSS Validation Service](#w3c-css-validation-service)
     * [Wave](#wave-testing)
     * [Lighthouse](#lighthouse-testing)
+    * [Flake8](#flake8)
   * [Manual Testing](#manual-testing)
   * [Bugs](#bugs)
 
@@ -477,7 +478,16 @@ The following files were tested with a [Python Linter](https://pep8ci.herokuapp.
 * I am mostly satisfied with the Lighthouse results for desktop but I recognise that the mobile performance scores are not as good as I would like them to be. The main advice Lighthouse gave to improve mobile performance scores was to implement an efficient cache control policy, I did this through the AWS S3 website which improved performance scores. I was unable to eliminate render-blocking resources as when I added a defer attribute to script files in base.html it rendered the Stripe payment box unusable and removed the toast messages from the site.
 * I recognise that site performance is vitally important for user experience but at this time I am unable to improve these scores further without sacrifising the functionality of the site so I have chosen to leave this as it is.
 
-## Improvements Made
+### Flake8
+After using the CI Python linter to individually check the compliance of each Python page I used the command 'python3 -m flake8' in the terminal to further check for anything I may have missed. The results of this are below:
+* ![Flake8 1](/docs/images/flake1.png)
+* ![Flake8 2](/docs/images/flake2.png)
+
+The only unresolved errors I got back were as follows:
+* Errors related to the devcontainer and settings files as these lines were not ones that I created or edited in any way, but were instead created by Django. The errors are also only related to line length or whitespace so I feel comfortable leaving them as they are
+* The same as above goes for errors concerning the migrations files which comprised the majority of these linting warnings
+* The checkout webhooks file is flagged for the variable 'e' being assigned but not used however this variable has been assigned in order to catch exceptions or errors in the code that may occur with webhooks and Stripe
+* The contact views.py file warns that three variables 'name', 'subject' and 'content' are assigned but never used
 
 ## Manual Testing
 ### Testing User Stories

@@ -27,10 +27,10 @@ def all_books(request):
             if sortkey == 'averagerating':
                 if direction == 'desc':
                     products = products.order_by(F(
-                    'averagerating').desc(nulls_last=True))
+                        'averagerating').desc(nulls_last=True))
                 elif direction == 'asc':
                     products = products.order_by(F(
-                    'averagerating').asc(nulls_last=True))
+                        'averagerating').asc(nulls_last=True))
             else:
                 if sortkey == 'name':
                     sortkey = 'lower_name'
@@ -212,7 +212,8 @@ def edit_book_review(request, bookreview_id):
             return render(request, 'products/edit-book-review.html',
                           {'form': form})
         else:
-            messages.warning(request, 'Sorry, you can only edit your own reviews')
+            messages.warning(request, 'Sorry, you can only edit your \
+                own reviews')
             return redirect(reverse('book_detail', args=[product.id]))
     else:
         messages.warning(request, 'You must be logged in to edit your reviews')

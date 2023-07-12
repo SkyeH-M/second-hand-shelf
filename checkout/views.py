@@ -79,7 +79,6 @@ def checkout(request):
                         product = get_object_or_404(Product, pk=item_id)
                         if Quality.objects.filter(
                                 product=product, name=text_quality).exists():
-                            # quality_instance = Quality.objects.filter(product=product, price_factor=Decimal(quality))[0]
                             quality_instance = Quality.objects.get(
                                 product=product,
                                 price_factor=Decimal(quality)

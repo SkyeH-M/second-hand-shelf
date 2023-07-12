@@ -201,11 +201,6 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-.contact-form {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /* Media Queries */
 
@@ -554,7 +549,16 @@ input[name='q']::placeholder {
         height: 333px;
         width: 220px;
     }
+    .contact-form {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
+    .card-img-top {
+        height: 400px;
+        width: auto;
+    }
 }
 
 @media (max-width: 991px) {
@@ -606,10 +610,6 @@ input[name='q']::placeholder {
         padding: 2px !important;
     }
 
-    /* .increment-qty, .decrement-qty {
-        padding: .25rem .5rem !important;
-    } */
-
     .increment-qty, .decrement-qty {
         padding: 0 !important;
         height: 38px;
@@ -647,6 +647,10 @@ input[name='q']::placeholder {
         font-size: 1.2rem;
         margin-right: auto;
         margin-left: auto;
+    }
+
+    .card {
+        align-items: center;
     }
 }
 
