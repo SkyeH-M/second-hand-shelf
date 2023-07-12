@@ -168,6 +168,13 @@ def add_book_review(request, product_id):
                               f"review by clicking the edit button shown"
                               f" on your review card.")
                 return redirect(reverse('book_detail', args=[product.id]))
+            elif request.user.is_superuser:
+                stars = request.POST.get('stars', 3)
+                content = request.POST.get('content', '')
+                review = BookReview.objects.create(
+                    product=product, user=request.user, stars=stars,
+                    content=content)
+                review.save()
         else:
             stars = request.POST.get('stars', 3)
             content = request.POST.get('content', '')
@@ -223,14 +230,8 @@ def delete_book_review(request, bookreview_id):
         if request.user == bookreview.user:
             bookreview.delete()
             # Update averagerating value
-            # review_number = product.reviews.count()
-            # if review_number > 0: #1
-            #     total_rating = product.reviews.aggregate(total_rating=Sum('stars'))['total_rating']
-            #     current_averagerating = total_rating / review_number
-            # else:
-            #     current_averagerating = None
-            # product.averagerating = current_averagerating
-            # product.save()
+            product.get_rating()
+            product.save()
             messages.success(request, 'Your book review was \
                              successfully deleted')
         return redirect(reverse('book_detail', args=[product.id]))
