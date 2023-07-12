@@ -25,8 +25,12 @@ def all_books(request):
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'averagerating':
-                products = products.order_by(F(
+                if direction == 'desc':
+                    products = products.order_by(F(
                     'averagerating').desc(nulls_last=True))
+                elif direction == 'asc':
+                    products = products.order_by(F(
+                    'averagerating').asc(nulls_last=True))
             else:
                 if sortkey == 'name':
                     sortkey = 'lower_name'
@@ -36,8 +40,8 @@ def all_books(request):
                 if sortkey == 'bookreview':
                     sortkey = 'stars'
 
-                    if direction == 'desc':
-                        sortkey = f'-{sortkey}'
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
                 products = products.order_by(sortkey)
 
         if 'category' in request.GET:
