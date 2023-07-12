@@ -223,15 +223,12 @@ def edit_book_review(request, bookreview_id):
 def delete_book_review(request, bookreview_id):
     """ Give users the ability to delete their own reviews """
     if request.user.is_authenticated:
-        # bookreview = BookReview.objects.get(id=bookreview_id)
-        bookreview = get_object_or_404(BookReview, pk=bookreview_id)
+        bookreview = BookReview.objects.get(id=bookreview_id)
+        # bookreview = get_object_or_404(BookReview, pk=bookreview_id)
         product = bookreview.product
         # star_rating = bookreview.stars
         if request.user == bookreview.user:
             bookreview.delete()
-            # Update averagerating value
-            product.get_rating()
-            product.save()
             messages.success(request, 'Your book review was \
                              successfully deleted')
         return redirect(reverse('book_detail', args=[product.id]))

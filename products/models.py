@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 
 
 class Category(models.Model):
@@ -90,3 +92,14 @@ class BookReview(models.Model):
 
     def __str__(self):
         return self.product.title
+
+@receiver(post_save, sender=BookReview)
+def update_rating(sender, instance, created, **kwargs):
+    instance.product.averagerating = instance.product.get_rating()
+    instance.product.save()
+
+
+@receiver(post_delete, sender=BookReview)
+def update_rating(sender, instance, *args, **kwargs):
+    instance.product.averagerating = instance.product.get_rating()
+    instance.product.save()
