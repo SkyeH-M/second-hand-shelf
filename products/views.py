@@ -167,7 +167,7 @@ def add_book_review(request, product_id):
                               f"{product.title}, you can edit your "
                               f"review by clicking the edit button shown"
                               f" on your review card.")
-            return redirect(reverse('book_detail', args=[product.id]))
+                return redirect(reverse('book_detail', args=[product.id]))
         else:
             stars = request.POST.get('stars', 3)
             content = request.POST.get('content', '')
@@ -205,10 +205,10 @@ def edit_book_review(request, bookreview_id):
             return render(request, 'products/edit-book-review.html',
                           {'form': form})
         else:
-            messages.warning('Sorry, you can only edit your own reviews')
+            messages.warning(request, 'Sorry, you can only edit your own reviews')
             return redirect(reverse('book_detail', args=[product.id]))
     else:
-        messages.warning('You must be logged in to edit your reviews')
+        messages.warning(request, 'You must be logged in to edit your reviews')
         return redirect(reverse('account_login'))
 
 
@@ -216,13 +216,24 @@ def edit_book_review(request, bookreview_id):
 def delete_book_review(request, bookreview_id):
     """ Give users the ability to delete their own reviews """
     if request.user.is_authenticated:
-        bookreview = BookReview.objects.get(id=bookreview_id)
+        # bookreview = BookReview.objects.get(id=bookreview_id)
+        bookreview = get_object_or_404(BookReview, pk=bookreview_id)
         product = bookreview.product
+        # star_rating = bookreview.stars
         if request.user == bookreview.user:
             bookreview.delete()
+            # Update averagerating value
+            # review_number = product.reviews.count()
+            # if review_number > 0: #1
+            #     total_rating = product.reviews.aggregate(total_rating=Sum('stars'))['total_rating']
+            #     current_averagerating = total_rating / review_number
+            # else:
+            #     current_averagerating = None
+            # product.averagerating = current_averagerating
+            # product.save()
             messages.success(request, 'Your book review was \
                              successfully deleted')
         return redirect(reverse('book_detail', args=[product.id]))
     else:
-        messages.warning('You must be logged in to edit your reviews')
+        messages.warning(request, 'You must be logged in to edit your reviews')
         return redirect(reverse('account_login'))
