@@ -709,3 +709,44 @@ input[name='q']::placeholder {
         margin-left: 13px;
     }
 }
+
+@media (max-width: 290px) {
+    .nav-link i.fa-lg  {
+        font-size: 0.7rem;
+    }
+
+    .nav-link p {
+        font-size: 0.7rem;
+    }
+
+    .navbar-toggler {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .top-nav-items {
+        padding: 0;
+    }
+
+    #delivery-banner h1 {
+        font-size: 0.9rem;
+    }
+
+    .book-feature-info {
+        font-size: 0.9rem;
+    }
+}
+
+@media (width: 1024px) and (height: 600px) {
+    .main-logo-link h2{
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        padding: 0;
+    }
+
+    #delivery-banner {
+        height: 53px;
+    }
+}
