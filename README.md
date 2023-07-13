@@ -188,7 +188,7 @@ Before development began I designed wireframes to aid in the creation of my site
 * [Book Details Desktop](/docs/wireframes/D-Book-Detail-1.png)
 * [Book Details Desktop part 2](/docs/wireframes/D-Book-Detail-2.png)
 * [Book Details Mobile](/docs/wireframes/M-Book-detail-1.png)
-* [Book Details Mobile](/docs/wireframes/M-Book-detail-2.png)
+* [Book Details Mobile part 2](/docs/wireframes/M-Book-detail-2.png)
 * [Shopping Bag Desktop](/docs/wireframes/D-Shopping-bag.png)
 * [Shopping Bag Mobile](/docs/wireframes/M-Shopping-bag.png)
 * [Checkout Desktop](/docs/wireframes/D-Checkout.png)
@@ -206,6 +206,7 @@ Before development began I designed wireframes to aid in the creation of my site
 * [Bootstrap](https://getbootstrap.com/) was utilised to create a core HTML structure similar to Boutique Ado so that my time could be spent on providing functionality
 * [CI Python Linter](https://pep8ci.herokuapp.com/#)
 * [Coolors](https://coolors.co/) to create my colour palette for this README document
+* [Django](https://www.djangoproject.com/) was used as a Python framework
 * [ElephantSQL](https://www.elephantsql.com/) was used to host the database for this site
 * [Favicon](https://favicon.io/) was utilised to create a Favicon for my site's browser tab
 * [Font Awesome version 6](https://fontawesome.com/) was used for all icons seen across the site
@@ -370,18 +371,18 @@ How to Clone
 ### W3 Nu HTML Validator
 The W3 Nu HTML Validator was used multiple times throughout development to ensure the HTML used was all up to industry standards, the results are as follows:
 
-* [Home page](/docs/images/home-HTML.png)
-* [Sign Up page](/docs/images/sign-up-HTML.png)
-* [Log In page](/docs/images/login-HTML.png)
-* [Product Management page](/docs/images/product-management-HTML.png)
-* [Wishlist page](/docs/images/wishlist-HTML.png)
-* [Profile page](/docs/images/profile-HTML.png)
-* [Contact Us page](/docs/images/contact-HTML.png)
-* [All Books page](/docs/images/all-books-HTML.png)
-* [Book Detail page](/docs/images/book-detail-HTML.png)
-* [Shopping Bag page](/docs/images/shopping-bag-HTML.png)
-* [Checkout page](/docs/images/checkout-HTML.png)
-* [Checkout Success page](/docs/images/checkout-success-HTML.png)
+* [Home page](/docs/images/home-html.png)
+* [Sign Up page](/docs/images/sign-up-html.png)
+* [Log In page](/docs/images/login-html.png)
+* [Product Management page](/docs/images/product-management-html.png)
+* [Wishlist page](/docs/images/wishlist-html.png)
+* [Profile page](/docs/images/profile-html.png)
+* [Contact Us page](/docs/images/contact-html.png)
+* [All Books page](/docs/images/all-books-html.png)
+* [Book Detail page](/docs/images/book-detail-html.png)
+* [Shopping Bag page](/docs/images/shopping-bag-html.png)
+* [Checkout page](/docs/images/checkout-html.png)
+* [Checkout Success page](/docs/images/checkout-success-html.png)
 
 ### W3C CSS Validation Service
 The W3C CSS Validation Service was used to validate the two CSS files contained within the project, the results are as follows:
@@ -612,7 +613,7 @@ The site was tested by Rossanne Hamilton from my CI cohort, my partner Isabelle 
 | 5. [This](/docs/bugs/bug5.gif) bug rendered my quantity update button non-functional where if the quantity was altered and 'update' was clicked the page would refresh and revert to the original quantity | Yes | I discovered that the placement of my text_quality code was potentially producing an additional quality parameter, [evidenced here](/docs/bugs/quantity-update-bug.png) and assigning the quality value from a string representing a number (on which calculations could be performed) to a string representing the text_quality value. I moved the relevant code and this became functional once again |
 | 6. My most problematic and time-consuming bug was a bug related to the book quality being accurately logged and represented during and after checkout. As seen [here](/docs/bugs/bug6.png) in the admin an order would display the correct quality and price factor in the bag but after checkout was completed each book would be stored as a default quality of 'Great' meaning pricing was not being accurately calculated | Yes | With the help of tutor support I altered the book_quality field on my OrderLineItem model to a ForeignKey pointing to the Quality model so I could access its price_factor field. I then overwrote the save function for the OrderLineItem model to calculate the lineitem_total by multiplying the product's full price by the relevant book quality price factor, multiplied by the quantity of items bought. I then had to calculate a quality_instance based on the product and its price factor to save this to the OrderLineItem model so the price could be represented accurately in the checkout HTML templates |
 | 7. After deploying my site to Heroku the Contact Form served a 'Server Error (500)' when the form was submitted [e.g.](/docs/bugs/contact-error.png). After setting DEBUG to True in Heroku Config Vars and settings.py I received the following [error message](/docs/bugs/contact-expanded-error.png) | Yes | I found [this](https://stackoverflow.com/questions/73462412/how-can-i-fix-not-enough-values-to-unpack-expected-2-got-1) post on StackOverflow which suggested to remove trailing commas from the 'if request.method == 'POST':' block and this resulted in the form being successfully submitted and an email being received |
-| 8. When performing user testing Isabelle Harley found a bug which only occurred when a user tried to purchase 2 or more different books in the qualities 'fair'. On the user side the bug meant that they would be shown the order confirmation page with all the correct information but not receive an order confirmation email. The order was being created in admin with the correct information too but Stripe was giving the following webhooks error [Stripe error message](/docs/bugs/cannot-assign-0.60.png). The full Stripe error message was as follows "ERROR: Cannot assign "'0.60'": "OrderLineItem.book_quality" must be a "Quality" instance.’". The failing 'payment_intent.succeeded' webhook was responsible for the order confirmation email not being sent. | Yes | After spending a long time researching this error and speaking to multiple members of tutor support a mentor named Kevin concluded that the likely cause was that sometimes the quality variable was passing an instance of quality to the book_quality variable (foreign keyed to the Quality model). But when users ordered 2 or more different 'fair' quality books the quality variable was just passing a string '0.60' which caused Stripe to be unable to handle the order. To fix this I created a function in the webhook_handler.py file called checkout_quality which looped through the data in items associated with 'items_by_quality' and set the text_quality to a string based on the quality variable associated with the Quality model. A quality instance was then generated based on the product and text_quality passed in along with a decimal form of its price_factor. This quality_instance (now an instance of the Quality model) was attributed to the book_quality variable and passed to the order_line_item variable making it accessible to Stripe and the order confirmation email templates. Stripe webhooks now pass successfully for all orders and all tested orders now receive an order confirmation email [Order confirmation](/docs/bugs/order-confirmation-fairx2.png) |
+| 8. When performing user testing Isabelle Harley found a bug which only occurred when a user tried to purchase 2 or more different books in the qualities 'fair'. On the user side the bug meant that they would be shown the order confirmation page with all the correct information but not receive an order confirmation email. The order was being created in admin with the correct information too but Stripe was giving the following webhooks error [Stripe error message](/docs/bugs/cannot-assign-0.60.png). The full Stripe error message was as follows "ERROR: Cannot assign "'0.60'": "OrderLineItem.book_quality" must be a "Quality" instance.’". The failing 'payment_intent.succeeded' webhook was responsible for the order confirmation email not being sent. | Yes | After spending a long time researching this error and speaking to multiple members of tutor support a mentor named Kevin concluded that the likely cause was that sometimes the quality variable was passing an instance of quality to the book_quality variable (foreign keyed to the Quality model). But when users ordered 2 or more different 'fair' quality books the quality variable was just passing a string '0.60' which caused Stripe to be unable to handle the order. To fix this I created a function in the webhook_handler.py file called checkout_quality which looped through the data in items associated with 'items_by_quality' and set the text_quality to a string based on the quality variable associated with the Quality model. A quality instance was then generated based on the product and text_quality passed in along with a decimal form of its price_factor. This quality_instance (now an instance of the Quality model) was attributed to the book_quality variable and passed to the order_line_item variable making it accessible to Stripe and the order confirmation email templates. Stripe webhooks now pass successfully for all orders and all tested orders now receive an order confirmation [email](/docs/bugs/order-confirmation-fairx2.png) |
 | 9. During user testing, Rossanne Hamilton found that when sorting books by rating (low to high) books that have no rating are displayed above those with a low rating as books only have a rating value after users have rated them and these ratings have been aggregated into an averagerating variable | Yes | After consulting my mentor and Ed from tutor support I was able to debug this issue by adding an F expression and a nulls_last parameter to sort the books by rating while leaving any null values (those without ratings) last. This feature now functions as desired. |
 
 ## Credits
