@@ -73,8 +73,7 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    for quality, quantity in item_data['items_by_\
-                            quality'].items():
+                    for quality, quantity in item_data['items_by_quality'].items(): #noqa
                         quality_instance = None
                         product = get_object_or_404(Product, pk=item_id)
                         if Quality.objects.filter(
